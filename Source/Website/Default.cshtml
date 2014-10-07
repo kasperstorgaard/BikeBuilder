@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "~/Views/Layouts/_main.cshtml";
+}
+
+<div class="col-md-8">
+    @RenderPage("~/Views/Sections/_flow.cshtml")
+</div>
+<div class="col-md-4">
+    @RenderPage("~/Views/Sections/_preview.cshtml")
+    @RenderPage("~/Views/Sections/_summary.cshtml")
+</div>

@@ -1,0 +1,1 @@
+﻿grunt karma:watch:start watch
