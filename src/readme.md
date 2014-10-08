@@ -1,0 +1,1 @@
+﻿BikeBuilder is an angular tdd project to teach basics of angular and karma testing
