@@ -59,7 +59,9 @@ gulp.task('js:main', function () {
         }))
         .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('scripts'));
+        .pipe(gulp.dest('scripts'))
+        .pipe(reload({ stream: true }))
+        .pipe(notify('scripts updated'));
 });
 
 
@@ -79,7 +81,8 @@ gulp.task('less', function () {
         .pipe(rename('main.min.css'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.css))
-        .pipe(reload({ stream: true }));
+        .pipe(reload({ stream: true }))
+        .pipe(notify('css updated'));
 });
 
 //_____________ BROWSER SYNC _____________//
