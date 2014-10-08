@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -109,3 +110,9 @@ packages/
 
 #Test files
 *.testsettings
+
+#Minified javascript
+*.min.js
+
+#Minified css
+*.min.css
