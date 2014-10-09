@@ -119,3 +119,6 @@ packages/
 *.css
 src/Scripts/main.min.js
 src/Scripts/vendor.min.js
+*.css
+src/Scripts/main.min.js
+src/Scripts/vendor.min.js

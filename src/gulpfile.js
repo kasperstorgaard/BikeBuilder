@@ -22,10 +22,7 @@ var paths = {
 };
 
 function swallowError(error) {
-
-    //If you want details of the error in the console
     console.log(error.toString());
-
     this.emit('end');
 }
 
@@ -44,7 +41,6 @@ gulp.task('js:vendor', function () {
 
 gulp.task('js:main', function () {
     var mapJSON = require('./scripts/website/map.json');
-    console.log(mapJSON);
     gulp.src(mapJSON)
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.js'))

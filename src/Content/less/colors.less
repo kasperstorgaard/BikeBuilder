@@ -1,45 +1,25 @@
-﻿@shared: '000000', '424242', '555555', 'dedede', '888888';
-@strokes: '002000', '424a42', '555a55', 'deaede', '888a88';
-@fills: 'a00000', '42424a', '5a5555', 'deaede', '8a8888';
+﻿@blue: blue;
+@red: red;
+@yellow: yellow;
+@green: green;
 
-.do-make-shared(@i) when (@i > 0){
-    @extracted-str: extract(@shared, @i);
-    @stroke-sel: ~'.s-@{extracted-str}';
-    @fill-sel: ~'.f-@{extracted-str}';
+@colors: 'blue', 'red', 'yellow', 'green';
 
-    @{stroke-sel} {
-         stroke: ~'#@{extracted-str};'
-    }
-
-    @{fill-sel} {
-         fill: ~'#@{extracted-str};'
-    }
-
-    .do-make-shared((@i - 1));
-}
-
-.do-make-strokes(@i) when (@i > 0){
-    @extracted-str: extract(@strokes, @i);
-    @sel: ~'.s-@{extracted-str}';
+.do-make-colors(@i) when (@i > 0) {
+    @color: extract(@colors, @i);
+    @sel: ~'.@{color}';
 
     @{sel} {
-         fill: ~'#@{extracted-str};'
+        path& {
+            fill: @@color;
+        }
+
+        g& line {
+            stroke: @@color;
+        }
     }
 
-    .do-make-strokes((@i - 1))
+    .do-make-colors((@i - 1));
 }
 
-.do-make-fills(@i) when (@i > 0){
-    @extracted-str: extract(@fills, @i);
-    @sel: ~'.f-@{extracted-str}';
-
-    @{sel} {
-         stroke: ~'#@{extracted-str};'
-    }
-
-    .do-make-fills((@i - 1))
-}
-
-.do-make-shared(length(@shared));
-.do-make-strokes(length(@strokes));
-.do-make-fills(length(@fills));
+.do-make-colors(length(@colors));
