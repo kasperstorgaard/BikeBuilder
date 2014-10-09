@@ -21,6 +21,14 @@ var paths = {
     karmaConfig: 'scripts/test/config/karma.conf.js'
 };
 
+function swallowError(error) {
+
+    //If you want details of the error in the console
+    console.log(error.toString());
+
+    this.emit('end');
+}
+
 //_________________ JS ___________________//
 gulp.task('js:vendor', function () {
     var mapJSON = require('./scripts/vendor/map.json');
@@ -36,6 +44,7 @@ gulp.task('js:vendor', function () {
 
 gulp.task('js:main', function () {
     var mapJSON = require('./scripts/website/map.json');
+    console.log(mapJSON);
     gulp.src(mapJSON)
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.js'))
@@ -61,6 +70,7 @@ gulp.task('less', function () {
     gulp.src(paths.mainLess)
         .pipe(sourcemaps.init())
         .pipe(less())
+        .on('error', swallowError)
         .pipe(minifyCSS())
         .pipe(rename('main.min.css'))
         .pipe(sourcemaps.write({ sourceRoot: '/Content/less' }))
@@ -76,11 +86,19 @@ gulp.task('browser-sync', function () {
     });
 });
 
+//_____________ VIEWS ___________________//
+gulp.task('views:updated', function () {
+    gulp.src(paths.mainLess)
+        .pipe(reload({ stream: true }))
+        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'views updated' }));
+});
+
 //----------------------------------------//
 gulp.task('serve', ['less', 'js:vendor', 'js:main', 'browser-sync'], function () {
     gulp.watch(paths.less, ['less']);
     gulp.watch(['scripts/website/**/*.js', 'scripts/website/map.json'], ['js:main']);
     gulp.watch(['scripts/vendor/**/*.js', 'scripts/vendor/map.json'], ['js:vendor', 'js:main']);
+    gulp.watch('views/**/*.cshtml', ['views:updated']);
 });
 
 gulp.task('default', ['serve']);

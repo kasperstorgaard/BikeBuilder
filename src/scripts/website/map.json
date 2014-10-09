@@ -1,4 +1,5 @@
 ﻿[
     "scripts/website/main.js",
-    "scripts/website/directives/dummy.directive.js"
+    "scripts/website/directives/svg/line.group.js",
+    "scripts/website/directives/svg/path.js"
 ]

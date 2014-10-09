@@ -1,12 +1,14 @@
 ﻿; (function () {
     'use strict';
-    angular.module('codehouse.bikebuilder')
-        .directive('dummyDirective', function () {
+    angular.module('bikeBuilder')
+        .directive('svgLineGroup', function () {
             return {
                 restrict: 'A',
                 scope: true,
                 link: function (scope, element, attrs) {
-                    console.log(attrs);
+                    scope.getClass = function() {
+                        return ["test"];
+                    };
                 }
             }
         });

@@ -1,5 +1,5 @@
 ; (function () {
     'use strict';
-    angular.module('codehouse.bikebuilder', ['mgcrea.ngStrap'])
+    angular.module('bikeBuilder', ['mgcrea.ngStrap'])
         .value('version', '0.1');
 })();

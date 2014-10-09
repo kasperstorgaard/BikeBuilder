@@ -91,11 +91,10 @@
     <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="content\fonts\raleway\raleway.less" />
     <Content Include="content\images\bike2.svg" />
-    <Content Include="content\images\brickwall.png" />
-    <Content Include="content\images\brickwall_%402X.png" />
+    <Content Include="content\images\brushed.png" />
+    <Content Include="content\images\brushed_%402X.png" />
     <Content Include="content\images\brushed_alu_dark.png" />
     <Content Include="content\images\brushed_alu_dark_%402X.png" />
-    <Content Include="content\images\green_cup.png" />
     <Content Include="content\images\logo.svg" />
     <Content Include="content\images\stardust.png" />
     <Content Include="content\images\stardust_%402X.png" />
@@ -114,6 +113,8 @@
     <Content Include="scripts\vendor\angularJs\version.json" />
     <Content Include="scripts\.jshintignore" />
     <Content Include="scripts\.jshintrc" />
+    <Content Include="scripts\website\directives\svg\path.js" />
+    <Content Include="scripts\website\directives\svg\line.group.js" />
     <Content Include="views\layouts\_main.cshtml" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
@@ -248,10 +249,10 @@
     <Content Include="views\sections\_flow.cshtml" />
     <Content Include="readme.md" />
     <Content Include="package.json" />
-    <Content Include="scripts\website\directives\dummy.directive.js" />
     <Content Include="packages.config" />
     <Content Include="scripts\website\map.json" />
     <Content Include="scripts\vendor\map.json" />
+    <Content Include="content\less\colors.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
