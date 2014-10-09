@@ -1,0 +1,7 @@
+﻿[
+    "scripts/vendor/AngularJs/angular.js",
+    "scripts/vendor/AngularJs/angular-animate.js",
+    "scripts/vendor/Angular-strap/angular-strap.js",
+    "scripts/vendor/Angular-strap/angular-strap.tpl.js",
+    "scripts/vendor/lodash/lodash.js"
+]
