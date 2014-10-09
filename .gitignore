@@ -116,3 +116,6 @@ packages/
 
 #Minified css
 *.min.css
+*.css
+src/Scripts/main.min.js
+src/Scripts/vendor.min.js
