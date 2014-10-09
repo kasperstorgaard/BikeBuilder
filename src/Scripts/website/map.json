@@ -1,5 +1,5 @@
 ﻿[
     "scripts/website/main.js",
-    "scripts/website/directives/svg/line.group.js",
-    "scripts/website/directives/svg/path.js"
+    "scripts/website/directives/svg.element.js",
+    "scripts/website/controllers/preview.js"
 ]

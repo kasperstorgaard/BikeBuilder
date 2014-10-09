@@ -26,13 +26,18 @@ function swallowError(error) {
     this.emit('end');
 }
 
+var env = {
+    dev: true,
+    prod: false
+};
+
 //_________________ JS ___________________//
 gulp.task('js:vendor', function () {
     var mapJSON = require('./scripts/vendor/map.json');
     gulp.src(mapJSON)
         .pipe(sourcemaps.init())
         .pipe(concat('vendor.min.js'))
-        .pipe(uglify())
+        .pipe(uglify({ mangle: env.prod }))
         .pipe(sourcemaps.write({ sourceRoot: '/Scripts/vendor' }))
         .pipe(gulp.dest('scripts'))
         .pipe(reload({ stream: true }))
@@ -45,8 +50,8 @@ gulp.task('js:main', function () {
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.js'))
         .pipe(ngAnnotate())
-        .pipe(uglify())
-        .pipe(sourcemaps.write({sourceRoot: '/Scripts/website'}))
+        .pipe(uglify({mangle: env.prod }))
+        .pipe(sourcemaps.write({ sourceRoot: '/Scripts/website' }))
         .pipe(gulp.dest('scripts'))
         .pipe(reload({ stream: true }))
         .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'website scripts updated' }));

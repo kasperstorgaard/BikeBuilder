@@ -1,69 +1,79 @@
 ﻿.preview {
     svg {
         width: 100%;
-
-        g {
-            stroke: black;
-        }
-
-        .frame {
-            fill: white;
-        }
-
-        .fork {
-            fill: white;
-        }
-
-        .front-fork {
-            fill: white;
-        }
-
-        .handlebars {
-            fill: black;
-        }
-
-        .hub {
-            fill: silver;
-        }
-
-        .rim {
-            fill: silver;
-        }
-
-        .tire {
-            fill: black;
-        }
-
-        .spokes > * {
-            stroke: silver;
-        }
-
-        .saddle {
-            fill: black;
-        }
-
-        .seatmast {
-            fill: silver;
-        }
-
-        .chain {
-            fill: pink;
-        }
-
-        .pedal-arm {
-            fill: silver;
-        }
-
-        .pedal {
-            fill: black;
-        }
-
-        .crankset {
-            fill: silver;
-        }
-
-        .handlebars {
-            fill: black;
-        }
     }
+}
+
+g {
+    stroke: black;
+
+    &:hover > line {
+        stroke: red !important;
+        stroke-width: 2px;
+    }
+}
+
+path:hover {
+    stroke: red;
+    stroke-width: 2px;
+}
+
+.frame {
+    fill: white;
+}
+
+.fork {
+    fill: white;
+}
+
+.front-fork {
+    fill: white;
+}
+
+.handlebars {
+    fill: black;
+}
+
+.hub {
+    fill: silver;
+}
+
+.rim {
+    fill: silver;
+}
+
+.tire {
+    fill: black;
+}
+
+.spokes > * {
+    stroke: silver;
+}
+
+.saddle {
+    fill: black;
+}
+
+.seatmast {
+    fill: silver;
+}
+
+.chain {
+    fill: pink;
+}
+
+.pedal-arm {
+    fill: silver;
+}
+
+.pedal {
+    fill: black;
+}
+
+.crankset {
+    fill: silver;
+}
+
+.handlebars {
+    fill: black;
 }
