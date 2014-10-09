@@ -99,7 +99,6 @@
     <Content Include="Content\images\logo.svg" />
     <Content Include="Content\images\stardust.png" />
     <Content Include="Content\images\stardust_%402X.png" />
-    <Content Include="bak\shell.js" />
     <Content Include="gulpfile.js" />
     <Content Include="Scripts\test\config\karma.conf.js" />
     <Content Include="Scripts\vendor\angularJs\angular-animate.min.js.map" />
@@ -247,7 +246,6 @@
     <Content Include="Views\sections\_summary.cshtml" />
     <Content Include="Views\sections\_preview.cshtml" />
     <Content Include="Views\sections\_flow.cshtml" />
-    <Content Include="bak\package.json" />
     <Content Include="readme.md" />
     <Content Include="package.json" />
     <Content Include="Scripts\website\directives\dummy.directive.js" />
@@ -260,15 +258,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bak\autoprefixer.js" />
-    <Content Include="bak\jshint.js" />
-    <Content Include="bak\karma.js" />
-    <Content Include="bak\less.js" />
-    <Content Include="bak\ngAnnotate.js" />
-    <Content Include="bak\open.js" />
-    <Content Include="bak\plato.js" />
-    <Content Include="bak\uglify.js" />
-    <Content Include="bak\watch.js" />
     <Content Include="Scripts\test\config\jasmine_template.html" />
     <Content Include="Scripts\test\test.spec.js" />
     <Content Include="Scripts\vendor\angular-strap\angular-strap.js" />
@@ -1032,6 +1021,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\css\" />
+    <Folder Include="Scripts\notifications\" />
     <Folder Include="Scripts\reports\jshint\" />
     <Folder Include="Scripts\reports\plato\" />
     <Folder Include="Scripts\test\directives\" />

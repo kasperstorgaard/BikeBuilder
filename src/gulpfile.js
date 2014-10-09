@@ -1,4 +1,4 @@
-/// <vs />
+/// <vs SolutionOpened='serve' />
 var gulp = require('gulp');
 var karma = require('karma');
 var server = karma.server;
@@ -14,7 +14,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
 var path = require('path');
-var shell = require('gulp-shell')
+var fs = require('fs');
 
 var paths = {
     js: {
@@ -43,10 +43,11 @@ var paths = {
 gulp.task('js:vendor', function () {
     gulp.src(paths.js.vendor)
         .pipe(sourcemaps.init())
-            .pipe(concat('vendor.min.js'))
-            .pipe(uglify())
+        .pipe(concat('vendor.min.js'))
+        .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('scripts'));
+        .pipe(gulp.dest('scripts'))
+        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'vendor scripts uglified' }));
 });
 
 gulp.task('js:main', function () {
@@ -61,7 +62,7 @@ gulp.task('js:main', function () {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('scripts'))
         .pipe(reload({ stream: true }))
-        .pipe(notify('scripts updated'));
+        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'scripts updated' }));
 });
 
 
@@ -82,7 +83,7 @@ gulp.task('less', function () {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.css))
         .pipe(reload({ stream: true }))
-        .pipe(notify('css updated'));
+        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'css updated' }));
 });
 
 //_____________ BROWSER SYNC _____________//
@@ -95,9 +96,7 @@ gulp.task('browser-sync', function () {
 //----------------------------------------//
 gulp.task('serve', ['less', 'js:vendor', 'js:main', 'browser-sync'], function () {
     gulp.watch(paths.less, ['less']);
-    gulp.watch('scripts/website/**/*.js', ['js:main'], function () {
-        console.log('js changed!');
-    });
+    gulp.watch('scripts/website/**/*.js', ['js:main']);
 });
 
 gulp.task('default', ['serve']);
