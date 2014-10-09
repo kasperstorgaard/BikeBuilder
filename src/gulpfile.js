@@ -1,4 +1,4 @@
-/// <vs SolutionOpened='serve' />
+/// <vs />
 var gulp = require('gulp');
 var karma = require('karma');
 var server = karma.server;
