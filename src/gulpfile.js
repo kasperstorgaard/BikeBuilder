@@ -13,26 +13,8 @@ var reload = browserSync.reload;
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
-var path = require('path');
-var fs = require('fs');
 
 var paths = {
-    js: {
-        vendor: [
-            'scripts/vendor/AngularJs/angular.js',
-            'scripts/vendor/AngularJs/angular-animate.js',
-            'scripts/vendor/Angular-strap/angular-strap.js',
-            'scripts/vendor/Angular-strap/angular-strap.tpl.js',
-            'scripts/vendor/lodash/lodash.js'
-        ],
-        main: [
-            'scripts/website/main.js',
-            'scripts/website/services/*.js',
-            'scripts/website/configs/*.js',
-            'scripts/website/directives/*.js',
-            'scripts/website/controllers/*.js'
-        ]
-    },
     less: 'content/less/**/*.less',
     css: 'content/css',
     mainLess: 'content/less/main.less',
@@ -41,34 +23,35 @@ var paths = {
 
 //_________________ JS ___________________//
 gulp.task('js:vendor', function () {
-    gulp.src(paths.js.vendor)
+    var mapJSON = require('./scripts/vendor/map.json');
+    gulp.src(mapJSON)
         .pipe(sourcemaps.init())
         .pipe(concat('vendor.min.js'))
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write({ sourceRoot: '/Scripts/vendor' }))
         .pipe(gulp.dest('scripts'))
-        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'vendor scripts uglified' }));
+        .pipe(reload({ stream: true }))
+        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'vendor scripts updated' }));
 });
 
 gulp.task('js:main', function () {
-    gulp.src(paths.js.main)
+    var mapJSON = require('./scripts/website/map.json');
+    gulp.src(mapJSON)
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.js'))
-        .pipe(ngAnnotate({
-            'add': true,
-            'remove': true
-        }))
+        .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write({sourceRoot: '/Scripts/website'}))
         .pipe(gulp.dest('scripts'))
         .pipe(reload({ stream: true }))
-        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'scripts updated' }));
+        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'website scripts updated' }));
 });
 
 
 //________________ KARMA _________________//
 gulp.task('karma:start', function (done) {
     server.start({
+        // ReSharper disable once UseOfImplicitGlobalInFunctionScope
         configFile: __dirname + '/' + paths.karmaConfig
     }, done);
 });
@@ -80,7 +63,7 @@ gulp.task('less', function () {
         .pipe(less())
         .pipe(minifyCSS())
         .pipe(rename('main.min.css'))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write({ sourceRoot: '/Content/less' }))
         .pipe(gulp.dest(paths.css))
         .pipe(reload({ stream: true }))
         .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'css updated' }));
@@ -96,7 +79,8 @@ gulp.task('browser-sync', function () {
 //----------------------------------------//
 gulp.task('serve', ['less', 'js:vendor', 'js:main', 'browser-sync'], function () {
     gulp.watch(paths.less, ['less']);
-    gulp.watch('scripts/website/**/*.js', ['js:main']);
+    gulp.watch(['scripts/website/**/*.js', 'scripts/website/map.json'], ['js:main']);
+    gulp.watch(['scripts/vendor/**/*.js', 'scripts/vendor/map.json'], ['js:vendor', 'js:main']);
 });
 
 gulp.task('default', ['serve']);

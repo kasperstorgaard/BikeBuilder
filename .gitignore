@@ -116,3 +116,6 @@ packages/
 
 #Minified css
 *.min.css
+
+#Sourcemap files
+*.map
