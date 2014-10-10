@@ -113,8 +113,10 @@
     <Content Include="scripts\vendor\angularJs\version.json" />
     <Content Include="scripts\.jshintignore" />
     <Content Include="scripts\.jshintrc" />
-    <Content Include="scripts\website\directives\svg\path.js" />
+    <Content Include="scripts\website\controllers\preview.js" />
     <Content Include="scripts\website\directives\svg\line.group.js" />
+    <Content Include="scripts\website\directives\svg\polygon.js" />
+    <Content Include="scripts\website\directives\svg\path.js" />
     <Content Include="views\layouts\_main.cshtml" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
@@ -253,6 +255,7 @@
     <Content Include="scripts\website\map.json" />
     <Content Include="scripts\vendor\map.json" />
     <Content Include="content\less\colors.less" />
+    <Content Include="scripts\website\services\svg.parts.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1030,8 +1033,6 @@
     <Folder Include="scripts\test\directives\" />
     <Folder Include="scripts\test\services\" />
     <Folder Include="scripts\website\configs\" />
-    <Folder Include="scripts\website\controllers\" />
-    <Folder Include="scripts\website\services\" />
     <Folder Include="scripts\website\templates\" />
     <Folder Include="tasks\" />
   </ItemGroup>
