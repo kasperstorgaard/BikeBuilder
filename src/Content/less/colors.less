@@ -1,9 +1,14 @@
 ﻿@blue: blue;
+@blurple: #263881;
+@orange: #bd7228;
+@yellow: #bd9025;
+@darkgrey: #080808;
+@turqoise: #1a6276;
 @red: red;
-@yellow: yellow;
 @green: green;
+@transparent: transparent;
 
-@colors: 'blue', 'red', 'yellow', 'green';
+@colors: 'transparent','blurple', 'orange','yellow','darkgrey', 'turqoise', 'blue', 'red', 'green';
 
 .do-make-colors(@i) when (@i > 0) {
     @color: extract(@colors, @i);

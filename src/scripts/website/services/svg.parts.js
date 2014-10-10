@@ -4,6 +4,12 @@
         .service('svgParts', function () {
         	var defaultColor = 'transparent';
 
+        	_.mixin(_, {
+        	    'inherit': inherit
+        	});
+        	_.inherit(Path, SVGPart);
+        	_.inherit(LineGroup, SVGPart);
+
         	var parts = {
         		frontSpokes: new LineGroup('frontSpokes',
 					'450.1,201.4,388.8,219.4|388.8,219.4,425.9,166.4|435.8,177.7,392.3,228.2|444.4,188.2,381.3,216.2|452.6,216.2,393.3,228.2|453.2,230.4,389.6,234.4|450.1,244.9,390.5,222.2|445.1,258.6,391.6,225|' +
@@ -62,51 +68,58 @@
 				    'M94.7,234.1l-2,0.9l2.2,2.5L94.7,234.1z M94,230l-2.7-1.7l0.4,3.6L94,230z M93.7,225.2l1.9,1.6l0-2.9L93.7,225.2z M98.5,223.6 l1.5,3.2l1-3.8L98.5,223.6z')
         	};
 
-        	//---------------------------------------------------------------------------------//
-
-        	_.mixin(_, {
-        		'inherit': inherit
-        	});
-        	_.inherit(Path,SVGPart);
-        	_.inherit(LineGroup,SVGPart);
-
         	return {
-        		getPart: getPart
+        	    getPart: getPart
         	};
+
+        	//---------------------------------------------------------------------------------//
 
         	function getPart(key) {
         		return parts[key] || {};
         	}
 
         	function inherit(child, base, props) {
-        		child.prototype = _.create(base.prototype, _.assign({
-        			'_super': base.prototype,
-        			'constructor': child
-        		}, props));
-        		return child;
-        	}
-
-        	function Line(lineData) {
-        		this.svgData = lineData.split(',');
+        	    child.prototype = _.create(base.prototype, _.assign({
+        	        '_super': base.prototype,
+        	        'invokeBaseConstructor': function (ctx, args) {
+                        base.call(ctx, args);
+                    },
+                    'constructor': child
+        	    }, props));
+        	    return child;
         	}
 
         	function SVGPart() {
-        		this.color = defaultColor;
+	            var self = this;
+	            this.setColor = function(color) {
+	                self.color = color;
+	            };
+	        }
+
+        	function Line(lineData) {
+        	    this.svgData = lineData.split(',');
         	}
 
         	function LineGroup(key, linesData) {
-        		var self = this;
-        		self.key = key;
-        		var linesDataArr = linesData.split('|');
-        		self.lines = [];
-        		_.forEach(linesDataArr, function (lineData) {
-        			self.lines.push(new Line(lineData));
-        		});
+        	    this.invokeBaseConstructor(this);
+        	    var self = this;
+
+	            this.color = 'black';
+        	    var linesDataArr = linesData.split('|');
+        	    this.lines = [];
+        	    this.key = key;
+
+        	    _.forEach(linesDataArr, function (lineData) {
+        	        self.lines.push(new Line(lineData));
+        	    });
         	}
 
         	function Path(key, pathData) {
-        		this.key = key;
-        		this.svgData = pathData;
+        	    this.invokeBaseConstructor(this);
+
+	            this.color = 'transparent';
+        	    this.key = key;
+        	    this.svgData = pathData;
         	}
         });
 })();
