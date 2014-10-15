@@ -8,19 +8,14 @@ module.exports = function (config) {
             '../../vendor/angularJs/angular-mocks.js',
             '../**/*.spec.js'
         ],
-        reporters: ['progress', 'growl', 'html'],
-        htmlReporter: {
-            outputDir: '../../reports/karma',
-            templatePath: __dirname+'/jasmine_template.html'
-        },
+        reporters: ['progress', 'growl'],
         plugins: [
             'karma-phantomjs-launcher',
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-ie-launcher',
             'karma-growl-reporter',
-            'karma-jasmine',
-            'karma-html-reporter'
+            'karma-jasmine'
         ]
     });
 };

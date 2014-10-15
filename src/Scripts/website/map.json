@@ -4,5 +4,7 @@
     "scripts/website/directives/svg/line.group.js",
     "scripts/website/directives/svg/polygon.js",
     "scripts/website/controllers/preview.js",
-    "scripts/website/services/svg.parts.js"
+    "scripts/website/services/svg.parts.js",
+    "scripts/website/services/utils.js"
+
 ]

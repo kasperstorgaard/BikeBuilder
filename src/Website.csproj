@@ -100,14 +100,27 @@
     <Content Include="content\images\stardust_%402X.png" />
     <Content Include="gulpfile.js" />
     <Content Include="scripts\test\config\karma.conf.js" />
-    <Content Include="scripts\vendor\angularJs\angular-animate.min.js.map" />
-    <Content Include="scripts\vendor\angularJs\angular-cookies.min.js.map" />
-    <Content Include="scripts\vendor\angularJs\angular-loader.min.js.map" />
-    <Content Include="scripts\vendor\angularJs\angular-messages.min.js.map" />
-    <Content Include="scripts\vendor\angularJs\angular-resource.min.js.map" />
-    <Content Include="scripts\vendor\angularJs\angular-route.min.js.map" />
-    <Content Include="scripts\vendor\angularJs\angular-sanitize.min.js.map" />
-    <Content Include="scripts\vendor\angularJs\angular-touch.min.js.map" />
+    <Content Include="scripts\test\directives\svg.parts.spec.js" />
+    <Content Include="scripts\vendor\angularJs\angular-animate.js" />
+    <Content Include="scripts\vendor\angularJs\angular-animate.min.js" />
+    <Content Include="scripts\vendor\angularJs\angular-cookies.js" />
+    <Content Include="scripts\vendor\angularJs\angular-cookies.min.js" />
+    <Content Include="scripts\vendor\angularJs\angular-csp.css" />
+    <Content Include="scripts\vendor\angularJs\angular-loader.js" />
+    <Content Include="scripts\vendor\angularJs\angular-loader.min.js" />
+    <Content Include="scripts\vendor\angularJs\angular-messages.js" />
+    <Content Include="scripts\vendor\angularJs\angular-messages.min.js" />
+    <Content Include="scripts\vendor\angularJs\angular-mocks.js" />
+    <Content Include="scripts\vendor\angularJs\angular-resource.js" />
+    <Content Include="scripts\vendor\angularJs\angular-resource.min.js" />
+    <Content Include="scripts\vendor\angularJs\angular-route.js" />
+    <Content Include="scripts\vendor\angularJs\angular-route.min.js" />
+    <Content Include="scripts\vendor\angularJs\angular-sanitize.js" />
+    <Content Include="scripts\vendor\angularJs\angular-sanitize.min.js" />
+    <Content Include="scripts\vendor\angularJs\angular-scenario.js" />
+    <Content Include="scripts\vendor\angularJs\angular-touch.js" />
+    <Content Include="scripts\vendor\angularJs\angular-touch.min.js" />
+    <Content Include="scripts\vendor\angularJs\angular.js" />
     <Content Include="scripts\vendor\angularJs\angular.min.js.map" />
     <Content Include="scripts\vendor\angularJs\errors.json" />
     <Content Include="scripts\vendor\angularJs\version.json" />
@@ -256,6 +269,15 @@
     <Content Include="scripts\vendor\map.json" />
     <Content Include="content\less\colors.less" />
     <Content Include="scripts\website\services\svg.parts.js" />
+    <Content Include="scripts\vendor\angularJs\angular-animate.min.js.map" />
+    <Content Include="scripts\vendor\angularJs\angular-cookies.min.js.map" />
+    <Content Include="scripts\vendor\angularJs\angular-loader.min.js.map" />
+    <Content Include="scripts\vendor\angularJs\angular-messages.min.js.map" />
+    <Content Include="scripts\vendor\angularJs\angular-resource.min.js.map" />
+    <Content Include="scripts\vendor\angularJs\angular-route.min.js.map" />
+    <Content Include="scripts\vendor\angularJs\angular-sanitize.min.js.map" />
+    <Content Include="scripts\vendor\angularJs\angular-touch.min.js.map" />
+    <None Include="_references.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -268,26 +290,6 @@
     <Content Include="Scripts\test\test.spec.js" />
     <Content Include="Scripts\vendor\angular-strap\angular-strap.js" />
     <Content Include="Scripts\vendor\angular-strap\angular-strap.tpl.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-animate.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-animate.min.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-cookies.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-cookies.min.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-csp.css" />
-    <Content Include="Scripts\vendor\angularJs\angular-loader.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-loader.min.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-messages.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-messages.min.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-mocks.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-resource.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-resource.min.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-route.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-route.min.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-sanitize.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-sanitize.min.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-scenario.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-touch.js" />
-    <Content Include="Scripts\vendor\angularJs\angular-touch.min.js" />
-    <Content Include="Scripts\vendor\angularJs\angular.js" />
     <Content Include="Scripts\vendor\angularJs\angular.min.js" />
     <Content Include="Scripts\vendor\angularJs\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\vendor\angularJs\i18n\angular-locale_aa-er.js" />
@@ -1030,7 +1032,6 @@
     <Folder Include="scripts\notifications\" />
     <Folder Include="scripts\reports\jshint\" />
     <Folder Include="scripts\reports\plato\" />
-    <Folder Include="scripts\test\directives\" />
     <Folder Include="scripts\test\services\" />
     <Folder Include="scripts\website\configs\" />
     <Folder Include="scripts\website\templates\" />
@@ -1048,7 +1049,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64078</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

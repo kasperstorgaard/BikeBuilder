@@ -1,9 +1,9 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .controller('PreviewCtrl', function (svgParts) {
+        .controller('PreviewCtrl', function (SvgParts) {
             var ctrl = this;
 
-            ctrl.getPart = svgParts.getPart;
+            ctrl.getPart = SvgParts.getPart;
         });
 })();

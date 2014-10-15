@@ -7,13 +7,17 @@
 g {
     stroke: black;
 
-    &:hover > line {
-        stroke: red !important;
-        stroke-width: 2px;
+    &:hover, &.active {
+        > line {
+            stroke: red !important;
+            stroke-width: 2px;
+        }
     }
 }
 
-path:hover {
-    stroke: red;
-    stroke-width: 2px;
+path {
+    &:hover, &.active {
+        stroke: red;
+        stroke-width: 2px;
+    }
 }
