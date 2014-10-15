@@ -12,7 +12,7 @@
                 child.prototype = _.create(base.prototype, _.assign({
                     '_super': base.prototype,
                     'callSuperConstructor': function (ctx, args) {
-                        base.call(ctx, args);
+                        base.apply(ctx, args);
                     },
                     'constructor': child
                 }, props));

@@ -101,6 +101,7 @@
     <Content Include="gulpfile.js" />
     <Content Include="scripts\test\config\karma.conf.js" />
     <Content Include="scripts\test\directives\svg.parts.spec.js" />
+    <Content Include="scripts\test\directives\utils.spec.js" />
     <Content Include="scripts\vendor\angularJs\angular-animate.js" />
     <Content Include="scripts\vendor\angularJs\angular-animate.min.js" />
     <Content Include="scripts\vendor\angularJs\angular-cookies.js" />
@@ -130,6 +131,7 @@
     <Content Include="scripts\website\directives\svg\line.group.js" />
     <Content Include="scripts\website\directives\svg\polygon.js" />
     <Content Include="scripts\website\directives\svg\path.js" />
+    <Content Include="scripts\website\services\utils.js" />
     <Content Include="views\layouts\_main.cshtml" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />

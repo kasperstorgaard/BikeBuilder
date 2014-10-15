@@ -1,4 +1,4 @@
-﻿describe('bikeBuilder', function () {
+﻿describe('utils  |', function () {
 
     var utils;
 
@@ -11,7 +11,7 @@
         expect(utils).not.toBeUndefined();
     });
 
-    describe('inherit', function () {
+    describe('inherit |', function () {
         var oakTree;
 
         it('should be defined', function() {

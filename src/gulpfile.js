@@ -50,6 +50,7 @@ gulp.task('js:main', function () {
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.js'))
         .pipe(ngAnnotate())
+        .on('error', swallowError)
         .pipe(uglify({mangle: env.prod }))
         .pipe(sourcemaps.write({ sourceRoot: '/Scripts/website' }))
         .pipe(gulp.dest('scripts'))
@@ -98,7 +99,7 @@ gulp.task('views:updated', function () {
 gulp.task('serve', ['less', 'js:vendor', 'js:main', 'browser-sync'], function () {
     gulp.watch(paths.less, ['less']);
     gulp.watch(['scripts/website/**/*.js', 'scripts/website/map.json'], ['js:main']);
-    gulp.watch(['scripts/vendor/**/*.js', 'scripts/vendor/map.json'], ['js:vendor', 'js:main']);
+    gulp.watch(['scripts/vendor/map.json'], ['js:vendor', 'js:main']);
     gulp.watch('views/**/*.cshtml', ['views:updated']);
 });
 

@@ -9,7 +9,7 @@
                     'model': '='
                 },
                 templateNamespace: 'svg',
-                template: '<path id={{model.key}} fill="none" ng-class="[model.color, model.key]" ng-attr-d="{{model.svgData}}" />'
+                template: '<path id={{model.key}} fill="none" ng-class="[model.color, model.key]" ng-attr-d="{{model.data}}" />'
             };
         });
 })();

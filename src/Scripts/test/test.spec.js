@@ -1,7 +1,7 @@
-﻿describe('As a tester i need this to ', function () {
+﻿describe('module |', function () {
     beforeEach(module('bikeBuilder'));
 
-    it('pass', inject(function (version) {
+    it('should have a version', inject(function (version) {
         expect(version).toEqual('0.1');
     }));
 });
