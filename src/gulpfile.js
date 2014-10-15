@@ -38,7 +38,7 @@ gulp.task('js:vendor', function () {
         .pipe(sourcemaps.init())
         .pipe(concat('vendor.min.js'))
         .pipe(uglify({ mangle: env.prod }))
-        .pipe(sourcemaps.write({ sourceRoot: '/Scripts/vendor' }))
+        .pipe(sourcemaps.write({ sourceRoot: './vendor' }))
         .pipe(gulp.dest('scripts'))
         .pipe(reload({ stream: true }))
         .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'vendor scripts updated' }));
@@ -51,8 +51,8 @@ gulp.task('js:main', function () {
         .pipe(concat('main.min.js'))
         .pipe(ngAnnotate())
         .on('error', swallowError)
-        .pipe(uglify({mangle: env.prod }))
-        .pipe(sourcemaps.write({ sourceRoot: '/Scripts/website' }))
+        .pipe(uglify({ mangle: env.prod }))
+        .pipe(sourcemaps.write({ sourceRoot: './website' }))
         .pipe(gulp.dest('scripts'))
         .pipe(reload({ stream: true }))
         .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'website scripts updated' }));
@@ -75,7 +75,7 @@ gulp.task('less', function () {
         .on('error', swallowError)
         .pipe(minifyCSS())
         .pipe(rename('main.min.css'))
-        .pipe(sourcemaps.write({ sourceRoot: '/Content/less' }))
+        .pipe(sourcemaps.write({ sourceRoot: '/Content/less', includeContent: false }))
         .pipe(gulp.dest(paths.css))
         .pipe(reload({ stream: true }))
         .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'css updated' }));

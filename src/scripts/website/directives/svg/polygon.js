@@ -9,7 +9,7 @@
                     'model': '='
                 },
                 templateNamespace: 'svg',
-                template: '<polygon id={{model.key}} fill="none" ng-class="[model.color, model.key]" ng-attr-points="{{model.svgData}}" />'
+                template: '<polygon id={{model.key}} fill="none" ng-class="[model.color, model.key]" ng-attr-points="{{model.data}}" />'
             };
         });
 })();
