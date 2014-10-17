@@ -7,7 +7,7 @@
             utils.inherit(LineGroup, SVGPart);
 
             var parts = {};
-            var typeConstructors = { Path: Path, LineGroup: LineGroup };
+            var classes = { Path: Path, LineGroup: LineGroup };
 
             return {
                 getPart: getPart,
@@ -26,17 +26,17 @@
                     return null;
                 }
 
-                var constructor = getTypeConstructor(props.type);
+                var Class = getClass(props.type);
                 if (!constructor) {
                     return null;
                 }
 
-                parts[key] = new constructor(key, props);
+                parts[key] = new Class(key, props);
                 return parts;
             }
 
-            function getTypeConstructor(key) {
-                return typeConstructors[key] || null;
+            function getClass(key) {
+                return classes[key] || null;
             }
 
             function getPart(key) {

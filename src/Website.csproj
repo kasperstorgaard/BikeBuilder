@@ -129,8 +129,10 @@
     <Content Include="scripts\.jshintrc" />
     <Content Include="scripts\website\controllers\preview.js" />
     <Content Include="scripts\website\directives\svg\line.group.js" />
+    <Content Include="scripts\website\directives\svg\line.js" />
     <Content Include="scripts\website\directives\svg\polygon.js" />
     <Content Include="scripts\website\directives\svg\path.js" />
+    <Content Include="scripts\website\directives\svg\svg.root.js" />
     <Content Include="scripts\website\services\utils.js" />
     <Content Include="views\layouts\_main.cshtml" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />

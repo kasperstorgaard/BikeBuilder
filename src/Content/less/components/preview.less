@@ -1,23 +1,51 @@
-﻿.preview {
+﻿@part-outline-stroke: rgba(55,55,55,0.5);
+@part-outline-stroke-hover: rgba(0,0,0,1);
+@part-outline-stroke-hover-width: 2px;
+
+.preview {
     svg {
         width: 100%;
     }
+
+    margin-bottom: 2px;
+
+    /*position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 7px;
+        right: 7px;
+        border-bottom: 2px solid rgba(100,100,100,0.5);
+    }*/
 }
 
 g {
-    stroke: black;
-
     &:hover, &.active {
         > line {
-            stroke: red !important;
-            stroke-width: 2px;
+            stroke: @part-outline-stroke-hover;
+            stroke-width: @part-outline-stroke-hover-width;
         }
     }
 }
 
-path {
+path, line, polygon {
+    stroke: @part-outline-stroke;
+
     &:hover, &.active {
-        stroke: red;
-        stroke-width: 2px;
+        stroke: @part-outline-stroke-hover;
+        stroke-width: @part-outline-stroke-hover-width;
+    }
+}
+
+@-webkit-keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
     }
 }
