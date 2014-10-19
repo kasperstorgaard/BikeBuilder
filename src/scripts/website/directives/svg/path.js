@@ -9,10 +9,11 @@
                     'model': '='
                 },
                 templateNamespace: 'svg',
-                template: '<path id={{model.key}} fill="none" ng-class="[model.color, model.key]" ng-style="animationStyle" ng-attr-stroke-dasharray="{{pathLength}}" ng-attr-stroke-dashoffset="{{pathLength}}" ng-attr-d="{{model.data}}" />',
+                template: '<path id={{model.key}} fill="none" ng-class="[model.type, model.color, \'selected\' ? model.selected : \'\']" ng-style="animationStyle" ' +
+                    'ng-attr-stroke-dasharray="{{pathLength}}" ng-attr-stroke-dashoffset="{{pathLength}}" ng-attr-d="{{model.data}}" />',
                 link: function (scope, element) {
                     var el = element[0];
-                    scope.$on('svgRootLoaded', setPathLength);
+                    scope.$on('svgRootLoaded', setPathLength);                                     
 
                     function setPathLength() {
                         if (el.getTotalLength) {
