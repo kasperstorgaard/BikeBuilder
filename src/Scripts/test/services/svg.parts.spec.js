@@ -1,4 +1,4 @@
-﻿describe('svg.parts |', function () {
+﻿describe('service:svg.parts |', function () {
 
     var SvgParts;
 
@@ -60,6 +60,14 @@
     describe('updatePart |', function () {
         it('should be defined', function () {
             expect(SvgParts.updatePart).not.toBeUndefined();
+        });
+
+        it('should return updated part', function() {
+            SvgParts.addPart('base', { type: 'Path', data: 'somedata', newProp: 'new data' });
+            var updatedPart = SvgParts.updatePart('base', { data: 'someotherdata' });
+            expect(updatedPart.type).toEqual('Path');
+            expect(updatedPart.data).toEqual('someotherdata');
+            expect(updatedPart.newProp).toEqual('new data');
         });
     });
 

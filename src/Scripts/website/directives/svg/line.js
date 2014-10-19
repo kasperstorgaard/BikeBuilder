@@ -19,15 +19,16 @@
                         var y = Math.abs(scope.model.data[1] - scope.model.data[3]);
                         var length = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
                         scope.pathLength = length;
-                        
-                        var BASE_LENGTH = 100;
-                        var BASE_DURATION = 2;
 
-                        var duration = (Math.min(length / BASE_LENGTH, 1)) * BASE_DURATION;
+                        var SECONDS_PER_UNIT = 0.02;
+                        var MAX_SECONDS = 2;
 
+                        var duration = Math.min(length * SECONDS_PER_UNIT, MAX_SECONDS);
+
+                        var animation = 'dash ' + duration + 's linear forwards';
                         scope.animationStyle = {
-                            '-webkit-animation': 'dash ' + duration + 's linear forwards',
-                            'animation': 'dash ' + duration + 's linear forwards'
+                            '-webkit-animation': animation,
+                            'animation': animation
                         };
 
                         scope.$apply();

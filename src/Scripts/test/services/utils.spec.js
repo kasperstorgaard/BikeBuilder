@@ -1,4 +1,4 @@
-﻿describe('utils  |', function () {
+﻿describe('service:utils |', function () {
 
     var utils;
 

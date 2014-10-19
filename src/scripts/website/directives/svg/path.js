@@ -19,10 +19,10 @@
                             var length = el.getTotalLength();
                             scope.pathLength = length;
 
-                            var BASE_LENGTH = 1200;
-                            var BASE_DURATION = 5;
+                            var SECONDS_PER_UNIT = 0.00416;
+                            var MAX_SECONDS = 5;
 
-                            var duration = (Math.min(length / BASE_LENGTH, 1)) * BASE_DURATION;
+                            var duration = Math.min(length * SECONDS_PER_UNIT, MAX_SECONDS);
 
                             scope.animationStyle = {
                                 '-webkit-animation': 'dash '+duration+'s linear forwards',

@@ -1,31 +1,21 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .service('scroll', function () {
-            var callbacks = [],
-                throttledHandleScroll;
+        .service('scroll', function (BaseBind) {
+            var self = this;
+
+            _.assign(self, _.assign(new BaseBind(), {
+                onAttach: attachScroll,
+                onDetach: detachScroll
+            }));
+
+            var throttledHandleScroll;
 
             return {
-                'bind': bind
+                'bind': self.bind
             };
 
             //---------------------------------------------------------------------------------//
-
-            function bind(callback) {
-                callbacks.push(callback);
-                var index = callbacks.length - 1;
-
-                if (index === 0) {
-                    attachScroll();
-                }
-
-                return function unbind() {
-                    callbacks.splice(index, 1);
-                    if (callbacks.length === 0) {
-                        detachScroll();
-                    }
-                }
-            }
 
             function attachScroll() {
                 throttledHandleScroll = _.throttle(handleScroll, 100);
@@ -46,10 +36,8 @@
 
             function handleScroll() {
                 var scrollTop = getScrollTop();
-                
-                _.forEach(callbacks, function (callback) {
-                    callback.apply(null, [scrollTop]);
-                });
+
+                self.invoke(scrollTop);
             }
         });
 })();
