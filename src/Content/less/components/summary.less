@@ -1,7 +1,7 @@
 ﻿.summary {
     margin: 0 4px;
-    background: darken(@primary-bg, 2%);
-
+    padding: 0;
+    background: transparent;
     
     &:after {
         @indent: 4px;
@@ -16,5 +16,26 @@
         bottom: (-@bottom-height - 2px);
         background: @primary-bg;
         box-shadow: @primary-box-shadow;
+    }
+
+    .parts-list {
+
+    }
+
+    .part {
+        padding: 0 @base-padding-horisontal;
+        line-height: 1.5em;
+        font-size: 16px;
+        background: fade(@primary-bg, 70%);
+        margin-bottom: 1px;
+
+        &:first-child {
+            padding-top: 4px;
+        }
+
+        &:last-child {
+            padding-bottom: 4px;
+            margin-bottom: 0;
+        }
     }
 }
