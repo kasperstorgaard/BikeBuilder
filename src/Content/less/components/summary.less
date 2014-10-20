@@ -1,2 +1,20 @@
-﻿body {
+﻿.summary {
+    margin: 0 4px;
+    background: darken(@primary-bg, 2%);
+
+    
+    &:after {
+        @indent: 4px;
+        @bottom-height: 8px;
+
+        content: "";
+        display: block;
+        position: absolute;
+        right: -@indent;
+        left: -@indent;
+        height: @bottom-height;
+        bottom: (-@bottom-height - 2px);
+        background: @primary-bg;
+        box-shadow: @primary-box-shadow;
+    }
 }
