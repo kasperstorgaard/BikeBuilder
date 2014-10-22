@@ -15,7 +15,7 @@
                     var el = element[0];
                     scope.$on('svgRootLoaded', setPathLength);
 
-                    scope.handleClicked = function(key) {
+                    scope.handleClicked = function (key) {
                         scope.$emit('svgPart:clicked', key);
                     };
 
@@ -32,8 +32,8 @@
                             var duration = Math.min(length * SECONDS_PER_UNIT, MAX_SECONDS);
 
                             scope.animationStyle = {
-                                '-webkit-animation': 'dash '+duration+'s linear forwards',
-                                'animation': 'dash '+duration+'s linear forwards'
+                                '-webkit-animation': 'dash ' + duration + 's linear forwards',
+                                'animation': 'dash ' + duration + 's linear forwards'
                             };
 
                             scope.$apply();

@@ -7,9 +7,11 @@
 
             SvgParts.setupPartData();
 
-            $scope.$on('svgPart:clicked', function (event, key) {
+            $scope.$on('svgPart:clicked', updateActiveSvgPart);
+
+            function updateActiveSvgPart(event, key) {
                 SvgParts.updateAll({ active: false });
                 SvgParts.updateOne(key, { active: true });
-            });
+            }
         });
 })();

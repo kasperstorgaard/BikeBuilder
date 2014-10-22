@@ -100,8 +100,9 @@
     <Content Include="content\images\stardust_%402X.png" />
     <Content Include="gulpfile.js" />
     <Content Include="scripts\test\config\karma.conf.js" />
-    <Content Include="scripts\test\directives\svg.parts.spec.js" />
-    <Content Include="scripts\test\directives\utils.spec.js" />
+    <Content Include="scripts\test\services\base.bind.spec.js" />
+    <Content Include="scripts\test\services\svg.parts.spec.js" />
+    <Content Include="scripts\test\services\utils.spec.js" />
     <Content Include="scripts\vendor\angularJs\angular-animate.js" />
     <Content Include="scripts\vendor\angularJs\angular-animate.min.js" />
     <Content Include="scripts\vendor\angularJs\angular-cookies.js" />
@@ -128,11 +129,15 @@
     <Content Include="scripts\.jshintignore" />
     <Content Include="scripts\.jshintrc" />
     <Content Include="scripts\website\controllers\preview.js" />
+    <Content Include="scripts\website\directives\scroll.bind.js" />
     <Content Include="scripts\website\directives\svg\line.group.js" />
     <Content Include="scripts\website\directives\svg\line.js" />
+    <Content Include="scripts\website\directives\svg\animate.js" />
     <Content Include="scripts\website\directives\svg\polygon.js" />
     <Content Include="scripts\website\directives\svg\path.js" />
     <Content Include="scripts\website\directives\svg\svg.root.js" />
+    <Content Include="scripts\website\services\base.bind.js" />
+    <Content Include="scripts\website\services\scroll.js" />
     <Content Include="scripts\website\services\utils.js" />
     <Content Include="views\layouts\_main.cshtml" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
@@ -281,6 +286,8 @@
     <Content Include="scripts\vendor\angularJs\angular-route.min.js.map" />
     <Content Include="scripts\vendor\angularJs\angular-sanitize.min.js.map" />
     <Content Include="scripts\vendor\angularJs\angular-touch.min.js.map" />
+    <Content Include="views\_sidebar.cshtml" />
+    <Content Include="content\less\elements.less" />
     <None Include="_references.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1036,7 +1043,7 @@
     <Folder Include="scripts\notifications\" />
     <Folder Include="scripts\reports\jshint\" />
     <Folder Include="scripts\reports\plato\" />
-    <Folder Include="scripts\test\services\" />
+    <Folder Include="scripts\test\directives\" />
     <Folder Include="scripts\website\configs\" />
     <Folder Include="scripts\website\templates\" />
     <Folder Include="tasks\" />

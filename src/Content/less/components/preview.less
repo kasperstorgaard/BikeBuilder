@@ -8,16 +8,6 @@
     }
 
     margin-bottom: 2px;
-
-    /*position: relative;
-    &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 7px;
-        right: 7px;
-        border-bottom: 2px solid rgba(100,100,100,0.5);
-    }*/
 }
 
 g {
@@ -32,9 +22,16 @@ g {
 path, line, polygon {
     stroke: @part-outline-stroke;
 
-    &:hover, &.active {
+    &:hover {
         stroke: @part-outline-stroke-hover;
         stroke-width: @part-outline-stroke-hover-width;
+    }
+
+    &.active {
+        -moz-animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
     }
 }
 
