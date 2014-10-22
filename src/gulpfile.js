@@ -14,6 +14,8 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
 var templateCache = require('gulp-angular-templatecache');
+var fs = require('fs');
+var util = require('util');
 
 var paths = {
     css: 'content/css',
@@ -29,6 +31,15 @@ var paths = {
 function swallowError(error) {
     console.log(error.toString());
     this.emit('end');
+}
+
+function readJSONFile(path) {
+    var file = fs.readFileSync(path, 'utf8');
+    var str = file.toString();
+    while (str.charCodeAt(0) == 65279) {
+        str = str.substr(1);
+    }
+    return JSON.parse(str);
 }
 
 var env = {
@@ -48,7 +59,7 @@ gulp.task('js:templates', function () {
 });
 
 gulp.task('js:vendor', function () {
-    var mapJSON = require('./scripts/vendor/map.json');
+    var mapJSON = readJSONFile('./scripts/vendor/map.json');
     gulp.src(mapJSON)
         .pipe(sourcemaps.init())
         .pipe(concat('vendor.min.js'))
@@ -60,7 +71,7 @@ gulp.task('js:vendor', function () {
 });
 
 gulp.task('js:main', function () {
-    var mapJSON = require('./scripts/website/map.json');
+    var mapJSON = readJSONFile('./scripts/website/map.json');
     gulp.src(mapJSON)
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.js'))
@@ -76,7 +87,6 @@ gulp.task('js:main', function () {
 //________________ KARMA _________________//
 gulp.task('karma:start', function (done) {
     server.start({
-        // ReSharper disable once UseOfImplicitGlobalInFunctionScope
         configFile: __dirname + '/' + paths.karmaConfig
     }, done);
 });
@@ -89,7 +99,7 @@ gulp.task('less', function () {
         .on('error', swallowError)
         .pipe(minifyCSS())
         .pipe(rename('main.min.css'))
-        .pipe(sourcemaps.write({ sourceRoot: '/Content/less', includeContent: false }))
+        .pipe(sourcemaps.write({ sourceRoot: '/Content/less'}))
         .pipe(gulp.dest(paths.css))
         .pipe(reload({ stream: true }))
         .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'css updated' }));

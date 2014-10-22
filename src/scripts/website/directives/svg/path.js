@@ -15,11 +15,7 @@
 
                     var base = new SvgAnimationDirective(el, 'path');
 
-                    if (scope.svgRootLoaded) {
-                        loadAnimation();
-                    } else {
-                        scope.$on('svgRootLoaded', loadAnimation);
-                    }
+                    scope.$on('svgRootLoaded', loadAnimation);
 
                     scope.handleClicked = function (key) {
                         scope.$emit('svgPart:clicked', key);
@@ -28,7 +24,6 @@
                     //------------------------------------//
 
                     function loadAnimation() {
-                        scope.animationReady = true;
                         scope.pathLength = base.getLength();
                         scope.animationDuration = base.getDuration(scope.pathLength);
                         scope.animationStyle = base.getStyleObj(scope.animationDuration, false);

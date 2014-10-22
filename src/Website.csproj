@@ -141,7 +141,9 @@
     <Content Include="scripts\website\services\classes\SvgAnimationDirective.js" />
     <Content Include="scripts\website\services\classes\Bindable.js" />
     <Content Include="scripts\website\services\scroll.js" />
+    <Content Include="scripts\website\services\catalog.js" />
     <Content Include="scripts\website\services\utils.js" />
+    <Content Include="scripts\website\templates\spinner.tpl.html" />
     <Content Include="scripts\website\templates\path.tpl.html" />
     <Content Include="scripts\website\templates\line.tpl.html" />
     <Content Include="scripts\website\templates\line.group.tpl.html" />
@@ -280,7 +282,6 @@
     <Content Include="readme.md" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
-    <Content Include="scripts\website\map.json" />
     <Content Include="scripts\vendor\map.json" />
     <Content Include="content\less\colors.less" />
     <Content Include="scripts\website\services\svg.parts.js" />
@@ -295,6 +296,7 @@
     <Content Include="content\images\parts\bikebuilder images.rar" />
     <Content Include="content\less\elements.less" />
     <Content Include="views\_sidebar.cshtml" />
+    <Content Include="scripts\website\map.json" />
     <None Include="_references.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

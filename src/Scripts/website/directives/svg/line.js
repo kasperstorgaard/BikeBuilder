@@ -21,7 +21,6 @@
                     scope.$on('svgRootLoaded', loadAnimation);
 
                     function loadAnimation() {
-                        scope.animationReady = true;
                         scope.pathLength = base.getLength();
                         scope.animationDuration = base.getDuration(scope.pathLength);
                         scope.animationStyle = base.getStyleObj(scope.animationDuration, false);
