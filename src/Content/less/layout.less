@@ -9,6 +9,9 @@
 @primary-bg: rgba(255,255,255,0.8);
 @primary-box-shadow: 0 3px 5px rgba(0,0,0,.05);
 
+@base-padding-vertical: 22px;
+@base-padding-horisontal: 20px;
+
 body {
     font-family: @base-font;
     background: url("../images/brushed.png");
@@ -24,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
-    padding: 22px 20px;
+    padding: @base-padding-vertical @base-padding-horisontal;
     background: @primary-bg;
     margin-bottom: 60px;
     position: relative;
