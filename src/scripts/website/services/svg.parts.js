@@ -70,8 +70,6 @@
                 return parts;
             }
 
-            
-
             function setupPartData() {
                 add('rearTire', {
                     type: 'Path',

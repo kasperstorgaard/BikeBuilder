@@ -1,16 +1,16 @@
 ﻿describe('service:base.bind |', function () {
 
-    var BaseBind,
+    var Bindable,
         mockChildService,
         called;
 
 
     beforeEach(module('bikeBuilder'));
-    beforeEach(inject(function (_BaseBind_) {
-        BaseBind = _BaseBind_;
+    beforeEach(inject(function (_Bindable_) {
+        Bindable = _Bindable_;
     }));
     beforeEach(function () {
-        var bindable = new BaseBind();
+        var bindable = new Bindable();
         called = {
             onAttach: 0,
             onDetach: 0,
@@ -26,7 +26,7 @@
     });
 
     it('should be defined', function () {
-        expect(BaseBind).not.toBeUndefined();
+        expect(Bindable).not.toBeUndefined();
     });
 
     describe('child service | ', function () {
@@ -34,13 +34,13 @@
             expect(mockChildService).not.toBeUndefined();
         });
 
-        it('should inherit BaseBind props and methods', function () {
+        it('should inherit Bindable props and methods', function () {
             expect(mockChildService.bind).not.toBeUndefined();
             expect(mockChildService['_callbacks']).not.toBeUndefined();
             expect(mockChildService.invoke).not.toBeUndefined();
         });
 
-        it('should be able to override BaseBind methods', function () {
+        it('should be able to override Bindable methods', function () {
             mockChildService.onAttach();
             expect(called.onAttach).toEqual(1);
         });

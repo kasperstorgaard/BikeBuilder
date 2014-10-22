@@ -9,8 +9,7 @@
                     'model': '='
                 },
                 templateNamespace: 'svg',
-                template: '<path id={{model.key}} fill="none" ng-click="handleClicked(model.key)" ng-class="[model.type, model.color, model.active ? \'active\' : \'\']" ng-style="animationStyle" ' +
-                    'ng-attr-stroke-dasharray="{{pathLength}}" ng-attr-stroke-dashoffset="{{pathLength}}" ng-attr-d="{{model.data}}" />',
+                templateUrl: 'path.tpl.html',
                 link: function (scope, element) {
                     var el = element[0];
                     scope.$on('svgRootLoaded', setPathLength);

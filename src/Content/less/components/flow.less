@@ -1,3 +1,55 @@
 ﻿.flow {
     min-height: 900px;
 }
+
+.variant-picker {
+    width: 50px;
+    min-width: 345px;
+    float: right;
+    background: white;
+
+    border: 2px solid @btn-default-border;
+
+    .images-stack {
+        position: relative;
+    }
+
+    .variant-image {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        -moz-transition: opacity 0.5s ease-in;
+        -o-transition: opacity 0.5s ease-in;
+        -webkit-transition: opacity 0.5s ease-in;
+        transition: opacity 0.5s ease-in;
+
+        &:first-child {
+            position: relative;
+        }
+
+        &.selected {
+            opacity: 1;
+        }
+    }
+
+    .variant-buttons { 
+        margin: 0;
+        padding: 0;
+
+        & > li {
+            list-style-type: none;
+            display: inline-block;
+        }
+    }
+
+    .variant-button {
+
+        &:first-child {
+            border-left: none;
+        }
+        border-bottom: none;
+    }
+}

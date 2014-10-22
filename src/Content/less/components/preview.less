@@ -8,30 +8,48 @@
     }
 
     margin-bottom: 2px;
-}
 
-g {
-    &:hover, &.active {
-        > line {
+    .spinner {
+        position: relative;
+        text-align: center;
+
+        svg {
+            max-width: 120px;
+
+            -webkit-animation-name: rotate360;
+            animation-name: rotate360;
+            -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+        }
+
+        .load-text {
+            display: block;
+        }
+    }
+
+
+    g {
+        &:hover, &.active {
+            > line {
+                stroke: @part-outline-stroke-hover;
+                stroke-width: @part-outline-stroke-hover-width;
+            }
+        }
+    }
+
+    path, line, polygon {
+        stroke: @part-outline-stroke;
+
+        &:hover, &.active {
             stroke: @part-outline-stroke-hover;
             stroke-width: @part-outline-stroke-hover-width;
         }
-    }
-}
-
-path, line, polygon {
-    stroke: @part-outline-stroke;
-
-    &:hover {
-        stroke: @part-outline-stroke-hover;
-        stroke-width: @part-outline-stroke-hover-width;
-    }
-
-    &.active {
-        -moz-animation-iteration-count: infinite;
-        -o-animation-iteration-count: infinite;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
     }
 }
 
@@ -45,4 +63,14 @@ path, line, polygon {
     to {
         stroke-dashoffset: 0;
     }
+}
+
+@-webkit-keyframes rotate360 {
+    0% { -webkit-transform: rotate(0); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes rotate360 {
+    0% { -webkit-transform: rotate(0); }
+    100% { -webkit-transform: rotate(360deg); }
 }
