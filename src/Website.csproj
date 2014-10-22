@@ -138,7 +138,24 @@
     <Content Include="scripts\website\directives\svg\svg.root.js" />
     <Content Include="scripts\website\services\base.bind.js" />
     <Content Include="scripts\website\services\scroll.js" />
+    <Content Include="scripts\website\directives\show.spinner.js" />
+    <Content Include="scripts\website\directives\scroll.bind.js" />
+    <Content Include="scripts\website\directives\svg\line.group.js" />
+    <Content Include="scripts\website\directives\svg\line.js" />
+    <Content Include="scripts\website\directives\svg\path.js" />
+    <Content Include="scripts\website\directives\svg\svg.root.js" />
+    <Content Include="scripts\website\services\classes\svg\SvgPart.js" />
+    <Content Include="scripts\website\services\classes\svg\LineGroup.js" />
+    <Content Include="scripts\website\services\classes\svg\Path.js" />
+    <Content Include="scripts\website\services\classes\SvgAnimationDirective.js" />
+    <Content Include="scripts\website\services\classes\Bindable.js" />
+    <Content Include="scripts\website\services\scroll.js" />
+    <Content Include="scripts\website\services\catalog.js" />
     <Content Include="scripts\website\services\utils.js" />
+    <Content Include="scripts\website\templates\spinner.tpl.html" />
+    <Content Include="scripts\website\templates\path.tpl.html" />
+    <Content Include="scripts\website\templates\line.tpl.html" />
+    <Content Include="scripts\website\templates\line.group.tpl.html" />
     <Content Include="views\layouts\_main.cshtml" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
@@ -274,7 +291,6 @@
     <Content Include="readme.md" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
-    <Content Include="scripts\website\map.json" />
     <Content Include="scripts\vendor\map.json" />
     <Content Include="content\less\colors.less" />
     <Content Include="scripts\website\services\svg.parts.js" />
@@ -288,6 +304,10 @@
     <Content Include="scripts\vendor\angularJs\angular-touch.min.js.map" />
     <Content Include="views\_sidebar.cshtml" />
     <Content Include="content\less\elements.less" />
+    <Content Include="content\images\parts\bikebuilder images.rar" />
+    <Content Include="content\less\elements.less" />
+    <Content Include="views\_sidebar.cshtml" />
+    <Content Include="scripts\website\map.json" />
     <None Include="_references.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1045,7 +1065,6 @@
     <Folder Include="scripts\reports\plato\" />
     <Folder Include="scripts\test\directives\" />
     <Folder Include="scripts\website\configs\" />
-    <Folder Include="scripts\website\templates\" />
     <Folder Include="tasks\" />
   </ItemGroup>
   <PropertyGroup>

@@ -13,17 +13,33 @@ var reload = browserSync.reload;
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
+var templateCache = require('gulp-angular-templatecache');
+var fs = require('fs');
+var util = require('util');
 
 var paths = {
-    less: 'content/less/**/*.less',
     css: 'content/css',
+    js: 'scripts/website/**/*.js',
+    karmaConfig: 'scripts/test/config/karma.conf.js',
+    less: 'content/less/**/*.less',
     mainLess: 'content/less/main.less',
-    karmaConfig: 'scripts/test/config/karma.conf.js'
+    maps: { website: 'scripts/website/map.json', vendor: 'scripts/vendor/map.json' },
+    templates: 'scripts/website/templates/**/*.tpl.html',
+    views: 'views/**/*.cshtml'
 };
 
 function swallowError(error) {
     console.log(error.toString());
     this.emit('end');
+}
+
+function readJSONFile(path) {
+    var file = fs.readFileSync(path, 'utf8');
+    var str = file.toString();
+    while (str.charCodeAt(0) == 65279) {
+        str = str.substr(1);
+    }
+    return JSON.parse(str);
 }
 
 var env = {
@@ -32,8 +48,18 @@ var env = {
 };
 
 //_________________ JS ___________________//
+gulp.task('js', ['js:templates', 'js:vendor', 'js:main']);
+
+gulp.task('js:templates', function () {
+    gulp.src(paths.templates)
+        .pipe(templateCache({module: 'bikeBuilder'}))
+        .pipe(gulp.dest('scripts/website/templates'))
+        .pipe(reload({ stream: true }))
+        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'templates updated' }));
+});
+
 gulp.task('js:vendor', function () {
-    var mapJSON = require('./scripts/vendor/map.json');
+    var mapJSON = readJSONFile('./scripts/vendor/map.json');
     gulp.src(mapJSON)
         .pipe(sourcemaps.init())
         .pipe(concat('vendor.min.js'))
@@ -45,7 +71,7 @@ gulp.task('js:vendor', function () {
 });
 
 gulp.task('js:main', function () {
-    var mapJSON = require('./scripts/website/map.json');
+    var mapJSON = readJSONFile('./scripts/website/map.json');
     gulp.src(mapJSON)
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.js'))
@@ -58,11 +84,9 @@ gulp.task('js:main', function () {
         .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'website scripts updated' }));
 });
 
-
 //________________ KARMA _________________//
 gulp.task('karma:start', function (done) {
     server.start({
-        // ReSharper disable once UseOfImplicitGlobalInFunctionScope
         configFile: __dirname + '/' + paths.karmaConfig
     }, done);
 });
@@ -75,7 +99,7 @@ gulp.task('less', function () {
         .on('error', swallowError)
         .pipe(minifyCSS())
         .pipe(rename('main.min.css'))
-        .pipe(sourcemaps.write({ sourceRoot: '/Content/less', includeContent: false }))
+        .pipe(sourcemaps.write({ sourceRoot: '/Content/less'}))
         .pipe(gulp.dest(paths.css))
         .pipe(reload({ stream: true }))
         .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'css updated' }));
@@ -96,10 +120,11 @@ gulp.task('views:updated', function () {
 });
 
 //----------------------------------------//
-gulp.task('serve', ['less', 'js:vendor', 'js:main', 'browser-sync'], function () {
+gulp.task('serve', ['less', 'js', 'browser-sync'], function () {
     gulp.watch(paths.less, ['less']);
-    gulp.watch(['scripts/website/**/*.js', 'scripts/website/map.json'], ['js:main']);
-    gulp.watch(['scripts/vendor/map.json'], ['js:vendor', 'js:main']);
+    gulp.watch([paths.js, paths.maps.website], ['js:main']);
+    gulp.watch([paths.maps.vendor], ['js:vendor', 'js:main']);
+    gulp.watch([paths.templates], ['js:templates', 'js:main']);
     gulp.watch('views/**/*.cshtml', ['views:updated']);
 });
 
