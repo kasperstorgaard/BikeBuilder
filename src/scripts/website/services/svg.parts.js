@@ -1,10 +1,10 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .service('SvgParts', function (utils) {
+        .service('SvgParts', function (utils, SvgPart, Path, LineGroup) {
 
-            utils.inherit(Path, SVGPart);
-            utils.inherit(LineGroup, SVGPart);
+            utils.inherit(Path, SvgPart);
+            utils.inherit(LineGroup, SvgPart);
 
             var parts = {};
             var classes = { Path: Path, LineGroup: LineGroup };
@@ -70,33 +70,7 @@
                 return parts;
             }
 
-            function SVGPart(key, props) {
-                props = props || {};
-                props.key = key;
-                _.assign(this, props);
-            }
-
-            function Line(lineData) {
-                this.data = lineData.split(',');
-            }
-
-            function LineGroup() {
-                this.callSuperConstructor(this, arguments);
-                this.color = 'black';
-
-                var linesDataArr = this.data.split('|');
-                this.lines = [];
-
-                var self = this;
-                _.forEach(linesDataArr, function (lineData) {
-                    self.lines.push(new Line(lineData));
-                });
-            }
-
-            function Path() {
-                this.callSuperConstructor(this, arguments);
-                this.color = 'transparent';
-            }
+            
 
             function setupPartData() {
                 add('rearTire', {
@@ -157,7 +131,7 @@
                     type: 'Path',
                     data: 'M333.4,131c0,0,30.1,97.1,44.8,99.4c14,2.2,1.2-7.8,1.3-7.5c-5-0.6-35.9-98.7-35.1-96L333.4,131z'
                 });
-                add('riserBar', {
+                add('stem', {
                     type: 'Path',
                     data: 'M319.6,81.3l7.7-2.8l-6.2-18.4c6.2-4.4,15-3.1,15-3.1s7.3-7.4-0.3-8.1s-13.8,0.5-18.9,0.9 s-7.7,3.1-7.7,3.1l1.9,10.2l2-0.2L319.6,81.3'
                 });
@@ -190,7 +164,7 @@
                 });
                 add('pedal', {
                     type: 'Path',
-                    data: '243.6,249.7 271.6,232.4 277.9,236.6 245.4,254.2'
+                    data: 'M243.6,249.7 271.6,232.4 277.9,236.6 245.4,254.2z'
                 });
 
                 add('rearRim', {

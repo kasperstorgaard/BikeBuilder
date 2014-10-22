@@ -9,6 +9,8 @@
                     var el = element[0];
                     el.addEventListener('load', function() {
                         scope.$broadcast('svgRootLoaded');
+                        scope.svgRootLoaded = true;
+                        scope.$apply();
                     });
                 }
             }

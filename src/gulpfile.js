@@ -13,12 +13,17 @@ var reload = browserSync.reload;
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
+var templateCache = require('gulp-angular-templatecache');
 
 var paths = {
-    less: 'content/less/**/*.less',
     css: 'content/css',
+    js: 'scripts/website/**/*.js',
+    karmaConfig: 'scripts/test/config/karma.conf.js',
+    less: 'content/less/**/*.less',
     mainLess: 'content/less/main.less',
-    karmaConfig: 'scripts/test/config/karma.conf.js'
+    maps: { website: 'scripts/website/map.json', vendor: 'scripts/vendor/map.json' },
+    templates: 'scripts/website/templates/**/*.tpl.html',
+    views: 'views/**/*.cshtml'
 };
 
 function swallowError(error) {
@@ -32,6 +37,16 @@ var env = {
 };
 
 //_________________ JS ___________________//
+gulp.task('js', ['js:templates', 'js:vendor', 'js:main']);
+
+gulp.task('js:templates', function () {
+    gulp.src(paths.templates)
+        .pipe(templateCache({module: 'bikeBuilder'}))
+        .pipe(gulp.dest('scripts/website/templates'))
+        .pipe(reload({ stream: true }))
+        .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'templates updated' }));
+});
+
 gulp.task('js:vendor', function () {
     var mapJSON = require('./scripts/vendor/map.json');
     gulp.src(mapJSON)
@@ -57,7 +72,6 @@ gulp.task('js:main', function () {
         .pipe(reload({ stream: true }))
         .pipe(notify({ title: 'Gulp: BikeBuilder', message: 'website scripts updated' }));
 });
-
 
 //________________ KARMA _________________//
 gulp.task('karma:start', function (done) {
@@ -96,10 +110,11 @@ gulp.task('views:updated', function () {
 });
 
 //----------------------------------------//
-gulp.task('serve', ['less', 'js:vendor', 'js:main', 'browser-sync'], function () {
+gulp.task('serve', ['less', 'js', 'browser-sync'], function () {
     gulp.watch(paths.less, ['less']);
-    gulp.watch(['scripts/website/**/*.js', 'scripts/website/map.json'], ['js:main']);
-    gulp.watch(['scripts/vendor/map.json'], ['js:vendor', 'js:main']);
+    gulp.watch([paths.js, paths.maps.website], ['js:main']);
+    gulp.watch([paths.maps.vendor], ['js:vendor', 'js:main']);
+    gulp.watch([paths.templates], ['js:templates', 'js:main']);
     gulp.watch('views/**/*.cshtml', ['views:updated']);
 });
 

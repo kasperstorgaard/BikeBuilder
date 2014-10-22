@@ -1,44 +1,44 @@
 ﻿<section class="section preview" ng-controller="PreviewCtrl as Preview">
     <svg svg-root version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 480 360" enable-background="new 0 0 480 360" xml:space="preserve">
-    <g id="rear-wheel" class="rear-wheel">
+    <g id="rear-wheel-g" class="rear-wheel">
     <g svg-line-group model="Preview.getPart('rearSpokes')">
     </g>
     <path svg-path model="Preview.getPart('rearRim')" />
     <path svg-path model="Preview.getPart('rearTire')" />
     <path svg-path model="Preview.getPart('rearHub')" />
     </g>
-    <g id="front-wheel">
+    <g id="front-wheel-g">
     <path svg-path model="Preview.getPart('frontRim')" />
     <g svg-line-group model="Preview.getPart('frontSpokes')"></g>
     <path svg-path model="Preview.getPart('frontTire')" />
     <path svg-path model="Preview.getPart('frontHub')" />
     </g>
-    <g id="seatmast">
+    <g id="seatmast-g">
     <path svg-path model="Preview.getPart('seatMast')" />
     </g>
-    <g id="frame">
+    <g id="frame-g">
     <path svg-path model="Preview.getPart('frame')" />
     </g>
-    <g id="fork">
+    <g id="fork-g">
     <path svg-path model="Preview.getPart('fork')" />
     </g>
-    <g id="handlebars">
-    <path svg-path model="Preview.getPart('riserBar')" />
+    <g id="handlebars-g">
+    <path svg-path model="Preview.getPart('stem')" />
     <path svg-path model="Preview.getPart('handleBar')" />
     </g>
-    <g id="saddle">
+    <g id="saddle-g">
     <path svg-path model="Preview.getPart('saddle')" />
         </g>
-    <g id="crankset">
+    <g id="crankset-g">
     <path svg-path model="Preview.getPart('crankset')" />
     </g>
-    <g id="chain">
+    <g id="chain-g">
     <path svg-path model="Preview.getPart('chain')" />
     </g>
-    <g id="pedals">
+    <g id="pedals-g">
     <path svg-path model="Preview.getPart('pedalArm')" />
-    <polygon svg-polygon model="Preview.getPart('pedal')" />
-    </g>
+    <path svg-path model="Preview.getPart('pedal')" />
+        </g>
   </svg>
 </section>

@@ -1,10 +1,10 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .service('scroll', function (BaseBind) {
+        .service('scroll', function (Bindable) {
             var self = this;
 
-            _.assign(self, _.assign(new BaseBind(), {
+            _.assign(self, _.assign(new Bindable(), {
                 onAttach: attachScroll,
                 onDetach: detachScroll
             }));

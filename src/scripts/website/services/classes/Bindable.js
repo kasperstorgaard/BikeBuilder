@@ -1,8 +1,8 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .service('BaseBind', function () {
-            return function BaseBind() {
+        .service('Bindable', function () {
+            return function Bindable() {
                 var self = this;
 
                 this.onAttach = angular.noop;

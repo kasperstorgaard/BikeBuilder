@@ -9,10 +9,8 @@
                     'model': '='
                 },
                 templateNamespace: 'svg',
-                template: '<g id={{model.key}} ng-click="handleClicked(model.key)" ng-class="[model.color, model.key, model.active ? \'active\' : \'\']">' +
-                    '<line svg-line ng-repeat="line in model.lines" model="line" />' +
-                '</g>',
-                link: function(scope) {
+                templateUrl: 'line.group.tpl.html',
+                link: function (scope) {
                     scope.handleClicked = function (key) {
                         scope.$emit('svgPart:clicked', key);
                     };
