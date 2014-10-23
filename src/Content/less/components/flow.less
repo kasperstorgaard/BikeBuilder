@@ -2,54 +2,40 @@
 
 .flow {
     min-height: 900px;
+
+    &-title {
+        margin-bottom: 60px;
+    }
+
+    .jumbotron {
+        min-height: 256px;
+    }
 }
 
-.variant-picker {
-    background: white;
+.part-section {
+    margin-bottom: 60px;
 
-    border: 2px solid @btn-default-border;
+    &-name {
+        margin-left: -(@container-padding-horisontal);
+        margin-right: -(@container-padding-horisontal);
+        margin-bottom: 0;
 
-    .images-stack {
-        position: relative;
+        padding: (@padding-large-vertical * 2) (@container-padding-horisontal) 0 (@container-padding-horisontal + 12px);
+
+        background: rgba(255,255,255,0.2);
+
+        border-top: 1px solid @btn-default-border;
     }
+}
 
-    .variant-image {
-        max-width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-
-        -moz-transition: opacity 0.5s ease-in;
-        -o-transition: opacity 0.5s ease-in;
-        -webkit-transition: opacity 0.5s ease-in;
-        transition: opacity 0.5s ease-in;
-
-        .center-horisontal();
-
-        &:first-child {
-            position: relative;
-        }
-
-        &.selected {
-            opacity: 1;
-        }
-    }
-
-    .variant-buttons { 
-        margin: 0;
-        padding: 0;
-
-        & > li {
-            list-style-type: none;
-            display: inline-block;
-        }
-    }
-
-    .variant-button {
-        &:first-child {
-            border-left: none;
-        }
+.part {
+    margin-bottom: 40px;
+    
+    &-name {
+        padding: 8px 12px;
+        margin-bottom: 0;
+        margin-left: 0;
+        display: inline-block;
         border-bottom: none;
     }
 }

@@ -5,8 +5,8 @@
             return {
                 restrict: 'A',
                 scope: {
-                    'name': '@partSection',
-                    'type': '@partType',
+                    'name': '=partSection',
+                    'type': '=partType',
                     'parts': '='
                 },
                 replace: true,

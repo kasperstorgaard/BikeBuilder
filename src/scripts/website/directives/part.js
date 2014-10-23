@@ -5,12 +5,12 @@
             return {
                 restrict: 'A',
                 scope: {
-                    'model': '=part'
+                    'name': '=part',
+                    'type': '=',
+                    'variants': '='
                 },
                 replace: true,
-                templateUrl: 'part.tpl.html',
-                link: function (scope) {
-                }
+                templateUrl: 'part.tpl.html'
             };
         });
 })();

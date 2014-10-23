@@ -358,14 +358,13 @@
     <Content Include="scripts\vendor\angularJs\angular-route.min.js.map" />
     <Content Include="scripts\vendor\angularJs\angular-sanitize.min.js.map" />
     <Content Include="scripts\vendor\angularJs\angular-touch.min.js.map" />
-    <Content Include="views\_sidebar.cshtml" />
-    <Content Include="content\less\elements.less" />
     <Content Include="content\images\parts\bikebuilder images.rar" />
-    <Content Include="content\less\elements.less" />
-    <Content Include="views\_sidebar.cshtml" />
     <Content Include="scripts\website\map.json" />
     <Content Include="content\less\mixins.less" />
     <Content Include="content\less\variables.less" />
+    <Content Include="content\less\elements.less" />
+    <Content Include="content\less\custom-variables.less" />
+    <Content Include="views\_sidebar.cshtml" />
     <None Include="_references.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

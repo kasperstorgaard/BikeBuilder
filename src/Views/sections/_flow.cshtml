@@ -1,5 +1,10 @@
-﻿<section class="section flow" ng-controller="FlowCtrl as Flow">
-    <h1>Build your bike</h1>
-    <div part-section="section.name" part-type="section.partType" parts="section.parts" ng-repeat="section in Flow.partSections">
-    </div>
-</section>
+﻿<div class="col-md-8">
+    <section class="section flow" ng-controller="FlowCtrl as Flow">
+        <div class="jumbotron">
+            <h1>Build your bike</h1>
+            <p>Pick a bike part from each section, choose your colors, and preview the result!</p>
+        </div>
+        <div part-section="section.name" part-type="section.partType" parts="section.parts" ng-repeat="section in Flow.partSections">
+        </div>
+    </section>
+</div>

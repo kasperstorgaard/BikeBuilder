@@ -1,32 +1,16 @@
 ﻿.summary {
-    @indent: 1px;
-    margin-left: @indent;
-    margin-right: @indent;
+    margin-bottom: 0;
     padding: 0;
     background: transparent;
     
     @part-bg: fade(@primary-bg, 70%);
-
-    &:after {
-        @bottom-height: 12px;
-
-        content: "";
-        display: block;
-        position: absolute;
-        right: -@indent;
-        left: -@indent;
-        height: @bottom-height;
-        bottom: (-@bottom-height - 2px);
-        background: @primary-bg;
-        box-shadow: @primary-box-shadow;
-    }
 
     .parts-list {
 
     }
 
     .part {
-        @separator-height: 2px;
+        @separator-height: 1px;
 
         position: relative;
         padding: 0 @container-padding-horisontal;
@@ -46,17 +30,6 @@
             &:after {
                 display: none;
             }
-        }
-
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: (-@separator-height);
-            left: 0;
-            width: 100%;
-            height: 0;
-            border-bottom: @separator-height dashed @part-bg;
         }
     }
 }

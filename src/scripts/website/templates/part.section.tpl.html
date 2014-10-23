@@ -1,5 +1,5 @@
 ﻿<div class="part-section">
-    <div part="part" ng-repeat="part in getParts()">
-        <div variant-picker="Flow.variants" selected-variant="Flow.selectedVariant"></div>
+    <h2 class="part-section-name">{{name}}</h2>
+    <div part="part.name" type="part.type" variants="part.variants" ng-repeat="part in getParts()">
     </div>
 </div>

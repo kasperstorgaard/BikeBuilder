@@ -10,3 +10,53 @@
         display: block;
     }
 }
+
+.variant-picker {
+    background: white;
+
+    .box-border-thin();
+
+    .images-stack {
+        position: relative;
+    }
+
+    .variant-image {
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        -moz-transition: opacity 0.5s ease-in;
+        -o-transition: opacity 0.5s ease-in;
+        -webkit-transition: opacity 0.5s ease-in;
+        transition: opacity 0.5s ease-in;
+
+        .center-horisontal();
+
+        &:first-child {
+            position: relative;
+        }
+
+        &.selected {
+            opacity: 1;
+        }
+    }
+
+    .variant-buttons { 
+        margin: 0;
+        padding: 0;
+
+        & > li {
+            list-style-type: none;
+            display: inline-block;
+        }
+    }
+
+    .variant-button {
+        &:first-child {
+            border-left: none;
+        }
+        border-bottom: none;
+    }
+}

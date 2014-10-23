@@ -12,10 +12,41 @@ body {
     margin-top: @nav-height + @base-gutter;
 }
 
+h1, .h1, h2, .h2 {
+    font-weight: bold;
+}
+
+h3, .h3 {
+    font-size: @font-size-h3;
+    font-weight: normal;
+}
+
 .section {
     padding: @container-padding-vertical @container-padding-horisontal;
     background: @primary-bg;
     margin-bottom: 60px;
     position: relative;
     box-shadow: @primary-box-shadow;
+}
+
+.sidebar {
+    background: url(../images/brushed.png);
+
+    position: fixed;
+    top: 350px;
+    right: 0;
+
+    padding: 24px 0 28px 30px;
+    transform: translate3d(100%,0,0);
+    transition: transform 0.5s ease-in-out;
+
+    &.open {
+        transform: translate3d(0,0,0);
+    }
+
+    @media (min-width: @screen-md-min) {
+        position: static;
+        transform: none;
+        padding: initial;
+    }
 }
