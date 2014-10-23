@@ -10,7 +10,7 @@
                     'part-type': 'frame',
                     'parts': [
                         {
-                            'name': 'blb-track',
+                            'name': 'blb track',
                             'type': 'frame',
                             'variants': [
                                 {
@@ -23,12 +23,32 @@
                             ]
                         },
                         {
-                            'name': '8bar-krzberg-v4',
+                            'name': 'dolan pre cursa',
+                            'type': 'frame',
+                            'variants': [
+                                {
+                                    name: 'black',
+                                    imageUrl: IMAGE_ROOT + 'parts/frames/cuadro-dolan-negro_1.jpg'
+                                }
+                            ]
+                        },
+                        {
+                            'name': '8bar krzberg-v4',
                             'type': 'frame',
                             'variants': [
                                 {
                                     name: 'white',
                                     imageUrl: IMAGE_ROOT + 'parts/frames/8bar-krzberg-v4_white-1.jpg'
+                                }
+                            ]
+                        },
+                        {
+                            'name': 'leader 725',
+                            'type': 'frame',
+                            'variants': [
+                                {
+                                    name: 'white',
+                                    imageUrl: IMAGE_ROOT + 'parts/frames/leader-frame-725-white.jpg'
                                 }
                             ]
                         }
@@ -39,7 +59,7 @@
                     'part-type': 'chain',
                     'parts': [
                         {
-                            'name': 'cadena-kmc',
+                            'name': 'cadena kmc',
                             'type': 'frame',
                             'variants': [
                                 {
@@ -60,7 +80,7 @@
                             ]
                         },
                         {
-                            'name': 'cadena-fixie',
+                            'name': 'cadena fixie',
                             'type': 'chain',
                             'variants': [
                                 {
@@ -70,7 +90,7 @@
                             ]
                         },
                          {
-                             'name': 'cadena-taya',
+                             'name': 'cadena taya',
                              'type': 'chain',
                              'variants': [
                                  {
@@ -79,6 +99,48 @@
                                  }
                              ]
                          }
+                    ]
+                },
+                {
+                    'name': 'wheels',
+                    'part-type': 'wheel',
+                    'parts': [
+                        {
+                            'name': 'aerospoke',
+                            'type': 'wheel',
+                            'variants': [
+                                {
+                                    name: 'white',
+                                    imageUrl: IMAGE_ROOT + 'parts/wheels/aerospoke-blanco.jpg'
+                                }, {
+                                    name: 'black',
+                                    imageUrl: IMAGE_ROOT + 'parts/wheels/aerospoke-negro-mate.jpg'
+                                }
+                            ]
+                        },
+                        {
+                            'name': 'del negra',
+                            'type': 'wheel',
+                            'variants': [
+                                {
+                                    name: 'black',
+                                    imageUrl: IMAGE_ROOT + 'parts/wheels/del-negra-1_1.jpg'
+                                }
+                            ]
+                        },
+                        {
+                            'name': 'h plus son formation face',
+                            'type': 'wheel',
+                            'variants': [
+                                {
+                                    name: 'white',
+                                    imageUrl: IMAGE_ROOT + 'parts/wheels/tras_hplus-son-formation-face-blanco-1.jpg'
+                                }, {
+                                    name: 'red',
+                                    imageUrl: IMAGE_ROOT + 'parts/wheels/tras-hplus-son-formation-face-rojo-1_1.jpg'
+                                }
+                            ]
+                        }
                     ]
                 }
             ];
