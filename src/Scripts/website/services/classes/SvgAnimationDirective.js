@@ -12,23 +12,15 @@
 
                 this.msPrUnit = options.msPrUnit || 4.16;
                 this.maxMs = options.maxMs || 5000;
-                
 
-                this.getStyleObj = function setAnimationStyle(duration, shouldRepeat) {
-                    var repeat = shouldRepeat ? 'infinite' : 'forwards';
-                    var animation = 'dash ' + duration + ' linear ' + repeat;
-                    return {
-                        '-webkit-animation': animation,
-                        'animation': animation
-                    };
-                }
+                this.getAnimation = getAnimation;
+                this.getDuration = getDuration;
+                this.getLength = getLength;
 
-                this.getDuration = function (length) {
-                    return Math.min(length * this.msPrUnit, this.maxMs) + 'ms';
-                }
+                //----------------------------------------//
 
-                this.getLength = function () {
-                    switch (this.type) {
+                function getLength() {
+                    switch (self.type) {
                         case 'path':
                             return getPathLength();
                         case 'line':
@@ -36,6 +28,15 @@
                         default:
                             return null;
                     }
+                }
+
+                function getDuration (length) {
+                    return Math.min(length * self.msPrUnit, self.maxMs) + 'ms';
+                }
+
+                function getAnimation(duration, shouldRepeat) {
+                    var repeat = shouldRepeat ? 'infinite' : 'forwards';
+                    return 'dash ' + duration + ' linear ' + repeat;
                 }
 
                 function getPathLength() {

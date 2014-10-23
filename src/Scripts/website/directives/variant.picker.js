@@ -4,13 +4,14 @@
         .directive('variantPicker', function () {
             return {
                 restrict: 'A',
+                replace: true,
                 scope: {
-                    variants: '=variantPicker'
+                    variants: '=variantPicker',
+                    selectedVariant: '='
                 },
                 templateUrl: 'variant.picker.tpl.html',
                 link: function (scope) {
                     scope.setSelectedVariant = setSelectedVariant;
-                    setSelectedVariant(scope.variants[0]);
 
                     function setSelectedVariant(variant) {
                         scope.selectedVariant = variant;

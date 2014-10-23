@@ -4,7 +4,6 @@
         .service('Path', function () {
             return function Path() {
                 this.callSuperConstructor(this, arguments);
-                this.color = 'transparent';
             }
         });
 })();

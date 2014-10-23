@@ -4,20 +4,20 @@
         .service('LineGroup', function () {
             return LineGroup;
 
-            function Line(lineData) {
+            function Line(lineData, color) {
                 this.data = lineData.split(',');
+                this.color = color;
             }
 
             function LineGroup() {
                 this.callSuperConstructor(this, arguments);
-                this.color = 'black';
 
                 var linesDataArr = this.data.split('|');
                 this.lines = [];
 
                 var self = this;
                 _.forEach(linesDataArr, function (lineData) {
-                    self.lines.push(new Line(lineData));
+                    self.lines.push(new Line(lineData, self.color));
                 });
             }
         });

@@ -1,7 +1,7 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .directive('svgPath', function () {
+        .directive('svgPath', function (SvgAnimationDirective) {
             return {
                 restrict: 'A',
                 replace: true,
@@ -11,33 +11,34 @@
                 templateNamespace: 'svg',
                 templateUrl: 'path.tpl.html',
                 link: function (scope, element) {
-                    var el = element[0];
-                    scope.$on('svgRootLoaded', setPathLength);
 
-                    scope.handleClicked = function (key) {
-                        scope.$emit('svgPart:clicked', key);
-                    };
+                    scope.$on('svgRootLoaded', loadAnimation);
+                    scope.handleClicked = handleClicked;
+                    scope.getStyle = getStyle;
 
                     //------------------------------------//
 
-                    function setPathLength() {
-                        if (el.getTotalLength) {
-                            var length = el.getTotalLength();
-                            scope.pathLength = length;
+                    function handleClicked(key) {
+                        scope.$emit('svgPart:clicked', key);
+                    }
 
-                            var SECONDS_PER_UNIT = 0.00416;
-                            var MAX_SECONDS = 5;
+                    function getStyle() {
+                        return {
+                            '-webkit-animation': scope.animation,
+                            'animation': scope.animation,
+                            'fill': scope.model.color
+                        };
+                    }
 
-                            var duration = Math.min(length * SECONDS_PER_UNIT, MAX_SECONDS);
+                    function loadAnimation() {
+                        var el = element[0];
+                        var base = new SvgAnimationDirective(el, 'path', {data: scope.model.data});
 
-                            scope.animationStyle = {
-                                '-webkit-animation': 'dash ' + duration + 's linear forwards',
-                                'animation': 'dash ' + duration + 's linear forwards'
-                            };
-
-                            scope.$apply();
-                        }
-                    }                    
+                        scope.pathLength = base.getLength();
+                        scope.animationDuration = base.getDuration(scope.pathLength);
+                        scope.animation = base.getAnimation(scope.animationDuration, false);
+                        scope.$apply();
+                    }
                 }
 
             }

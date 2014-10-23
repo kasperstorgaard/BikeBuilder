@@ -1,33 +1,19 @@
-﻿@import (reference) "../fonts/fonts";
-
-@base-font: @font-alegreya;
-@headings-font: @font-raleway;
-
-@base-gutter: 20px;
+﻿@base-gutter: 20px;
 @nav-height: 50px;
 
 @primary-bg: rgba(255,255,255,0.8);
 @primary-box-shadow: 0 3px 5px rgba(0,0,0,.05);
 
-@base-padding-vertical: 22px;
-@base-padding-horisontal: 20px;
+@container-padding-vertical: 22px;
+@container-padding-horisontal: 20px;
 
 body {
-    font-family: @base-font;
     background: url("../images/brushed.png");
     margin-top: @nav-height + @base-gutter;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: @headings-font;
-}
-
-.navbar a {
-    font-family: @headings-font;
-}
-
 .section {
-    padding: @base-padding-vertical @base-padding-horisontal;
+    padding: @container-padding-vertical @container-padding-horisontal;
     background: @primary-bg;
     margin-bottom: 60px;
     position: relative;

@@ -11,9 +11,14 @@
                 templateNamespace: 'svg',
                 templateUrl: 'line.group.tpl.html',
                 link: function (scope) {
-                    scope.handleClicked = function (key) {
+                    
+                    scope.handleClicked = handleClicked;
+
+                    //--------------------------------------//
+
+                    function handleClicked(key) {
                         scope.$emit('svgPart:clicked', key);
-                    };
+                    }
                 }
             };
         });

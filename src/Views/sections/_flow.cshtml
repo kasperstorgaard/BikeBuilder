@@ -1,7 +1,5 @@
 ﻿<section class="section flow" ng-controller="FlowCtrl as Flow">
-    <h1>This is the flow</h1>
-    <p class="lead">Some lead text here.<br> More info coming in a later version.</p>
-    <div>
-        <div variant-picker="Flow.testData"></div>
+    <h1>Build your bike</h1>
+    <div part-section="section.name" part-type="section.partType" parts="section.parts" ng-repeat="section in Flow.partSections">
     </div>
 </section>

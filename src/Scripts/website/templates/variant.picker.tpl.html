@@ -3,6 +3,6 @@
         <img class="variant-image" ng-src="{{variant.imageUrl}}" ng-class="{'selected': variant == selectedVariant }" ng-repeat="variant in variants" />
     </div>
     <div class="btn-group variant-buttons">
-        <a class="btn btn-default variant-button" ng-class="{'active': variant == selectedVariant}" ng-click="setSelectedVariant(variant)" ng-repeat="variant in variants">{{variant.name}}</a>
+        <a class="btn btn-lg btn-default variant-button" ng-class="{'active': variant == selectedVariant}" ng-click="setSelectedVariant(variant)" ng-repeat="variant in variants">{{variant.name}}</a>
     </div>
 </div>

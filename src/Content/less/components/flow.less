@@ -1,11 +1,10 @@
-﻿.flow {
+﻿@import (reference) "../mixins";
+
+.flow {
     min-height: 900px;
 }
 
 .variant-picker {
-    width: 50px;
-    min-width: 345px;
-    float: right;
     background: white;
 
     border: 2px solid @btn-default-border;
@@ -15,7 +14,7 @@
     }
 
     .variant-image {
-        width: 100%;
+        max-width: 100%;
         position: absolute;
         top: 0;
         left: 0;
@@ -25,6 +24,8 @@
         -o-transition: opacity 0.5s ease-in;
         -webkit-transition: opacity 0.5s ease-in;
         transition: opacity 0.5s ease-in;
+
+        .center-horisontal();
 
         &:first-child {
             position: relative;
@@ -46,7 +47,6 @@
     }
 
     .variant-button {
-
         &:first-child {
             border-left: none;
         }
