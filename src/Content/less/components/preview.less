@@ -16,46 +16,23 @@
 
     margin-bottom: 1px;
 
-    .spinner {
-        position: relative;
-        text-align: center;
-
-        svg {
-            max-width: 120px;
-
-            -webkit-animation-name: rotate360;
-            animation-name: rotate360;
-            -webkit-animation-duration: 1000ms;
-            animation-duration: 1000ms;
-            -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-            -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-            -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-        }
-
-        .load-text {
-            display: block;
-        }
-    }
-
-
     g {
-        &:hover, &.active {
-            > line {
-                stroke: @part-outline-stroke-hover;
-                stroke-width: @part-outline-stroke-hover-width;
-            }
+        &.active > line {
+            stroke-dasharray: 5px !important;
+            stroke-dashoffset: 0 !important;
+            -webkit-animation: dashactive 2000ms linear forwards infinite !important;
+            animation: dashactive 2000ms linear forwards infinite !important;
         }
     }
 
     path, line, polygon {
         stroke: @part-outline-stroke;
 
-        &:hover, &.active {
-            stroke: @part-outline-stroke-hover;
-            stroke-width: @part-outline-stroke-hover-width;
+        &.active {
+            stroke-dasharray: 5px !important;
+            stroke-dashoffset: 0 !important;
+            -webkit-animation: dashactive 2000ms linear forwards infinite !important;
+            animation: dashactive 2000ms linear forwards infinite !important;
         }
     }
 }
@@ -72,12 +49,42 @@
     }
 }
 
+@-webkit-keyframes dashactive {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 100;
+    }
+}
+
+@keyframes dashactive {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 100;
+    }
+}
+
 @-webkit-keyframes rotate360 {
-    0% { -webkit-transform: rotate(0); }
-    100% { -webkit-transform: rotate(360deg); }
+    0% {
+        -webkit-transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 @keyframes rotate360 {
-    0% { -webkit-transform: rotate(0); }
-    100% { -webkit-transform: rotate(360deg); }
+    0% {
+        -webkit-transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }

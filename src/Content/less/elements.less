@@ -60,3 +60,27 @@
         border-bottom: none;
     }
 }
+
+.spinner {
+        position: relative;
+        text-align: center;
+
+        svg {
+            max-width: 120px;
+
+            -webkit-animation-name: rotate360;
+            animation-name: rotate360;
+            -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+        }
+
+        .load-text {
+            display: block;
+        }
+    }

@@ -6,12 +6,12 @@
                 restrict: 'A',
                 replace: true,
                 scope: {
-                    variants: '=variantPicker'
+                    variants: '=variantPicker',
+                    selectedVariant: '='
                 },
                 templateUrl: 'variant.picker.tpl.html',
                 link: function (scope) {
                     scope.setSelectedVariant = setSelectedVariant;
-                    scope.selectedVariant = angular.copy(scope.variants[0]);
 
                     function setSelectedVariant(variant) {
                         scope.selectedVariant = variant;

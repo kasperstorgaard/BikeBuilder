@@ -1,4 +1,4 @@
-﻿<div class="part">
-    <h3 class="part-name">{{name}}</h3>
-    <div variant-picker="variants"></div>
+﻿<div class="part" ng-click="handleClicked()">
+    <h3 class="part-name">{{model.name}}</h3>
+    <div variant-picker="model.variants" selected-variant="selectedVariant"></div>
 </div>

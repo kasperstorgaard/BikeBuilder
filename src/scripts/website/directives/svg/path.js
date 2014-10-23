@@ -12,9 +12,12 @@
                 templateUrl: 'path.tpl.html',
                 link: function (scope, element) {
 
+                    var el = element[0];
+                    var base = new SvgAnimationDirective(el, 'path', { data: scope.model.data });
+
                     scope.$on('svgRootLoaded', loadAnimation);
                     scope.handleClicked = handleClicked;
-                    scope.getStyle = getStyle;
+                    scope.$watch('model.color', updateColor);
 
                     //------------------------------------//
 
@@ -22,22 +25,14 @@
                         scope.$emit('svgPart:clicked', key);
                     }
 
-                    function getStyle() {
-                        return {
-                            '-webkit-animation': scope.animation,
-                            'animation': scope.animation,
-                            'fill': scope.model.color
-                        };
+                    function loadAnimation() {
+                        scope.pathLength = base.getLength();
+                        scope.animationStyle = base.getStyle(scope.model.color, true);
+                        scope.$apply();
                     }
 
-                    function loadAnimation() {
-                        var el = element[0];
-                        var base = new SvgAnimationDirective(el, 'path', {data: scope.model.data});
-
-                        scope.pathLength = base.getLength();
-                        scope.animationDuration = base.getDuration(scope.pathLength);
-                        scope.animation = base.getAnimation(scope.animationDuration, false);
-                        scope.$apply();
+                    function updateColor() {
+                        scope.animationStyle = base.getStyle(scope.model.color, false);
                     }
                 }
 
