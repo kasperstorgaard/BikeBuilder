@@ -203,6 +203,7 @@
     <Content Include="scripts\website\services\classes\SvgAnimationDirective.js" />
     <Content Include="scripts\website\services\classes\Bindable.js" />
     <Content Include="scripts\website\services\catalog.js" />
+    <Content Include="scripts\website\services\parts.js" />
     <Content Include="scripts\website\services\scroll.js" />
     <Content Include="scripts\website\services\utils.js" />
     <Content Include="scripts\website\templates\spinner.tpl.html" />
@@ -365,6 +366,8 @@
     <Content Include="content\less\elements.less" />
     <Content Include="content\less\custom-variables.less" />
     <Content Include="views\_sidebar.cshtml" />
+    <Content Include="scripts\svgdata.json" />
+    <Content Include="scripts\partdata.json" />
     <None Include="_references.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

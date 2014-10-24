@@ -1,8 +1,5 @@
 ﻿<div class="variant-picker">
     <div class="images-stack">
-        <img class="variant-image" ng-src="{{variant.imageUrl}}" ng-class="{'selected': variant.name == selectedVariant.name }" ng-repeat="variant in variants" />
-    </div>
-    <div class="btn-group variant-buttons">
-        <a class="btn btn-lg btn-default variant-button" ng-class="{'active': variant.name == selectedVariant.name }" ng-click="setSelectedVariant(variant)" ng-repeat="variant in variants">{{variant.name}}</a>
+        <img class="variant-image" ng-src="{{basePartImgUrl + '/' + variant.imageUrl}}" ng-class="{'selected': variant.name == selectedVariant.name }" ng-repeat="variant in variants" />
     </div>
 </div>

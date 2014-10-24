@@ -19,6 +19,7 @@
     "scripts/website/services/classes/svg/LineGroup.js",
     "scripts/website/services/classes/svg/Path.js",
     "scripts/website/services/classes/svg/SvgPart.js",
+    "scripts/website/services/parts.js",
     "scripts/website/services/scroll.js",
     "scripts/website/services/svg.parts.js",
     "scripts/website/services/utils.js",

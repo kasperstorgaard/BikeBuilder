@@ -7,16 +7,10 @@
                 replace: true,
                 scope: {
                     variants: '=variantPicker',
-                    selectedVariant: '='
+                    selectedVariant: '=',
+                    basePartImgUrl: '@'
                 },
-                templateUrl: 'variant.picker.tpl.html',
-                link: function (scope) {
-                    scope.setSelectedVariant = setSelectedVariant;
-
-                    function setSelectedVariant(variant) {
-                        scope.selectedVariant = variant;
-                    }
-                }
+                templateUrl: 'variant.picker.tpl.html'
             };
         });
 })();

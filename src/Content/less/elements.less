@@ -13,6 +13,9 @@
 
 .variant-picker {
     background: white;
+    position: relative;
+
+    padding: @container-padding-vertical 0;
 
     .box-border-thin();
 
@@ -41,23 +44,6 @@
         &.selected {
             opacity: 1;
         }
-    }
-
-    .variant-buttons { 
-        margin: 0;
-        padding: 0;
-
-        & > li {
-            list-style-type: none;
-            display: inline-block;
-        }
-    }
-
-    .variant-button {
-        &:first-child {
-            border-left: none;
-        }
-        border-bottom: none;
     }
 }
 

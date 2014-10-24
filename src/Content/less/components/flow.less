@@ -18,22 +18,46 @@
     &-name {
         margin-left: -(@container-padding-horisontal);
         margin-right: -(@container-padding-horisontal);
-        margin-bottom: 0;
+        margin-bottom: @container-padding-vertical;
 
-        padding: (@padding-large-vertical * 2) (@container-padding-horisontal) 0 (@container-padding-horisontal + 12px);
+        padding: (@container-padding-vertical / 2) (@container-padding-horisontal) (@container-padding-vertical / 2) (@container-padding-horisontal + 12px);
 
-        background: rgba(255,255,255,0.2);
+        background: rgba(200,200,200, 0.02);
 
         border-top: 1px solid @btn-default-border;
+        border-bottom: 1px solid @btn-default-border;
     }
 }
 
 .part {
+    margin-bottom: 40px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &-box {
+        position: relative;
+    }
+
     &-name {
         padding: 8px 12px;
         margin-bottom: 0;
         margin-left: 0;
+        margin-top: 0;
         display: inline-block;
         border-bottom: none;
+
+        max-width: 50%;
+    }
+
+    &-select-btn {
+        display: block;
+        border-top: none;
+    }
+
+    .variant-buttons {
+        float: right;
+        max-width: 50%;
     }
 }

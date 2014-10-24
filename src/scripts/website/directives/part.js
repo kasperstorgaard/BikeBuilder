@@ -12,10 +12,15 @@
                 link: function(scope) {
                     scope.handleClicked = handleClicked;
                     scope.selectedVariant = angular.copy(scope.model.variants[0]);
+                    scope.setSelectedVariant = setSelectedVariant;
 
                     //-------------------------------//
                     function handleClicked() {
                         scope.$emit('part:clicked', scope.model, scope.selectedVariant);
+                    }
+
+                    function setSelectedVariant(variant) {
+                        scope.selectedVariant = variant;
                     }
                 }
             };
