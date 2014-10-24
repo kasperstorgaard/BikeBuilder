@@ -28,25 +28,3 @@ h3, .h3 {
     position: relative;
     box-shadow: @primary-box-shadow;
 }
-
-.sidebar {
-    background: url(../images/brushed.png);
-
-    position: fixed;
-    top: 350px;
-    right: 0;
-
-    padding: 24px 0 28px 30px;
-    transform: translate3d(100%,0,0);
-    transition: transform 0.5s ease-in-out;
-
-    &.open {
-        transform: translate3d(0,0,0);
-    }
-
-    @media (min-width: @screen-md-min) {
-        position: static;
-        transform: none;
-        padding: initial;
-    }
-}

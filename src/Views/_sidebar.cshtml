@@ -1,5 +1,6 @@
-﻿<div class="col-md-4 sidebar">
+﻿<div class="col-md-4 sidebar" ng-class="{'sidebar-open': sidebarOpen}">
     <div scroll-bind data-update-scope-vals="['height']" class="scroll-push" ng-style="{'height': height}"></div>
     @RenderPage("~/Views/Sections/_preview.cshtml")
     @RenderPage("~/Views/Sections/_summary.cshtml")
+    <div class="sidebar-button" ng-click="sidebarOpen = !sidebarOpen"></div>
 </div>
