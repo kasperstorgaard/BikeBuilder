@@ -1,4 +1,141 @@
 ﻿{
+    "cranksets": {
+        "part-type": "crankset",
+        "parts": [
+            {
+                "name": "prowheel",
+                "variants": [
+                    {
+                        "name": "blue",
+                        "colors": {
+                            "crankset": "#efe6d5",
+                            "pedalArm": "#0583b5"
+                        },
+                        "imageUrl": "cranksets/bielas-prowheel-azul.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "mighty fixie",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "crankset": "#161614",
+                            "pedalArm": "#1e2329"
+                        },
+                        "imageUrl": "cranksets/bielas-mighty-fixie-negra-46d_4.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "fixed",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "crankset": "#363638",
+                            "pedalArm": "#363638"
+                        },
+                        "imageUrl": "cranksets/bielas-fixed-negro.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "clasico",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "crankset": "#e8e3df",
+                            "pedalArm": "#ede8e4"
+                        },
+                        "imageUrl": "cranksets/bielas-clasico-blanco.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Paul Royal Flush 48T",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "crankset": "#7f7f7d",
+                            "pedalArm": "#c4c4c2"
+                        },
+                        "imageUrl": "cranksets/biela-paul-royal-flush-1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "sugino messenger",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "crankset": "#efeff1",
+                            "pedalArm": "#4a4643"
+                        },
+                        "imageUrl": "cranksets/biela_sugino_messenger_plata_165_48.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Origin8",
+                "variants": [
+                    {
+                        "name": "red",
+                        "colors": {
+                            "crankset": "#c32021",
+                            "pedalArm": "#c32021"
+                        },
+                        "imageUrl": "cranksets/biela_or8_rojo.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "forks": {
+        "part-type": "fork",
+        "parts": [
+            {
+                "name": "leader 725",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "fork": "#070908"
+                        },
+                        "imageUrl": "forks/leader-frame-725-white.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "horquilla aventon litecarbon",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "fork": "#171113"
+                        },
+                        "imageUrl": "forks/horquilla-aventon-lite-carbon-1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "blb track",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "fork": "#f8f9fb"
+                        },
+                        "imageUrl": "forks/blb_track_fork_5.jpg"
+                    }
+                ]
+            }
+        ]
+    },
     "frames": {
         "part-type": "frame",
         "parts": [
@@ -53,7 +190,7 @@
         "part-type": "chain",
         "parts": [
             {
-                "name": "cadena kmc",
+                "name": "KMC S1",
                 "variants": [
                     {
                         "name": "white",
@@ -78,7 +215,7 @@
                 ]
             },
             {
-                "name": "cadena fixie",
+                "name": "Taya 410B",
                 "variants": [
                     {
                         "name": "black",
@@ -88,7 +225,7 @@
                 ]
             },
             {
-                "name": "cadena taya",
+                "name": "Taya Mezzo",
                 "variants": [
                     {
                         "name": "green",
