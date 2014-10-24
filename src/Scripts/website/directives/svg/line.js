@@ -6,26 +6,28 @@
                 restrict: 'A',
                 replace: true,
                 scope: {
-                    'model': '='
+                    'color': '=',
+                    'data': '=lineData'
                 },
                 templateNamespace: 'svg',
                 templateUrl: 'line.tpl.html',
                 link: function (scope, element) {
+                    var el = element[0];
+                    var base = new SvgAnimationDirective(el, 'line', { msPrUnit: 20, data: scope.data});
 
                     scope.$on('svgRootLoaded', loadAnimation);
-
+                    scope.$watch('color', updateColor);
+                    
                     //-----------------------------------------------//
 
                     function loadAnimation() {
-                        var el = element[0];
-                        var base = new SvgAnimationDirective(el, 'line', {
-                            msPrUnit: 20,
-                            data: scope.model.data
-                        });
-
                         scope.pathLength = base.getLength();
-                        scope.animationStyle = base.getStyle(scope.model.color, true);
+                        scope.style = base.getStyle(scope.color, true);
                         scope.$apply();
+                    }
+
+                    function updateColor() {
+                        scope.style = base.getStyle(scope.color, false);
                     }
                 }
             };

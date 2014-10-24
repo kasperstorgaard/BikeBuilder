@@ -27,12 +27,12 @@
 
                     function loadAnimation() {
                         scope.pathLength = base.getLength();
-                        scope.animationStyle = base.getStyle(scope.model.color, true);
+                        scope.style = base.getStyle(scope.model.color, true);
                         scope.$apply();
                     }
 
                     function updateColor() {
-                        scope.animationStyle = base.getStyle(scope.model.color, false);
+                        scope.style = base.getStyle(scope.model.color, false);
                     }
                 }
 

@@ -23,9 +23,17 @@
             -webkit-animation: dashactive 2000ms linear forwards infinite !important;
             animation: dashactive 2000ms linear forwards infinite !important;
         }
+
+        &.has-color > line {
+            stroke-dashoffset: 0 !important;
+        }
     }
 
-    path, line, polygon {
+    path {
+        fill: #ffffff;
+    }
+
+    path, line {
         stroke: @part-outline-stroke;
 
         &.active {
@@ -33,6 +41,10 @@
             stroke-dashoffset: 0 !important;
             -webkit-animation: dashactive 2000ms linear forwards infinite !important;
             animation: dashactive 2000ms linear forwards infinite !important;
+        }
+
+        &.has-color {
+            stroke-dashoffset: 0 !important;
         }
     }
 }

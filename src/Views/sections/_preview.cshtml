@@ -1,44 +1,44 @@
 ﻿<section class="section preview" ng-controller="PreviewCtrl as Preview">
-    <svg class="bike-svg" ng-show="svgRootLoaded" show-spinner="{{!svgRootLoaded}}" svg-root version="1.1" xmlns="http://www.w3.org/2000/svg" 
+    <svg class="bike-svg" ng-show="svgRootLoaded" show-spinner="{{!svgRootLoaded}}" svg-root version="1.1" xmlns="http://www.w3.org/2000/svg"
          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 480 360" enable-background="new 0 0 480 360" xml:space="preserve">
     <g id="rear-wheel" class="rear-wheel">
-    <g svg-line-group model="Preview.getPart('rearSpokes')">
+        <g svg-line-group model="Preview.getPart('rearSpokes')" ng-if="Preview.SvgDataReady">
     </g>
-    <path svg-path model="Preview.getPart('rearRim')" />
-    <path svg-path model="Preview.getPart('rearTire')" />
-    <path svg-path model="Preview.getPart('rearHub')" />
+    <path svg-path model="Preview.getPart('rearRim')" ng-if="Preview.SvgDataReady" ng-if="Preview.SvgDataReady" />
+    <path svg-path model="Preview.getPart('rearTire')" ng-if="Preview.SvgDataReady" />
+    <path svg-path model="Preview.getPart('rearHub')" ng-if="Preview.SvgDataReady" />
     </g>
     <g id="front-wheel">
-    <path svg-path model="Preview.getPart('frontRim')" />
-    <g svg-line-group model="Preview.getPart('frontSpokes')"></g>
-    <path svg-path model="Preview.getPart('frontTire')" />
-    <path svg-path model="Preview.getPart('frontHub')" />
+    <path svg-path model="Preview.getPart('frontRim')" ng-if="Preview.SvgDataReady" />
+        <g svg-line-group model="Preview.getPart('frontSpokes')" ng-if="Preview.SvgDataReady"></g>
+    <path svg-path model="Preview.getPart('frontTire')" ng-if="Preview.SvgDataReady" />
+    <path svg-path model="Preview.getPart('frontHub')" ng-if="Preview.SvgDataReady" />
     </g>
     <g id="seatmast">
-    <path svg-path model="Preview.getPart('seatMast')" />
+    <path svg-path model="Preview.getPart('seatMast')" ng-if="Preview.SvgDataReady" />
     </g>
     <g id="frame">
-    <path svg-path model="Preview.getPart('frame')" />
+    <path svg-path model="Preview.getPart('frame')" ng-if="Preview.SvgDataReady" />
     </g>
     <g id="fork">
-    <path svg-path model="Preview.getPart('fork')" />
+    <path svg-path model="Preview.getPart('fork')" ng-if="Preview.SvgDataReady" />
     </g>
     <g id="handlebars">
-    <path svg-path model="Preview.getPart('stem')" />
-    <path svg-path model="Preview.getPart('handleBar')" />
+    <path svg-path model="Preview.getPart('stem')" ng-if="Preview.SvgDataReady" />
+    <path svg-path model="Preview.getPart('handleBar')" ng-if="Preview.SvgDataReady" />
     </g>
     <g id="saddle">
-    <path svg-path model="Preview.getPart('saddle')" />
+    <path svg-path model="Preview.getPart('saddle')" ng-if="Preview.SvgDataReady" />
         </g>
     <g id="crankset">
-    <path svg-path model="Preview.getPart('crankset')" />
+    <path svg-path model="Preview.getPart('crankset')" ng-if="Preview.SvgDataReady" />
     </g>
     <g id="chain">
-    <path svg-path model="Preview.getPart('chain')" />
+    <path svg-path model="Preview.getPart('chain')" ng-if="Preview.SvgDataReady" />
     </g>
     <g id="pedals">
-    <path svg-path model="Preview.getPart('pedalArm')" />
-    <path svg-path model="Preview.getPart('pedal')" />
+    <path svg-path model="Preview.getPart('pedalArm')" ng-if="Preview.SvgDataReady" />
+    <path svg-path model="Preview.getPart('pedal')" ng-if="Preview.SvgDataReady" />
         </g>
   </svg>
 </section>

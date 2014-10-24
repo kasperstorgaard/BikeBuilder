@@ -1,3 +1,3 @@
-﻿<g id={{model.key}} ng-click="handleClicked(model.key)" ng-class="[model.key, model.active ? 'active' : '']">
-    <line svg-line ng-repeat="line in model.lines" model="line"></line>
+﻿<g id={{model.key}} ng-click="handleClicked(model.key)" ng-class="[model.key, model.active ? 'active' : '', model.color ? 'has-color' : '']">
+    <line svg-line ng-repeat="line in model.lines" color="model.color" line-data="line.data"></line>
 </g>

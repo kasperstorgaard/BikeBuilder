@@ -11,7 +11,6 @@
                 templateNamespace: 'svg',
                 templateUrl: 'line.group.tpl.html',
                 link: function (scope) {
-                    
                     scope.handleClicked = handleClicked;
 
                     //--------------------------------------//

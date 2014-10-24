@@ -1,2 +1,2 @@
-﻿<path id={{model.key}} fill="none" ng-click="handleClicked(model.key)" ng-class="[model.type, model.active ? 'active' : '']" 
-      ng-style="animationStyle" ng-attr-stroke-dasharray="{{pathLength}}" ng-attr-stroke-dashoffset="{{pathLength}}" ng-attr-d="{{model.data}}" />
+﻿<path id={{model.key}} fill="none" ng-click="handleClicked(model.key)" ng-class="[model.type, model.active ? 'active' : '', model.color ? 'has-color':'']"
+      ng-style="style" ng-attr-stroke-dasharray="{{pathLength}}" ng-attr-stroke-dashoffset="{{pathLength}}" ng-attr-d="{{model.data}}" />

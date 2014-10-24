@@ -1,15 +1,18 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .service('SvgParts', function (utils, SvgPart, Path, LineGroup) {
+        .service('SvgParts', function ($q, $timeout, $http, utils, SvgPart, Path, LineGroup) {
+            var JSON_FILE_PATH = 'scripts/svgdata.json';
+            var parts = {},
+            dataFetched = false;
 
             utils.inherit(Path, SvgPart);
             utils.inherit(LineGroup, SvgPart);
 
-            var parts = {};
             var classes = { Path: Path, LineGroup: LineGroup };
 
-            return {
+            var exports = {
+                fetchData: fetchData,
                 getOne: getOne,
                 getAll: getAll,
                 updateOne: updateOne,
@@ -17,10 +20,33 @@
                 add: add,
                 setupPartData: setupPartData
             };
+            return exports;
 
             //---------------------------------------------------------------------------------//
 
+            function fetchData() {
+                var dfd = $q.defer();
+                $timeout(function () {
+                    $http.get(JSON_FILE_PATH).success(function (data) {
+                        dataFetched = true;
+                        processData(data);
+                        dfd.resolve(parts);
+                    });
+                }, 30);
+                return dfd.promise;
+            }
+
+            function processData(data) {
+                _.forEach(data, function (dataInstance, key) {
+                    add(key, dataInstance);
+                });
+            }
+
             function add(key, props) {
+                if (!dataFetched) {
+                    return null;
+                }
+
                 if (!key || !props.type || !props.data) {
                     return null;
                 }
@@ -30,7 +56,7 @@
                 }
 
                 var Class = getClass(props.type);
-                if (!constructor) {
+                if (!Class) {
                     return null;
                 }
 
@@ -43,6 +69,9 @@
             }
 
             function getOne(key) {
+                if (!dataFetched) {
+                    return null;
+                }
                 var part = parts[key];
                 if (part) {
                     return part;
@@ -51,10 +80,16 @@
             }
 
             function getAll() {
+                if (!dataFetched) {
+                    return null;
+                }
                 return parts;
             }
 
             function updateOne(key, props) {
+                if (!dataFetched) {
+                    return null;
+                }
                 var part = getOne(key);
                 if (!part) {
                     return null;
@@ -64,13 +99,18 @@
             }
 
             function updateAll(props) {
-                _.each(parts, function(part) {
+                if (!dataFetched) {
+                    return null;
+                }
+                _.each(parts, function (part) {
                     _.assign(part, props);
                 });
                 return parts;
             }
 
             function setupPartData() {
+                parts = {};
+
                 add('rearTire', {
                     type: 'Path',
                     data: 'M18.9,229.1c-2-55.7,40.4-87.7,86-87.8c43.9-0.1,85,40.3,85,87.8s-31.1,86-85,86 C64.9,315.1,20.8,280.4,18.9,229.1z M104.1,320.2c58.8,0,' +

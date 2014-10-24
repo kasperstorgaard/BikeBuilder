@@ -59,7 +59,6 @@
                 }
 
                 function getStyle(color, shouldAnimate) {
-                    //color = angular.copy(color);
                     var style = {};
                     var colorAttr = type == 'line' ? 'stroke' : 'fill';
                     style[colorAttr] = color;

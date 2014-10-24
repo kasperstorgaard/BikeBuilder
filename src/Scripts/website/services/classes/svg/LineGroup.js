@@ -4,9 +4,8 @@
         .service('LineGroup', function () {
             return LineGroup;
 
-            function Line(lineData, color) {
+            function Line(lineData) {
                 this.data = lineData.split(',');
-                this.color = color;
             }
 
             function LineGroup() {
@@ -17,7 +16,7 @@
 
                 var self = this;
                 _.forEach(linesDataArr, function (lineData) {
-                    self.lines.push(new Line(lineData, self.color));
+                    self.lines.push(new Line(lineData));
                 });
             }
         });
