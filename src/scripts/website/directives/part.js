@@ -10,17 +10,20 @@
                 replace: true,
                 templateUrl: 'part.tpl.html',
                 link: function(scope) {
-                    scope.handleClicked = handleClicked;
+                    scope.handleClicked = updateSelected;
                     scope.selectedVariant = angular.copy(scope.model.variants[0]);
                     scope.setSelectedVariant = setSelectedVariant;
 
                     //-------------------------------//
-                    function handleClicked() {
+                    function updateSelected() {
                         scope.$emit('part:clicked', scope.model, scope.selectedVariant);
                     }
 
                     function setSelectedVariant(variant) {
                         scope.selectedVariant = variant;
+                        if (scope.model.selected) {
+                            updateSelected();
+                        }
                     }
                 }
             };
