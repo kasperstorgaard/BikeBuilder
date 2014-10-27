@@ -19,7 +19,7 @@
                     //-----------------------------------------//
 
                     function updateSelected(event, selectedPart) {
-                        _.forEach(scope.parts, function (part) {
+                        _.each(scope.parts, function (part) {
                             part.selected = part.name == selectedPart.name;
                         });
                     }

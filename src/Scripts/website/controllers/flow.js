@@ -2,12 +2,11 @@
     'use strict';
     angular.module('bikeBuilder')
         .controller('FlowCtrl', function ($scope, Parts, SvgParts) {
-            var IMAGE_ROOT = 'content/images/';
             var ctrl = this;
 
-            $scope.$on('part:clicked', updateSvgPart);
+            $scope.$on('part:selected', updateSvgPart);
 
-            Parts.fetchData().then(partDataFetched);
+            Parts.fetch().then(partDataFetched);
 
             //-----------------------------------//
 
@@ -17,7 +16,7 @@
 
             function updateSvgPart(event, part, selectedVariant) {
                 if (selectedVariant.colors) {
-                    _.forEach(selectedVariant.colors, function (value, key) {
+                    _.each(selectedVariant.colors, function (value, key) {
                         SvgParts.updateOne(key, { color: value });
                     });
                 }

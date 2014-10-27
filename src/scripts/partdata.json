@@ -165,12 +165,17 @@
                 ]
             },
             {
-                "name": "8bar krzberg-v4",
+                "name": "8bar Krzberg v4",
                 "variants": [
                     {
                         "name": "white",
                         "colors": { "frame": "#f7f7f7" },
                         "imageUrl": "frames/8bar-krzberg-v4_white-1.jpg"
+                    },
+                    {
+                        "name": "raw",
+                        "colors": { "frame": "#aaaaac" },
+                        "imageUrl": "frames/8bar-krzberg-v4_plata-1.jpg"
                     }
                 ]
             },
@@ -236,18 +241,47 @@
             }
         ]
     },
-    "wheels": {
-        "part-type": "wheel",
+
+    "handlebars": {
+        "part-type": "handlebar",
+        "parts": [
+            {
+                "name": "P&B Double Height Handlebar",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "handleBar": "#171614"
+                        },
+                        "imageUrl": "handlebars/manillar-polo-bike-negro.jpg"
+                    },
+                    {
+                        "name": "purple",
+                        "colors": {
+                            "handleBar": "#4b2868"
+                        },
+                        "imageUrl": "handlebars/manillar-polo-bike-morado.jpg"
+                    },
+                    {
+                        "name": "blue",
+                        "colors": {
+                            "handleBar": "#2455a2"
+                        },
+                        "imageUrl": "handlebars/manillar-polo-bike-azul_1.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "Front wheels": {
+        "part-type": "frontWheel",
         "parts": [
             {
                 "name": "aerospoke",
                 "variants": [
                     {
                         "name": "white",
-                        "colors": {
-                            "rearRim": "#e3e6f9",
-                            "rearHub": "#e3e6f9",
-                            "rearSpokes": "#e3e6f9",
+                        "colors": {                           
                             "frontRim": "#e3e6f9",
                             "frontHub": "#e3e6f9",
                             "frontSpokes": "#e3e6f9"
@@ -256,10 +290,7 @@
                     },
                     {
                         "name": "black",
-                        "colors": {
-                            "rearRim": "#1f1f21",
-                            "rearHub": "#1f1f21",
-                            "rearSpokes": "#1f1f21",
+                        "colors": {                         
                             "frontRim": "#1f1f21",
                             "frontHub": "#1f1f21",
                             "frontSpokes": "#1f1f21"
@@ -273,10 +304,7 @@
                 "variants": [
                     {
                         "name": "black",
-                        "colors": {
-                            "rearRim": "#0f1014",
-                            "rearHub": "#0f1014",
-                            "rearSpokes": "#0f1014",
+                        "colors": {                          
                             "frontRim": "#0f1014",
                             "frontHub": "#0f1014",
                             "frontSpokes": "#0f1014"
@@ -291,9 +319,6 @@
                     {
                         "name": "white",
                         "colors": {
-                            "rearRim": "#c8c7cc",
-                            "rearHub": "#c8c7cc",
-                            "rearSpokes": "#c8c7cc",
                             "frontRim": "#c8c7cc",
                             "frontHub": "#c8c7cc",
                             "frontSpokes": "#c8c7cc"
@@ -303,12 +328,74 @@
                     {
                         "name": "red",
                         "colors": {
-                            "rearRim": "#991b26",
-                            "rearHub": "#242527",
-                            "rearSpokes": "#242527",
                             "frontRim": "#991b26",
                             "frontHub": "#242527",
                             "frontSpokes": "#242527"
+                        },
+                        "imageUrl": "wheels/tras-hplus-son-formation-face-rojo-1_1.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "Rear wheels": {
+        "part-type": "rearWheel",
+        "parts": [
+            {
+                "name": "aerospoke",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "rearRim": "#e3e6f9",
+                            "rearHub": "#e3e6f9",
+                            "rearSpokes": "#e3e6f9"
+                        },
+                        "imageUrl": "wheels/aerospoke-blanco.jpg"
+                    },
+                    {
+                        "name": "black",
+                        "colors": {
+                            "rearRim": "#1f1f21",
+                            "rearHub": "#1f1f21",
+                            "rearSpokes": "#1f1f21"
+                        },
+                        "imageUrl": "wheels/aerospoke-negro-mate.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "del negra",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "rearRim": "#0f1014",
+                            "rearHub": "#0f1014",
+                            "rearSpokes": "#0f1014"                          
+                        },
+                        "imageUrl": "wheels/del-negra-1_1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "h plus son formation face",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "rearRim": "#c8c7cc",
+                            "rearHub": "#c8c7cc",
+                            "rearSpokes": "#c8c7cc"                          
+                        },
+                        "imageUrl": "wheels/tras_hplus-son-formation-face-blanco-1.jpg"
+                    },
+                    {
+                        "name": "red",
+                        "colors": {
+                            "rearRim": "#991b26",
+                            "rearHub": "#242527",
+                            "rearSpokes": "#242527"                          
                         },
                         "imageUrl": "wheels/tras-hplus-son-formation-face-rojo-1_1.jpg"
                     }

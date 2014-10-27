@@ -15,7 +15,7 @@
                 this.lines = [];
 
                 var self = this;
-                _.forEach(linesDataArr, function (lineData) {
+                _.each(linesDataArr, function (lineData) {
                     self.lines.push(new Line(lineData));
                 });
             }

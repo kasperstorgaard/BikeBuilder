@@ -16,7 +16,7 @@
 
                     //-------------------------------//
                     function updateSelected() {
-                        scope.$emit('part:clicked', scope.model, scope.selectedVariant);
+                        scope.$emit('part:selected', scope.model, scope.selectedVariant);
                     }
 
                     function setSelectedVariant(variant) {

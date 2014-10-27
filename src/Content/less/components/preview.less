@@ -17,11 +17,11 @@
     margin-bottom: 1px;
 
     g {
-        &.active > line {
+        &.selected > line {
             stroke-dasharray: 5px !important;
             stroke-dashoffset: 0 !important;
-            -webkit-animation: dashactive 2000ms linear forwards infinite !important;
-            animation: dashactive 2000ms linear forwards infinite !important;
+            -webkit-animation: dashselected 2000ms linear forwards infinite !important;
+            animation: dashselected 2000ms linear forwards infinite !important;
         }
 
         &.has-color > line {
@@ -36,11 +36,11 @@
     path, line {
         stroke: @part-outline-stroke;
 
-        &.active {
+        &.selected {
             stroke-dasharray: 5px !important;
             stroke-dashoffset: 0 !important;
-            -webkit-animation: dashactive 2000ms linear forwards infinite !important;
-            animation: dashactive 2000ms linear forwards infinite !important;
+            -webkit-animation: dashselected 2000ms linear forwards infinite !important;
+            animation: dashselected 2000ms linear forwards infinite !important;
         }
 
         &.has-color {
@@ -61,7 +61,7 @@
     }
 }
 
-@-webkit-keyframes dashactive {
+@-webkit-keyframes dashselected {
     from {
         stroke-dashoffset: 0;
     }
@@ -71,7 +71,7 @@
     }
 }
 
-@keyframes dashactive {
+@keyframes dashselected {
     from {
         stroke-dashoffset: 0;
     }

@@ -38,7 +38,7 @@
 
                 function invoke() {
                     var args = arguments;
-                    _.forEach(self['_callbacks'], function (callback) {
+                    _.each(self['_callbacks'], function (callback) {
                         callback.apply(null, args);
                     });
                 }

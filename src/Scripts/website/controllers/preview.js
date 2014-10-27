@@ -7,7 +7,7 @@
 
             $scope.$on('svgPart:clicked', updateActiveSvgPart);
 
-            SvgParts.fetchData().then(dataFetched);
+            SvgParts.fetch().then(dataFetched);
 
             //--------------------------------------------//
 
@@ -23,8 +23,8 @@
             }
 
             function updateActiveSvgPart(event, key) {
-                SvgParts.updateAll({ active: false });
-                SvgParts.updateOne(key, { active: true });
+                SvgParts.updateAll({ selected: false });
+                SvgParts.updateOne(key, { selected: true });
             }
         });
 })();

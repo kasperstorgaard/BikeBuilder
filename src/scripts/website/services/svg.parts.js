@@ -1,56 +1,45 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .service('SvgParts', function ($q, $timeout, $http, utils, SvgPart, Path, LineGroup) {
+        .service('SvgParts', function (DataCollection, utils, SvgPart, Path, LineGroup) {
             var JSON_FILE_PATH = 'scripts/svgdata.json';
-            var parts = {},
-            dataFetched = false;
+            var base = new DataCollection(JSON_FILE_PATH);
+            base.processData = addSvgClasses;
+            base.add = addSvgClass;
 
             utils.inherit(Path, SvgPart);
             utils.inherit(LineGroup, SvgPart);
 
             var classes = { Path: Path, LineGroup: LineGroup };
 
-            var exports = {
-                fetchData: fetchData,
-                getOne: getOne,
-                getAll: getAll,
-                updateOne: updateOne,
-                updateAll: updateAll,
-                add: add
+            return {
+                fetch: base.fetch,
+                getOne: base.getOne,
+                getAll: base.getAll,
+                updateOne: base.updateOne,
+                updateAll: base.updateAll,
+                add: base.add
             };
-            return exports;
 
             //---------------------------------------------------------------------------------//
 
-            function fetchData() {
-                var dfd = $q.defer();
-                $timeout(function () {
-                    $http.get(JSON_FILE_PATH).success(function (data) {
-                        dataFetched = true;
-                        processData(data);
-                        dfd.resolve(parts);
-                    });
-                }, 30);
-                return dfd.promise;
-            }
-
-            function processData(data) {
-                _.forEach(data, function (dataInstance, key) {
-                    add(key, dataInstance);
+            function addSvgClasses(data) {
+                _.each(data, function (dataInstance, key) {
+                    base.add(key, dataInstance);
                 });
+                return base.items;
             }
 
-            function add(key, props) {
-                if (!dataFetched) {
+            function addSvgClass(key, props) {
+                if (!base.fetched) {
                     return null;
                 }
 
                 if (!key || !props.type || !props.data) {
                     return null;
                 }
-                var existingPart = getOne(key);
-                if (existingPart) {
+                var existing = base.getOne(key);
+                if (existing) {
                     return null;
                 }
 
@@ -59,52 +48,12 @@
                     return null;
                 }
 
-                parts[key] = new Class(key, props);
-                return parts;
+                base.items[key] = new Class(key, props);
+                return base.items;
             }
 
             function getClass(key) {
                 return classes[key] || null;
-            }
-
-            function getOne(key) {
-                if (!dataFetched) {
-                    return null;
-                }
-                var part = parts[key];
-                if (part) {
-                    return part;
-                }
-                return null;
-            }
-
-            function getAll() {
-                if (!dataFetched) {
-                    return null;
-                }
-                return parts;
-            }
-
-            function updateOne(key, props) {
-                if (!dataFetched) {
-                    return null;
-                }
-                var part = getOne(key);
-                if (!part) {
-                    return null;
-                }
-
-                return _.assign(part, props);
-            }
-
-            function updateAll(props) {
-                if (!dataFetched) {
-                    return null;
-                }
-                _.each(parts, function (part) {
-                    _.assign(part, props);
-                });
-                return parts;
             }
         });
 })();

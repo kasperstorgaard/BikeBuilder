@@ -34,7 +34,7 @@
 
                     function getUpdateValuesFn(scopeKeysToUpdate) {
                         return function updateValues(scrollTop) {
-                            _.forEach(scopeKeysToUpdate, function (scopeKey) {
+                            _.each(scopeKeysToUpdate, function (scopeKey) {
                                 scope[scopeKey] = scrollTop;
                             });
                             scope.$apply();

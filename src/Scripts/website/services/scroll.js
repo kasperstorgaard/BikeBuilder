@@ -2,23 +2,21 @@
     'use strict';
     angular.module('bikeBuilder')
         .service('scroll', function (Bindable) {
-            var self = this;
+            var base = new Bindable();
+            base.onAttach = attachScroll;
+            base.onDetach = detachScroll;
 
-            _.assign(self, _.assign(new Bindable(), {
-                onAttach: attachScroll,
-                onDetach: detachScroll
-            }));
-
+            var SCROLL_THROTTLE = 100;
             var throttledHandleScroll;
 
             return {
-                'bind': self.bind
+                'bind': base.bind
             };
 
             //---------------------------------------------------------------------------------//
 
             function attachScroll() {
-                throttledHandleScroll = _.throttle(handleScroll, 100);
+                throttledHandleScroll = _.throttle(handleScroll, SCROLL_THROTTLE);
                 window.addEventListener('scroll', throttledHandleScroll);
             }
 
@@ -37,7 +35,7 @@
             function handleScroll() {
                 var scrollTop = getScrollTop();
 
-                self.invoke(scrollTop);
+                base.invoke(scrollTop);
             }
         });
 })();

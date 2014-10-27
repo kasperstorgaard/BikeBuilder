@@ -1,30 +1,20 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .service('Parts', function ($q, $http) {
+        .service('Parts', function (DataCollection) {
             var JSON_FILE_PATH = 'scripts/partdata.json';
-            var parts = {},
-                dataFetched;
+            var base = new DataCollection(JSON_FILE_PATH;
+            base.processData = processData;
 
-            var exports = {
-                fetchData: fetchData
+            return {
+                fetch: base.fetch,
+                updateOne: base.updateOne
             };
-            return exports;
 
             //---------------------------------------------------------------------------------//
 
-            function fetchData() {
-                var dfd = $q.defer();
-                $http.get(JSON_FILE_PATH).success(function (data) {
-                    dataFetched = true;
-                    processData(data);
-                    dfd.resolve(parts);
-                });
-                return dfd.promise;
-            }
-
             function processData(data) {
-                parts = data;
+                return data;
             }
         });
 })();
