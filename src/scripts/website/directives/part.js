@@ -23,7 +23,7 @@
                     function setSelectedVariant(variant) {
                         scope.selectedVariant = variant;
                         if (scope.model.selected) {
-                            updateSelected();
+                            updateSelectedPart();
                         }
                     }
                 }

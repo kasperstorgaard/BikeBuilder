@@ -15,7 +15,7 @@
                     }
 
                     scope.spinnerKeyPostFix = idPostFix;
-                    idPostFix++;
+                    idPostFix++; 
 
                     var spinnerElement = getSpinnerElement();
                     insertBeforeElement(spinnerElement[0], element[0]);

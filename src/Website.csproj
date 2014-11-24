@@ -160,6 +160,8 @@
     <Content Include="scripts\test\services\base.bind.spec.js" />
     <Content Include="scripts\test\services\svg.parts.spec.js" />
     <Content Include="scripts\test\services\utils.spec.js" />
+    <Content Include="scripts\vendor\angular-strap\angular-strap.js" />
+    <Content Include="scripts\vendor\angular-strap\angular-strap.tpl.js" />
     <Content Include="scripts\vendor\angularJs\angular-animate.js" />
     <Content Include="scripts\vendor\angularJs\angular-animate.min.js" />
     <Content Include="scripts\vendor\angularJs\angular-cookies.js" />
@@ -199,12 +201,12 @@
     <Content Include="scripts\website\directives\part.js" />
     <Content Include="scripts\website\directives\variant.picker.js" />
     <Content Include="scripts\website\directives\show.spinner.js" />
-    <Content Include="scripts\website\services\classes\DataCollection.js" />
-    <Content Include="scripts\website\services\classes\svg\SvgPart.js" />
-    <Content Include="scripts\website\services\classes\svg\LineGroup.js" />
-    <Content Include="scripts\website\services\classes\svg\Path.js" />
-    <Content Include="scripts\website\services\classes\SvgAnimationDirective.js" />
-    <Content Include="scripts\website\services\classes\Bindable.js" />
+    <Content Include="scripts\website\services\base\DataCollection.js" />
+    <Content Include="scripts\website\services\base\svg\SvgPart.js" />
+    <Content Include="scripts\website\services\base\svg\LineGroup.js" />
+    <Content Include="scripts\website\services\base\svg\Path.js" />
+    <Content Include="scripts\website\services\base\SvgAnimationDirective.js" />
+    <Content Include="scripts\website\services\base\Bindable.js" />
     <Content Include="scripts\website\services\parts.js" />
     <Content Include="scripts\website\services\scroll.js" />
     <Content Include="scripts\website\services\utils.js" />
@@ -216,6 +218,12 @@
     <Content Include="scripts\website\templates\part.section.tpl.html" />
     <Content Include="scripts\website\templates\part.tpl.html" />
     <Content Include="scripts\website\templates\variant.picker.tpl.html" />
+    <Content Include="tasks\browser-sync.js" />
+    <Content Include="tasks\js.js" />
+    <Content Include="tasks\karma.js" />
+    <Content Include="tasks\less.js" />
+    <Content Include="tasks\templates.js" />
+    <Content Include="tasks\views.js" />
     <Content Include="views\layouts\_main.cshtml" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
@@ -372,6 +380,7 @@
     <Content Include="scripts\svgdata.json" />
     <Content Include="scripts\partdata.json" />
     <Content Include="content\less\sidebar.less" />
+    <Content Include="gulpconfig.json" />
     <None Include="_references.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -383,8 +392,6 @@
   <ItemGroup>
     <Content Include="Scripts\test\config\jasmine_template.html" />
     <Content Include="Scripts\test\test.spec.js" />
-    <Content Include="Scripts\vendor\angular-strap\angular-strap.js" />
-    <Content Include="Scripts\vendor\angular-strap\angular-strap.tpl.js" />
     <Content Include="Scripts\vendor\angularJs\angular.min.js" />
     <Content Include="Scripts\vendor\angularJs\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\vendor\angularJs\i18n\angular-locale_aa-er.js" />
@@ -1129,7 +1136,6 @@
     <Folder Include="scripts\reports\plato\" />
     <Folder Include="scripts\test\directives\" />
     <Folder Include="scripts\website\configs\" />
-    <Folder Include="tasks\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

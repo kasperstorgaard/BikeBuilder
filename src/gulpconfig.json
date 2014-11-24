@@ -1,0 +1,39 @@
+﻿{
+    "title": "bikeBuilder",
+    "env": {
+        "dev": true,
+        "prod": false
+    },
+    "js": {
+        "vendor": {
+            "map": "scripts/vendor/map.json",
+            "dest": "scripts",
+            "min": "vendor.min.js",
+            "msg": "vendor scripts updated"
+        },
+        "website": {
+            "src": "scripts/website/**/*.js",
+            "dest": "scripts",
+            "min": "main.min.js",
+            "msg": "website scripts updated"
+        },
+        "templates": {
+            "src": "scripts/website/templates/**/*.tpl.html",
+            "dest": "scripts/website/templates",
+            "module": "bikeBuilder",
+            "msg": "templates updated"
+        }
+    },
+    "karma": {
+        "configPath": "scripts/test/config/karma.conf.js"
+    },
+    "less": {
+        "src": "content/less/main.less",
+        "dest": "content/css",
+        "watch": "content/less/**/*.less"
+    },
+    "views": {
+        "src": "views/**/*.cshtml",
+        "msg": "views updated"
+    }
+}

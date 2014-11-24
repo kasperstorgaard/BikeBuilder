@@ -26,6 +26,7 @@
     "karma-html-reporter": "^0.2.4",
     "karma-ie-launcher": "^0.1.5",
     "karma-jasmine": "^0.2.2",
-    "karma-phantomjs-launcher": "^0.1.4"
+    "karma-phantomjs-launcher": "^0.1.4",
+    "promise": "^6.0.1"
   }
 }
