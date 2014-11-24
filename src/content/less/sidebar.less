@@ -1,9 +1,10 @@
 ﻿.sidebar {
     position: fixed;
-    top: 350px;
+    top: 50%;
     right: 0;
     padding: 24px 0 28px 30px;
-    transform: translate3d(100%,0,0);
+    -webkit-transform: translate3d(100%,-50%,0);
+    transform: translate3d(100%,-50%,0);
     transition: transform 0.5s ease-in-out;
     z-index: 3;
 
@@ -13,7 +14,8 @@
     background: url("../images/brushed.png");
 
     &.sidebar-open {
-        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,-50%,0);
+        transform: translate3d(0,-50%,0);
         background: fade(#eeeeee, 90%);
     }
 
@@ -47,6 +49,12 @@
         padding: initial;
         border: initial;
         background: initial;
+        top: 0;
+
+        &, &.sidebar-open {
+            -webkit-transform: none;
+            transform: none;
+        }
 
         &-button {
             display: none;

@@ -1,5 +1,5 @@
 ﻿{
-    "cranksets": {
+    "crankset": {
         "part-type": "crankset",
         "parts": [
             {
@@ -95,7 +95,7 @@
             }
         ]
     },
-    "forks": {
+    "fork": {
         "part-type": "fork",
         "parts": [
             {
@@ -136,7 +136,7 @@
             }
         ]
     },
-    "frames": {
+    "frame": {
         "part-type": "frame",
         "parts": [
             {
@@ -191,7 +191,7 @@
             }
         ]
     },
-    "chains": {
+    "chain": {
         "part-type": "chain",
         "parts": [
             {
@@ -241,8 +241,7 @@
             }
         ]
     },
-
-    "handlebars": {
+    "handlebar": {
         "part-type": "handlebar",
         "parts": [
             {
@@ -273,7 +272,7 @@
             }
         ]
     },
-    "Front wheels": {
+    "front wheel": {
         "part-type": "frontWheel",
         "parts": [
             {
@@ -338,7 +337,7 @@
             }
         ]
     },
-    "Rear wheels": {
+    "rear wheel": {
         "part-type": "rearWheel",
         "parts": [
             {

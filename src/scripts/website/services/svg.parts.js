@@ -2,43 +2,39 @@
     'use strict';
     angular.module('bikeBuilder')
         .service('SvgParts', function (DataCollection, utils, SvgPart, Path, LineGroup) {
-            var JSON_FILE_PATH = 'scripts/svgdata.json';
-            var base = new DataCollection(JSON_FILE_PATH);
-            base.processData = addSvgClasses;
-            base.add = addSvgClass;
+            function SVGParts() {
+                DataCollection.apply(this, arguments);
+            }
+            SVGParts.prototype = new DataCollection();
+            SVGParts.prototype.processData = addSvgClasses;
+            SVGParts.prototype.add = addSvgClass;
 
             utils.inherit(Path, SvgPart);
             utils.inherit(LineGroup, SvgPart);
 
             var classes = { Path: Path, LineGroup: LineGroup };
 
-            return {
-                fetch: base.fetch,
-                getOne: base.getOne,
-                getAll: base.getAll,
-                updateOne: base.updateOne,
-                updateAll: base.updateAll,
-                add: base.add
-            };
+            return new SVGParts('scripts/svgdata.json');
 
             //---------------------------------------------------------------------------------//
 
             function addSvgClasses(data) {
+                var self = this;
                 _.each(data, function (dataInstance, key) {
-                    base.add(key, dataInstance);
+                    self.add(key, dataInstance);
                 });
-                return base.items;
+                return this.items;
             }
 
             function addSvgClass(key, props) {
-                if (!base.fetched) {
+                if (!this.fetched) {
                     return null;
                 }
 
                 if (!key || !props.type || !props.data) {
                     return null;
                 }
-                var existing = base.getOne(key);
+                var existing = this.getOne(key);
                 if (existing) {
                     return null;
                 }
@@ -48,8 +44,8 @@
                     return null;
                 }
 
-                base.items[key] = new Class(key, props);
-                return base.items;
+                this.items[key] = new Class(key, props);
+                return this.items;
             }
 
             function getClass(key) {

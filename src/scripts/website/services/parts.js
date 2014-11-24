@@ -2,19 +2,30 @@
     'use strict';
     angular.module('bikeBuilder')
         .service('Parts', function (DataCollection) {
-            var JSON_FILE_PATH = 'scripts/partdata.json';
-            var base = new DataCollection(JSON_FILE_PATH;
-            base.processData = processData;
+            function Parts() {
+                DataCollection.apply(this, arguments);
+            }
+            Parts.prototype = new DataCollection();
+            Parts.prototype.processData = processData;
+            Parts.prototype.updateSelectedPart = updateSelectedPart;
 
-            return {
-                fetch: base.fetch,
-                updateOne: base.updateOne
-            };
+            return new Parts('scripts/partdata.json');
 
             //---------------------------------------------------------------------------------//
 
             function processData(data) {
                 return data;
+            }
+
+            function updateSelectedPart(sectionName, selectedPart) {
+                var section = this.items[sectionName];
+                if (!section) {
+                    return;
+                }
+
+                _.each(section.parts, function (part) {
+                    part.selected = part.name == selectedPart.name;
+                });
             }
         });
 })();

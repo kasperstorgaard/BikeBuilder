@@ -1,12 +1,10 @@
 ﻿<section class="section summary" ng-controller="SummaryCtrl as Summary">
     <ul class="parts-list">
-        <li class="part">dummy text</li>
-        <li class="part">dummy text</li>
-        <li class="part">dummy text</li>
-        <li class="part">dummy text</li>
-        <li class="part">dummy text</li>
-        <li class="part">dummy text</li>
-        <li class="part">dummy text</li>
-        <li class="part">dummy text</li>
+        <li summary-item="section.selectedPart"
+            data-section-name="sectionName" 
+            data-selected-variant="section.selectedVariant" 
+            class="part" 
+            ng-repeat="(sectionName, section) in Summary.selectedPartSections">
+        </li>
     </ul>
 </section>

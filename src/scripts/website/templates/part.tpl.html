@@ -3,6 +3,6 @@
     <div class="btn-group variant-buttons">
         <a class="btn btn-default variant-button" ng-class="{'active': variant.name == selectedVariant.name }" ng-click="setSelectedVariant(variant)" ng-repeat="variant in model.variants">{{variant.name}}</a>
     </div>
-    <div variant-picker="model.variants" selected-variant="selectedVariant" base-part-img-url="content/images/parts"></div>
-    <a class="btn part-select-btn btn-lg btn-default" ng-click="handleClicked()" ng-class="{'active': model.selected}">{{model.selected ? 'Selected' : 'Select this part'}}</a>
+    <div variant-picker="model.variants" data-selected-variant="selectedVariant" data-base-part-img-url="content/images/parts"></div>
+    <a class="btn part-select-btn btn-lg btn-default" ng-click="updateSelectedPart()" ng-class="{'active': model.selected}">{{model.selected ? 'Selected' : 'Select this part'}}</a>
 </div>

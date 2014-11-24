@@ -1,105 +1,104 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .service('DataCollection', function ($q, $timeout, $http) {
-            return function DataCollection(filePath) {
-                var self = this;
-
-                this.filePath = filePath;
+        .factory('DataCollection', function ($q, $timeout, $http) {
+            var DataCollection = function (filePath) {
                 this.items = {};
                 this.fetched = false;
                 this.fetching = false;
+                this.filePath = filePath;
+            }
+            
+            DataCollection.prototype.fetch = fetch;
+            DataCollection.prototype.getOne = getOne;
+            DataCollection.prototype.getAll = getAll;
+            DataCollection.prototype.updateOne = updateOne;
+            DataCollection.prototype.updateAll = updateAll;
+            DataCollection.prototype.processData = processData;
 
-                this.fetch = fetch;
-                this.getOne = getOne;
-                this.getAll = getAll;
-                this.updateOne = updateOne;
-                this.updateAll = updateAll;
-                this.add = add;
-                this.processData = processData;
+            return DataCollection;
 
-                window.DataCollectionSelf = window.DataCollectionSelf || self;
+            //---------------------------------------------------------------------------------//
 
-                //---------------------------------------------------------------------------------//
+            function fetch() {
+                var self = this;
 
-                function fetch() {
-                    self.fetchedDfd = self.fetchedDfd || $q.defer();
-                    if (self.fetched) {
-                        self.fetchedDfd = $q.defer();
-                        self.fetchedDfd.resolve();
-                    } else if (!self.fetching) {
-                        self.fetching = true;
-                        $http.get(self.filePath).success(function (data) {
-                            self.fetching = false;
-                            self.fetched = true;
-                            self.items = self.processData(data);
-                            self.fetchedDfd.resolve(self.items);
-                        });
-                    }
-
-                    return self.fetchedDfd.promise;
+                this.fetchedDfd = this.fetchedDfd || $q.defer();
+                if (this.fetched) {
+                    this.fetchedDfd = $q.defer();
+                    this.fetchedDfd.resolve();
+                } else if (!this.fetching) {
+                    this.fetching = true;
+                    $http.get(this.filePath).success(function (data) {
+                        self.fetching = false;
+                        self.fetched = true;
+                        self.items = self.processData(data);
+                        self.fetchedDfd.resolve(self.items);
+                    });
                 }
 
-                function processData(data) {
-                    return data;
-                }
+                return this.fetchedDfd.promise;
+            }
 
-                function add(key, item) {
-                    if (!self.fetched) {
-                        return null;
-                    }
+            function processData(data) {
+                return data;
+            }
 
-                    if (!key) {
-                        return null;
-                    }
-                    var existing = getOne(key);
-                    if (existing) {
-                        return null;
-                    }
-
-                    self.items[key] = item;
-                    return self.items;
-                }
-
-                function getOne(key) {
-                    if (!self.fetched) {
-                        return null;
-                    }
-                    var item = self.items[key];
-                    if (item) {
-                        return item;
-                    }
+            function add(key, item) {
+                if (!this.fetched) {
                     return null;
                 }
 
-                function getAll() {
-                    if (!self.fetched) {
-                        return null;
-                    }
-                    return self.items;
+                if (!key) {
+                    return null;
+                }
+                var existing = getOne(key);
+                if (existing) {
+                    return null;
                 }
 
-                function updateOne(key, props) {
-                    if (!self.dataFetched) {
-                        return null;
-                    }
-                    var item = self.getOne(key);
-                    if (!item) {
-                        return null;
-                    }
+                this.items[key] = item;
+                return this.items;
+            }
 
-                    return _.assign(item, props);
+            function getOne(key) {
+                if (!this.fetched) {
+                    return null;
+                }
+                var item = this.items[key];
+                if (item) {
+                    return item;
+                }
+                return null;
+            }
+
+            function getAll() {
+                if (!this.fetched) {
+                    return null;
+                }
+                return this.items;
+            }
+
+            function updateOne(key, props) {
+                if (!this.fetched) {
+                    return null;
+                }
+                var item = this.getOne(key);
+                if (!item) {
+                    return null;
                 }
 
-                function updateAll(props) {
-                    if (!self.fetched) {
-                        return null;
-                    }
-                    _.each(self.items, function (item) {
-                        _.assign(item, props);
-                    });
-                    return self.items;
+                return _.assign(item, props);
+            }
+
+            function updateAll(props) {
+                if (!this.fetched) {
+                    return null;
                 }
+                _.each(this.items, function (item) {
+                    _.assign(item, props);
+                });
+                return this.items;
             }
         });
 })();

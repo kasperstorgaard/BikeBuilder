@@ -1,0 +1,5 @@
+﻿<li ng-show="selectedPart" class="summary-item">
+    <span class="summary-section-name">{{sectionName}}:&nbsp;</span>
+    <span class="summary-part-name">{{selectedPart.name}}</span>
+    <span class="summary-variant-color" ng-repeat="color in selectedVariant.colors" ng-style="{'background':color}">&nbsp;</span>
+</li>

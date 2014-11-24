@@ -1,7 +1,8 @@
-﻿; (function () {
+﻿;(function () {
     'use strict';
+
     angular.module('bikeBuilder')
-        .directive('partSection', function () {
+        .directive('partSection', function ($rootScope) {
             return {
                 restrict: 'A',
                 scope: {
@@ -12,21 +13,16 @@
                 replace: true,
                 templateUrl: 'part.section.tpl.html',
                 link: function (scope) {
-                    scope.getParts = getParts;
-
-                    scope.$on('part:clicked', updateSelected);
-
+                    //scope.$on('part:selected', updateSelected);
+                    
                     //-----------------------------------------//
 
-                    function updateSelected(event, selectedPart) {
-                        _.each(scope.parts, function (part) {
-                            part.selected = part.name == selectedPart.name;
-                        });
-                    }
-
-                    function getParts() {
-                        return scope.parts;
-                    }
+                    //function updateSelected(event, selectedPart) {
+                    //    $rootScope.$broadcast('update:selected', selectedPart);
+                    //    _.each(scope.parts, function (part) {
+                    //        part.selected = part.name == selectedPart.name;
+                    //    });
+                    //}
                 }
             };
         });

@@ -5,18 +5,19 @@
             return {
                 restrict: 'A',
                 scope: {
-                    'model': '=part'
+                    'model': '=part',
+                    'sectionName': '='
                 },
                 replace: true,
                 templateUrl: 'part.tpl.html',
-                link: function(scope) {
-                    scope.handleClicked = updateSelected;
+                link: function(scope, element, attrs) {
+                    scope.updateSelectedPart = updateSelectedPart;
                     scope.selectedVariant = angular.copy(scope.model.variants[0]);
                     scope.setSelectedVariant = setSelectedVariant;
 
-                    //-------------------------------//
-                    function updateSelected() {
-                        scope.$emit('part:selected', scope.model, scope.selectedVariant);
+                    //-----------------------------------------------//
+                    function updateSelectedPart() {
+                        scope.$emit('part:selected', scope.sectionName, scope.model, scope.selectedVariant);
                     }
 
                     function setSelectedVariant(variant) {

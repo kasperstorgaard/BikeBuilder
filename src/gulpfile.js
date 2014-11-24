@@ -71,8 +71,7 @@ gulp.task('js:vendor', function () {
 });
 
 gulp.task('js:main', function () {
-    var mapJSON = readJSONFile('./scripts/website/map.json');
-    gulp.src(mapJSON)
+    gulp.src(paths.js)
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.js'))
         .pipe(ngAnnotate())
