@@ -1,11 +1,17 @@
-﻿module.exports = function (gulp, config, handleError) {
+﻿module.exports = function (gulp, configPath, handleError) {
+    var exec = require('child_process').exec;
     var karma = require('karma');
     var server = karma.server;
-    var runner = karma.runner;
 
-    gulp.task('karma:start', function (done) {
+    gulp.task('karma:start', function () {
+        exec('gulp karma:childrun', function (err, stdout, stderr) { })
+            .on('error', handleError);
+    });
+
+    gulp.task('karma:childrun', function (done) {
+        console.log(configPath);
         server.start({
-            configFile: __dirname + '/' + config.karma.configFile
+            configFile: configPath
         }, done);
     });
 }
