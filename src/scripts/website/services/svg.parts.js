@@ -5,8 +5,9 @@
             function SVGParts() {
                 DataCollection.apply(this, arguments);
             }
+
+            var base = DataCollection.prototype;
             SVGParts.prototype = new DataCollection();
-            SVGParts.prototype.processData = addSvgClasses;
             SVGParts.prototype.add = addSvgClass;
 
             utils.inherit(Path, SvgPart);
@@ -14,41 +15,24 @@
 
             var classes = { Path: Path, LineGroup: LineGroup };
 
-            return new SVGParts('scripts/svgdata.json');
+            return new SVGParts({ items: {}, isAsync: false });
 
             //---------------------------------------------------------------------------------//
 
-            function addSvgClasses(data) {
-                var self = this;
-                _.each(data, function (dataInstance, key) {
-                    self.add(key, dataInstance);
-                });
-                return this.items;
-            }
-
             function addSvgClass(key, props) {
-                if (!this.fetched) {
+                if (!props.data) {
                     return null;
                 }
 
-                if (!key || !props.type || !props.data) {
-                    return null;
-                }
-                var existing = this.getOne(key);
-                if (existing) {
-                    return null;
-                }
-
-                var Class = getClass(props.type);
+                var Class = getSvgClass(props.type);
                 if (!Class) {
                     return null;
                 }
 
-                this.items[key] = new Class(key, props);
-                return this.items;
+                return base.add.apply(this, [key, new Class(key, props)]);
             }
 
-            function getClass(key) {
+            function getSvgClass(key) {
                 return classes[key] || null;
             }
         });

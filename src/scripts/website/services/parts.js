@@ -9,7 +9,7 @@
             Parts.prototype.processData = processData;
             Parts.prototype.updateSelectedPart = updateSelectedPart;
 
-            return new Parts('scripts/partdata.json');
+            return new Parts({ filePath: 'scripts/partdata.json', isAsync: true });
 
             //-----------------------------------------------------//
 

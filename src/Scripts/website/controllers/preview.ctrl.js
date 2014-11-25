@@ -1,13 +1,15 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .controller('PreviewCtrl', function (SvgParts, $scope) {
+        .controller('PreviewCtrl', function (SvgParts, DataCollection, $scope) {
             var ctrl = this;
             ctrl.getPart = getPart;
 
             $scope.$on('svgPart:clicked', updateActiveSvgPart);
 
-            SvgParts.fetch().then(dataFetched);
+            var svgData = new DataCollection({ filePath: 'scripts/svgdata.json', isAsync: true });
+
+            svgData.fetch().then(dataFetched);
 
             //--------------------------------------------//
 
@@ -19,6 +21,9 @@
             }
 
             function dataFetched() {
+                _.forEach(svgData.getAll(), function(svgDataPart, key) {
+                    SvgParts.add(key, svgDataPart);
+                });
                 ctrl.SvgDataReady = true;
             }
 

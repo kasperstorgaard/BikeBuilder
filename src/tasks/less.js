@@ -17,7 +17,7 @@
             .pipe(sourcemaps.write())
             .pipe(gulp.dest(config.less.dest))
             .pipe(reload({ stream: true }))
-            .pipe(notify({ title: config.title, message: config.less.msg }))
+            .pipe(notify({ title: config.title, message: config.less.msg }));
     });
 
 }

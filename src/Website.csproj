@@ -157,7 +157,8 @@
     <Content Include="content\images\parts\wheels\tras_hplus-son-formation-face-blanco-1.jpg" />
     <Content Include="gulpfile.js" />
     <Content Include="scripts\test\config\karma.conf.js" />
-    <Content Include="scripts\test\services\base.bind.spec.js" />
+    <Content Include="scripts\test\services\bindable.spec.js" />
+    <Content Include="scripts\test\services\DataCollection.spec.js" />
     <Content Include="scripts\test\services\svg.parts.spec.js" />
     <Content Include="scripts\test\services\utils.spec.js" />
     <Content Include="scripts\vendor\angular-strap\angular-strap.js" />

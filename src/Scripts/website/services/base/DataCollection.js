@@ -2,28 +2,37 @@
     'use strict';
     angular.module('bikeBuilder')
         .factory('DataCollection', function ($q, $timeout, $http) {
-            var DataCollection = function (filePath) {
-                this.items = {};
+            var DataCollection = function (options) {
+                options = options || {};
+
+                this.isAsync = !_.isUndefined(options.isAsync) ? options.isAsync : false;
+                this.items = options.items || {};
                 this.fetched = false;
                 this.fetching = false;
-                this.filePath = filePath;
+                this.filePath = options.filePath;
             }
-            
+
             DataCollection.prototype.fetch = fetch;
             DataCollection.prototype.getOne = getOne;
             DataCollection.prototype.getAll = getAll;
             DataCollection.prototype.updateOne = updateOne;
             DataCollection.prototype.updateAll = updateAll;
             DataCollection.prototype.processData = processData;
+            DataCollection.prototype.add = add;
+            DataCollection.prototype.addAll = addAll;
 
             return DataCollection;
 
             //---------------------------------------------------------------------------------//
 
             function fetch() {
-                var self = this;
+                if (!this.isAsync) {
+                    return null;
+                }
 
+                var self = this;
                 this.fetchedDfd = this.fetchedDfd || $q.defer();
+
                 if (this.fetched) {
                     this.fetchedDfd = $q.defer();
                     this.fetchedDfd.resolve();
@@ -45,14 +54,14 @@
             }
 
             function add(key, item) {
-                if (!this.fetched) {
+                if (this.isAsync && !this.fetched) {
                     return null;
                 }
 
                 if (!key) {
                     return null;
                 }
-                var existing = getOne(key);
+                var existing = this.getOne(key);
                 if (existing) {
                     return null;
                 }
@@ -61,8 +70,24 @@
                 return this.items;
             }
 
+            function addAll(collection) {
+                var self = this;
+                if (this.isAsync && !this.fetched) {
+                    return null;
+                }
+
+                if (!collection || _.size(collection) === 0) {
+                    return null;
+                }
+
+                _.forEach(collection, function(item, key) {
+                    self.add(key, item);
+                });
+                return this.items;
+            }
+
             function getOne(key) {
-                if (!this.fetched) {
+                if (this.isAsync && !this.fetched) {
                     return null;
                 }
                 var item = this.items[key];
@@ -73,14 +98,14 @@
             }
 
             function getAll() {
-                if (!this.fetched) {
+                if (this.isAsync && !this.fetched) {
                     return null;
                 }
                 return this.items;
             }
 
             function updateOne(key, props) {
-                if (!this.fetched) {
+                if (this.isAsync && !this.fetched) {
                     return null;
                 }
                 var item = this.getOne(key);
@@ -92,7 +117,7 @@
             }
 
             function updateAll(props) {
-                if (!this.fetched) {
+                if (this.isAsync && !this.fetched) {
                     return null;
                 }
                 _.each(this.items, function (item) {

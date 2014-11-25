@@ -17,7 +17,7 @@ require('./tasks/less.js')(gulp, config, handleError);
 require('./tasks/views.js')(gulp, config, handleError);
 
 //----------------------------------------//
-gulp.task('serve', ['less', 'js:templates', 'js:vendor', 'js:website', 'karma:start', 'browser-sync'], function () {
+gulp.task('serve', ['less', 'js:templates', 'js:vendor', 'js:website','browser-sync'], function () {
     gulp.watch(config.less.watch, ['less']);
     gulp.watch(config.js.website.src, ['js:website']);
     gulp.watch(config.js.vendor.map, ['js:vendor']);
