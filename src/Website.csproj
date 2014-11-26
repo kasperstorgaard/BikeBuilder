@@ -114,12 +114,9 @@
     <Content Include="content\images\parts\frames\blb-track-frameset-mint_1.jpg" />
     <Content Include="content\images\parts\frames\cuadro-dolan-negro_1.jpg" />
     <Content Include="content\images\parts\frames\leader-frame-725-white.jpg" />
-    <Content Include="content\images\parts\handlebars\manillar-bullhorn-aero-1.jpg" />
-    <Content Include="content\images\parts\handlebars\manillar-bullhorn-plata-satori-1.jpg" />
-    <Content Include="content\images\parts\handlebars\manillar-doble-altura-negro-zoom1.jpg" />
-    <Content Include="content\images\parts\handlebars\manillar-pista-blanco_1.jpg" />
-    <Content Include="content\images\parts\handlebars\manillar-pista-cromado-polo-bike.jpg" />
-    <Content Include="content\images\parts\handlebars\manillar-satori-mini-plata1.jpg" />
+    <Content Include="content\images\parts\handlebars\manillar-polo-bike-azul_1.jpg" />
+    <Content Include="content\images\parts\handlebars\manillar-polo-bike-morado.jpg" />
+    <Content Include="content\images\parts\handlebars\manillar-polo-bike-negro.jpg" />
     <Content Include="content\images\parts\pedals\pedal-origin8-naranja.jpg" />
     <Content Include="content\images\parts\pedals\pedales-fixie-pirate-lila1.jpg" />
     <Content Include="content\images\parts\pedals\pedales-pirate-amarillo-1.jpg" />

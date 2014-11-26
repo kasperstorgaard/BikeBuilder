@@ -1,4 +1,368 @@
 ﻿{
+    "frame": {
+        "part-type": "frame",
+        "parts": [
+            {
+                "name": "blb track",
+                "variants": [
+                    {
+                        "name": "cream",
+                        "colors": { "frame": "#e0dbbd" },
+                        "imageUrl": "frames/blb-track-frameset-cream_1.jpg"
+                    },
+                    {
+                        "name": "mint",
+                        "colors": { "frame": "#93dcbf" },
+                        "imageUrl": "frames/blb-track-frameset-mint_1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "dolan pre cursa",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": { "frame": "#2b2e35" },
+                        "imageUrl": "frames/cuadro-dolan-negro_1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "8bar Krzberg v4",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": { "frame": "#f7f7f7" },
+                        "imageUrl": "frames/8bar-krzberg-v4_white-1.jpg"
+                    },
+                    {
+                        "name": "raw",
+                        "colors": { "frame": "#aaaaac" },
+                        "imageUrl": "frames/8bar-krzberg-v4_plata-1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "leader 725",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": { "frame": "#f9f9f9" },
+                        "imageUrl": "frames/leader-frame-725-white.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "fork": {
+        "part-type": "fork",
+        "parts": [
+            {
+                "name": "leader 725",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "fork": "#070908"
+                        },
+                        "imageUrl": "forks/leader-frame-725-white.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "horquilla aventon litecarbon",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "fork": "#171113"
+                        },
+                        "imageUrl": "forks/horquilla-aventon-lite-carbon-1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "blb track",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "fork": "#f8f9fb"
+                        },
+                        "imageUrl": "forks/blb_track_fork_5.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "front wheel": {
+        "part-type": "frontWheel",
+        "parts": [
+            {
+                "name": "aerospoke",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "frontRim": "#e3e6f9",
+                            "frontHub": "#e3e6f9",
+                            "frontSpokes": "#e3e6f9"
+                        },
+                        "imageUrl": "wheels/aerospoke-blanco.jpg"
+                    },
+                    {
+                        "name": "black",
+                        "colors": {
+                            "frontRim": "#1f1f21",
+                            "frontHub": "#1f1f21",
+                            "frontSpokes": "#1f1f21"
+                        },
+                        "imageUrl": "wheels/aerospoke-negro-mate.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "del negra",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "frontRim": "#0f1014",
+                            "frontHub": "#0f1014",
+                            "frontSpokes": "#0f1014"
+                        },
+                        "imageUrl": "wheels/del-negra-1_1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "h plus son formation face",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "frontRim": "#c8c7cc",
+                            "frontHub": "#c8c7cc",
+                            "frontSpokes": "#c8c7cc"
+                        },
+                        "imageUrl": "wheels/tras_hplus-son-formation-face-blanco-1.jpg"
+                    },
+                    {
+                        "name": "red",
+                        "colors": {
+                            "frontRim": "#991b26",
+                            "frontHub": "#242527",
+                            "frontSpokes": "#242527"
+                        },
+                        "imageUrl": "wheels/tras-hplus-son-formation-face-rojo-1_1.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "front tyre": {
+        "part-type": "tyre",
+        "parts": [
+            {
+                "name": "Hutchinson Nitro",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "frontTire": "#1f2022"
+                        },
+                        "imageUrl": "tyres/cubierta-hutchinson-nitro.jpg"
+                    },
+                    {
+                        "name": "brown",
+                        "colors": {
+                            "frontTire": "#72514c"
+                        },
+                        "imageUrl": "tyres/cubierta-hutchinson-marron1_1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Hutchinson Kenda",
+                "variants": [
+                    {
+                        "name": "cream",
+                        "colors": {
+                            "frontTire": "#cbb785"
+                        },
+                        "imageUrl": "tyres/kenda_700x28-crema-1_1.jpg"
+                    },
+                    {
+                        "name": "blue",
+                        "colors": {
+                            "frontTire": "#213373"
+                        },
+                        "imageUrl": "tyres/cubierta-kenda-azul_1.jpg"
+                    },
+                    {
+                        "name": "pink",
+                        "colors": {
+                            "frontTire": "#a6416d"
+                        },
+                        "imageUrl": "tyres/cubierta-kenda-rosa.jpg"
+                    },
+                    {
+                        "name": "orange",
+                        "colors": {
+                            "frontTire": "#f07915"
+                        },
+                        "imageUrl": "tyres/cubierta-kenda-naranja.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Vittoria Zaffiro",
+                "variants": [
+                    {
+                        "name": "yellow",
+                        "colors": {
+                            "frontTire": "#cda424"
+                        },
+                        "imageUrl": "tyres/cubierta-vittoria-zaffiro-amarillo1.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "rear wheel": {
+        "part-type": "rearWheel",
+        "parts": [
+            {
+                "name": "aerospoke",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "rearRim": "#e3e6f9",
+                            "rearHub": "#e3e6f9",
+                            "rearSpokes": "#e3e6f9"
+                        },
+                        "imageUrl": "wheels/aerospoke-blanco.jpg"
+                    },
+                    {
+                        "name": "black",
+                        "colors": {
+                            "rearRim": "#1f1f21",
+                            "rearHub": "#1f1f21",
+                            "rearSpokes": "#1f1f21"
+                        },
+                        "imageUrl": "wheels/aerospoke-negro-mate.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "del negra",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "rearRim": "#0f1014",
+                            "rearHub": "#0f1014",
+                            "rearSpokes": "#0f1014"
+                        },
+                        "imageUrl": "wheels/del-negra-1_1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "h plus son formation face",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "rearRim": "#c8c7cc",
+                            "rearHub": "#c8c7cc",
+                            "rearSpokes": "#c8c7cc"
+                        },
+                        "imageUrl": "wheels/tras_hplus-son-formation-face-blanco-1.jpg"
+                    },
+                    {
+                        "name": "red",
+                        "colors": {
+                            "rearRim": "#991b26",
+                            "rearHub": "#242527",
+                            "rearSpokes": "#242527"
+                        },
+                        "imageUrl": "wheels/tras-hplus-son-formation-face-rojo-1_1.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "rear tyre": {
+        "part-type": "tyre",
+        "parts": [
+            {
+                "name": "Hutchinson Nitro",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "rearTire": "#1f2022"
+                        },
+                        "imageUrl": "tyres/cubierta-hutchinson-nitro.jpg"
+                    },
+                    {
+                        "name": "brown",
+                        "colors": {
+                            "rearTire": "#72514c"
+                        },
+                        "imageUrl": "tyres/cubierta-hutchinson-marron1_1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Hutchinson Kenda",
+                "variants": [
+                    {
+                        "name": "cream",
+                        "colors": {
+                            "rearTire": "#cbb785"
+                        },
+                        "imageUrl": "tyres/kenda_700x28-crema-1_1.jpg"
+                    },
+                    {
+                        "name": "blue",
+                        "colors": {
+                            "rearTire": "#213373"
+                        },
+                        "imageUrl": "tyres/cubierta-kenda-azul_1.jpg"
+                    },
+                    {
+                        "name": "pink",
+                        "colors": {
+                            "rearTire": "#a6416d"
+                        },
+                        "imageUrl": "tyres/cubierta-kenda-rosa.jpg"
+                    },
+                    {
+                        "name": "orange",
+                        "colors": {
+                            "rearTire": "#f07915"
+                        },
+                        "imageUrl": "tyres/cubierta-kenda-naranja.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Vittoria Zaffiro",
+                "variants": [
+                    {
+                        "name": "yellow",
+                        "colors": {
+                            "rearTire": "#cda424"
+                        },
+                        "imageUrl": "tyres/cubierta-vittoria-zaffiro-amarillo1.jpg"
+                    }
+                ]
+            }
+        ]
+    },
     "crankset": {
         "part-type": "crankset",
         "parts": [
@@ -95,102 +459,6 @@
             }
         ]
     },
-    "fork": {
-        "part-type": "fork",
-        "parts": [
-            {
-                "name": "leader 725",
-                "variants": [
-                    {
-                        "name": "black",
-                        "colors": {
-                            "fork": "#070908"
-                        },
-                        "imageUrl": "forks/leader-frame-725-white.jpg"
-                    }
-                ]
-            },
-            {
-                "name": "horquilla aventon litecarbon",
-                "variants": [
-                    {
-                        "name": "black",
-                        "colors": {
-                            "fork": "#171113"
-                        },
-                        "imageUrl": "forks/horquilla-aventon-lite-carbon-1.jpg"
-                    }
-                ]
-            },
-            {
-                "name": "blb track",
-                "variants": [
-                    {
-                        "name": "white",
-                        "colors": {
-                            "fork": "#f8f9fb"
-                        },
-                        "imageUrl": "forks/blb_track_fork_5.jpg"
-                    }
-                ]
-            }
-        ]
-    },
-    "frame": {
-        "part-type": "frame",
-        "parts": [
-            {
-                "name": "blb track",
-                "variants": [
-                    {
-                        "name": "cream",
-                        "colors": { "frame": "#e0dbbd" },
-                        "imageUrl": "frames/blb-track-frameset-cream_1.jpg"
-                    },
-                    {
-                        "name": "mint",
-                        "colors": { "frame": "#93dcbf" },
-                        "imageUrl": "frames/blb-track-frameset-mint_1.jpg"
-                    }
-                ]
-            },
-            {
-                "name": "dolan pre cursa",
-                "variants": [
-                    {
-                        "name": "black",
-                        "colors": { "frame": "#2b2e35" },
-                        "imageUrl": "frames/cuadro-dolan-negro_1.jpg"
-                    }
-                ]
-            },
-            {
-                "name": "8bar Krzberg v4",
-                "variants": [
-                    {
-                        "name": "white",
-                        "colors": { "frame": "#f7f7f7" },
-                        "imageUrl": "frames/8bar-krzberg-v4_white-1.jpg"
-                    },
-                    {
-                        "name": "raw",
-                        "colors": { "frame": "#aaaaac" },
-                        "imageUrl": "frames/8bar-krzberg-v4_plata-1.jpg"
-                    }
-                ]
-            },
-            {
-                "name": "leader 725",
-                "variants": [
-                    {
-                        "name": "white",
-                        "colors": { "frame": "#f9f9f9" },
-                        "imageUrl": "frames/leader-frame-725-white.jpg"
-                    }
-                ]
-            }
-        ]
-    },
     "chain": {
         "part-type": "chain",
         "parts": [
@@ -272,131 +540,175 @@
             }
         ]
     },
-    "front wheel": {
-        "part-type": "frontWheel",
+    "stem": {
+        "part-type": "stem",
         "parts": [
             {
-                "name": "aerospoke",
+                "name": "BLB Lil Quill",
                 "variants": [
                     {
-                        "name": "white",
-                        "colors": {                           
-                            "frontRim": "#e3e6f9",
-                            "frontHub": "#e3e6f9",
-                            "frontSpokes": "#e3e6f9"
+                        "name": "black",
+                        "colors": {
+                            "stem": "#202020"
                         },
-                        "imageUrl": "wheels/aerospoke-blanco.jpg"
+                        "imageUrl": "stems/potencia-blb-lil-quill-stem-black_1.jpg"
                     },
                     {
-                        "name": "black",
-                        "colors": {                         
-                            "frontRim": "#1f1f21",
-                            "frontHub": "#1f1f21",
-                            "frontSpokes": "#1f1f21"
-                        },
-                        "imageUrl": "wheels/aerospoke-negro-mate.jpg"
-                    }
-                ]
-            },
-            {
-                "name": "del negra",
-                "variants": [
-                    {
-                        "name": "black",
-                        "colors": {                          
-                            "frontRim": "#0f1014",
-                            "frontHub": "#0f1014",
-                            "frontSpokes": "#0f1014"
-                        },
-                        "imageUrl": "wheels/del-negra-1_1.jpg"
-                    }
-                ]
-            },
-            {
-                "name": "h plus son formation face",
-                "variants": [
-                    {
-                        "name": "white",
+                        "name": "blue",
                         "colors": {
-                            "frontRim": "#c8c7cc",
-                            "frontHub": "#c8c7cc",
-                            "frontSpokes": "#c8c7cc"
+                            "stem": "#006eb0"
                         },
-                        "imageUrl": "wheels/tras_hplus-son-formation-face-blanco-1.jpg"
+                        "imageUrl": "stems/potencia-blb-lil-quill-stem-blue.jpg"
+                    },
+                    {
+                        "name": "purple",
+                        "colors": {
+                            "stem": "#8e2081"
+                        },
+                        "imageUrl": "stems/potencia-blb-lil-quill-stem-purple.jpg"
                     },
                     {
                         "name": "red",
                         "colors": {
-                            "frontRim": "#991b26",
-                            "frontHub": "#242527",
-                            "frontSpokes": "#242527"
+                            "stem": "#cd3645"
                         },
-                        "imageUrl": "wheels/tras-hplus-son-formation-face-rojo-1_1.jpg"
+                        "imageUrl": "stems/potencia-blb-lil-quill-stem-red.jpg"
+                    },
+                    {
+                        "name": "silver",
+                        "colors": {
+                            "stem": "#f4f4f4"
+                        },
+                        "imageUrl": "stems/potencia-blb-lil-quill-stem-silver.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Kalloy Uno Quill",
+                "variants": [
+                    {
+                        "name": "black",
+                        "colors": {
+                            "stem": "#393939"
+                        },
+                        "imageUrl": "stems/potencia-kalloy-negro.jpg"
                     }
                 ]
             }
         ]
     },
-    "rear wheel": {
-        "part-type": "rearWheel",
+    "saddle": {
+        "part-type": "saddle",
         "parts": [
             {
-                "name": "aerospoke",
+                "name": "Or8 Aero",
                 "variants": [
                     {
-                        "name": "white",
+                        "name": "yellow",
                         "colors": {
-                            "rearRim": "#e3e6f9",
-                            "rearHub": "#e3e6f9",
-                            "rearSpokes": "#e3e6f9"
+                            "saddle": "#fdc846"
                         },
-                        "imageUrl": "wheels/aerospoke-blanco.jpg"
+                        "imageUrl": "saddles/sillin-bicicleta-or8-santafixie-amarillo.jpg"
                     },
                     {
-                        "name": "black",
+                        "name": "blue",
                         "colors": {
-                            "rearRim": "#1f1f21",
-                            "rearHub": "#1f1f21",
-                            "rearSpokes": "#1f1f21"
+                            "saddle": "#75cbe2"
                         },
-                        "imageUrl": "wheels/aerospoke-negro-mate.jpg"
-                    }
-                ]
-            },
-            {
-                "name": "del negra",
-                "variants": [
-                    {
-                        "name": "black",
-                        "colors": {
-                            "rearRim": "#0f1014",
-                            "rearHub": "#0f1014",
-                            "rearSpokes": "#0f1014"                          
-                        },
-                        "imageUrl": "wheels/del-negra-1_1.jpg"
-                    }
-                ]
-            },
-            {
-                "name": "h plus son formation face",
-                "variants": [
-                    {
-                        "name": "white",
-                        "colors": {
-                            "rearRim": "#c8c7cc",
-                            "rearHub": "#c8c7cc",
-                            "rearSpokes": "#c8c7cc"                          
-                        },
-                        "imageUrl": "wheels/tras_hplus-son-formation-face-blanco-1.jpg"
+                        "imageUrl": "saddles/sillin-bicicleta-or8-santafixie-azul_1.jpg"
                     },
                     {
                         "name": "red",
                         "colors": {
-                            "rearRim": "#991b26",
-                            "rearHub": "#242527",
-                            "rearSpokes": "#242527"                          
+                            "saddle": "#ee4a2f"
                         },
-                        "imageUrl": "wheels/tras-hplus-son-formation-face-rojo-1_1.jpg"
+                        "imageUrl": "saddles/sillin-bicicleta-or8-santafixie-rojo.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Cinelli Unicanitor",
+                "variants": [
+                    {
+                        "name": "blue",
+                        "colors": {
+                            "saddle": "#3f6cbd"
+                        },
+                        "imageUrl": "saddles/sillin-cinelli-unicanitor-azul1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Csepel Puhos",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "saddle": "#f2f2f3"
+                        },
+                        "imageUrl": "saddles/sillin-csepel-blanco.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Velo Plus",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "saddle": "#dfe7f4"
+                        },
+                        "imageUrl": "saddles/velo-eco-blanco-1.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "seatpost": {
+        "part-type": "seatpost",
+        "parts": [
+            {
+                "name": "Cinelli Vai ",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "seatMast": "#f3f2f7"
+                        },
+                        "imageUrl": "seatposts/tija-cinelli-blanco1.jpg"
+                    },
+                    {
+                        "name": "black",
+                        "colors": {
+                            "seatMast": "#1a1c1b"
+                        },
+                        "imageUrl": "seatposts/tija-cinelli-negro1.jpg"
+                    }
+                ]
+            },
+            {
+                "name": "Lightskin",
+                "variants": [
+                    {
+                        "name": "white",
+                        "colors": {
+                            "seatMast": "#e8edf3"
+                        },
+                        "imageUrl": "seatposts/tija-lightskin-blanco2_1.jpg"
+                    },
+                    {
+                        "name": "silver",
+                        "colors": {
+                            "seatMast": "#757168"
+                        },
+                        "imageUrl": "seatposts/tija-lightskin-plata2_1.jpg"
+                    },
+                    {
+                        "name": "black",
+                        "colors": {
+                            "seatMast": "#0b1316"
+                        },
+                        "imageUrl": "seatposts/tija-lightskin-negro2.jpg"
                     }
                 ]
             }
