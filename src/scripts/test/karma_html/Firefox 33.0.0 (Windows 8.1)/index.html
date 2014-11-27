@@ -1,0 +1,520 @@
+﻿@@ -1,147 +0,0 @@
+﻿
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+        }
+
+        .list-group-item-passed {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+
+        a.list-group-item-passed {
+            color: #3c763d;
+        }
+
+            a.list-group-item-passed .list-group-item-heading {
+                color: inherit;
+            }
+
+            a.list-group-item-passed:hover,
+            a.list-group-item-passed:focus {
+                background-color: #d0e9c6;
+                color: #3c763d;
+            }
+
+            a.list-group-item-passed.active,
+            a.list-group-item-passed.active:hover,
+            a.list-group-item-passed.active:focus {
+                background-color: #3c763d;
+                border-color: #3c763d;
+                color: #fff;
+            }
+
+        .list-group-item-failed {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+
+        a.list-group-item-failed {
+            color: #a94442;
+        }
+
+            a.list-group-item-failed .list-group-item-heading {
+                color: inherit;
+            }
+
+            a.list-group-item-failed:hover,
+            a.list-group-item-failed:focus {
+                background-color: #ebcccc;
+                color: #a94442;
+            }
+
+            a.list-group-item-failed.active,
+            a.list-group-item-failed.active:hover,
+            a.list-group-item-failed.active:focus {
+                background-color: #a94442;
+                border-color: #a94442;
+                color: #fff;
+            }
+    </style>
+
+</head>
+
+<body id="HTMLReporter" class="html-reporter">
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Firefox 33.0.0 (Windows 8.1)</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="jumbotron">
+        
+        
+        
+        
+        <div class="alert alert-success" role="alert">
+            Passing 54 specs
+        </div>
+        
+        
+        
+    </div>
+    <div class="jumbotron results">
+        <div class="summary">
+
+            <ul class="list-group">
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base:DataCollection |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base:DataCollection | constructor |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should handle empty arguments
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base:DataCollection | add |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return null when called without key
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return the updated collection when adding
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base:DataCollection | addAll |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base:DataCollection | getOne |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return a part when called with valid existing
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return null when called with nonexisting key
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base:DataCollection | getAll |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return parts when called
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base:DataCollection | updateOne |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should update part
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base:DataCollection | updateAll |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should update parts collection
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base.bind |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base.bind | child service | </h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should inherit Bindable props and methods
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be able to override Bindable methods
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base.bind | bind |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return an unbind function
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should add callback when called
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should call onAttach when called first time
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base.bind | unbind |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should remove callback when called
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should call onUnBound when called
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should call onDetach when called with 1 item in callbacks
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:base.bind | invoke |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should do nothing if no callbacks are bound
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should invoke bound callback when called
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be invoked with arguments when passed
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should handle multiple invokes
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:scroll |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:scroll | attachScroll (onAttach) |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            shouldnt call invoke on scroll when not attached
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should call invoke on scroll when attached
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:scroll | detachScroll (onDetach) |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            shouldnt call invoke on scroll when detached
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:scroll | getScrollTop |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:scroll | handleScroll |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should call &quot;invoke&quot;
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:svg.parts |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:svg.parts | addSvgClass (add) |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return null when called without type
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return null when called without data
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return null when called with nonexisting type
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:svg.parts | updateOne |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should update part
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:svg.parts | model instance</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should have model data
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:utils |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>service:utils | inherit |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            child Class should have _super and invokeBaseConstructor methods
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            _super should point to parent Class
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            child Class instance should inherit parent Class standard values and methods
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            child Class instance should overwrite parent Class standard values
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>module |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should have a version
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div id="details">
+            
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+            $(function() {
+                $("a.summaryMenuItem").on("click", function() {
+                    $("body").removeClass("showDetails").addClass("showSummary");
+                });
+                $("a.detailsMenuItem").on("click", function() {
+                    $("body").addClass("showDetails").removeClass("showSummary");
+                });
+
+            });
+    </script>
+</body>
+</html>
+ No newline at end of file

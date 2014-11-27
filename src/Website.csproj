@@ -153,10 +153,12 @@
     <Content Include="content\images\parts\wheels\tras-hplus-son-formation-face-rojo-1_1.jpg" />
     <Content Include="content\images\parts\wheels\tras_hplus-son-formation-face-blanco-1.jpg" />
     <Content Include="gulpfile.js" />
+    <Content Include="scripts\test\config\jasmine_template.html" />
     <Content Include="scripts\test\config\karma.conf.js" />
     <Content Include="scripts\test\services\bindable.spec.js" />
     <Content Include="scripts\test\services\DataCollection.spec.js" />
     <Content Include="scripts\test\services\svg.parts.spec.js" />
+    <Content Include="scripts\test\services\scroll.spec.js" />
     <Content Include="scripts\test\services\utils.spec.js" />
     <Content Include="scripts\vendor\angular-strap\angular-strap.js" />
     <Content Include="scripts\vendor\angular-strap\angular-strap.tpl.js" />
@@ -388,8 +390,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\test\config\jasmine_template.html" />
-    <Content Include="Scripts\test\test.spec.js" />
+    <Content Include="scripts\test\test.spec.js" />
     <Content Include="Scripts\vendor\angularJs\angular.min.js" />
     <Content Include="Scripts\vendor\angularJs\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\vendor\angularJs\i18n\angular-locale_aa-er.js" />

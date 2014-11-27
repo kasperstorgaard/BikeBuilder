@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for D:/Git/BikeBuilder/src/scripts/website/templates/templates.js</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../prettify.css">
+
+    <style>
+        body, html {
+            margin:0; padding: 0;
+        }
+        body {
+            font-family: Helvetica Neue, Helvetica,Arial;
+            font-size: 10pt;
+        }
+        div.header, div.footer {
+            background: #eee;
+            padding: 1em;
+        }
+        div.header {
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid #666;
+            width: 100%;
+        }
+        div.footer {
+            border-top: 1px solid #666;
+        }
+        div.body {
+            margin-top: 10em;
+        }
+        div.meta {
+            font-size: 90%;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 12pt;
+        }
+        h2 {
+            font-size: 10pt;
+        }
+        pre {
+            font-family: Consolas, Menlo, Monaco, monospace;
+            margin: 0;
+            padding: 0;
+            line-height: 14px;
+            font-size: 14px;
+            -moz-tab-size: 2;
+            -o-tab-size:  2;
+            tab-size: 2;
+        }
+
+        div.path { font-size: 110%; }
+        div.path a:link, div.path a:visited { color: #000; }
+        table.coverage { border-collapse: collapse; margin:0; padding: 0 }
+
+        table.coverage td {
+            margin: 0;
+            padding: 0;
+            color: #111;
+            vertical-align: top;
+        }
+        table.coverage td.line-count {
+            width: 50px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        table.coverage td.line-coverage {
+            color: #777 !important;
+            text-align: right;
+            border-left: 1px solid #666;
+            border-right: 1px solid #666;
+        }
+
+        table.coverage td.text {
+        }
+
+        table.coverage td span.cline-any {
+            display: inline-block;
+            padding: 0 5px;
+            width: 40px;
+        }
+        table.coverage td span.cline-neutral {
+            background: #eee;
+        }
+        table.coverage td span.cline-yes {
+            background: #b5d592;
+            color: #999;
+        }
+        table.coverage td span.cline-no {
+            background: #fc8c84;
+        }
+
+        .cstat-yes { color: #111; }
+        .cstat-no { background: #fc8c84; color: #111; }
+        .fstat-no { background: #ffc520; color: #111 !important; }
+        .cbranch-no { background:  yellow !important; color: #111; }
+
+        .cstat-skip { background: #ddd; color: #111; }
+        .fstat-skip { background: #ddd; color: #111 !important; }
+        .cbranch-skip { background: #ddd !important; color: #111; }
+
+        .missing-if-branch {
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: black;
+            color: yellow;
+        }
+
+        .skip-if-branch {
+            display: none;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: #ccc;
+            color: white;
+        }
+
+        .missing-if-branch .typ, .skip-if-branch .typ {
+            color: inherit !important;
+        }
+
+        .entity, .metric { font-weight: bold; }
+        .metric { display: inline-block; border: 1px solid #333; padding: 0.3em; background: white; }
+        .metric small { font-size: 80%; font-weight: normal; color: #666; }
+
+        div.coverage-summary table { border-collapse: collapse; margin: 3em; font-size: 110%; }
+        div.coverage-summary td, div.coverage-summary table  th { margin: 0; padding: 0.25em 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; }
+        div.coverage-summary th { text-align: left; border: 1px solid #666; background: #eee; font-weight: normal; }
+        div.coverage-summary th.file { border-right: none !important; }
+        div.coverage-summary th.pic { border-left: none !important; text-align: right; }
+        div.coverage-summary th.pct { border-right: none !important; }
+        div.coverage-summary th.abs { border-left: none !important; text-align: right; }
+        div.coverage-summary td.pct { text-align: right; border-left: 1px solid #666; }
+        div.coverage-summary td.abs { text-align: right; font-size: 90%; color: #444; border-right: 1px solid #666; }
+        div.coverage-summary td.file { text-align: right; border-left: 1px solid #666; white-space: nowrap;  }
+        div.coverage-summary td.pic { min-width: 120px !important;  }
+        div.coverage-summary a:link { text-decoration: none; color: #000; }
+        div.coverage-summary a:visited { text-decoration: none; color: #333; }
+        div.coverage-summary a:hover { text-decoration: underline; }
+        div.coverage-summary tfoot td { border-top: 1px solid #666; }
+
+        div.coverage-summary .yui3-datatable-sort-indicator, div.coverage-summary .dummy-sort-indicator {
+            height: 10px;
+            width: 7px;
+            display: inline-block;
+            margin-left: 0.5em;
+        }
+        div.coverage-summary .yui3-datatable-sort-indicator {
+            background: url("https://yui-s.yahooapis.com/3.6.0/build/datatable-sort/assets/skins/sam/sort-arrow-sprite.png") no-repeat scroll 0 0 transparent;
+        }
+        div.coverage-summary .yui3-datatable-sorted .yui3-datatable-sort-indicator {
+            background-position: 0 -20px;
+        }
+        div.coverage-summary .yui3-datatable-sorted-desc .yui3-datatable-sort-indicator {
+            background-position: 0 -10px;
+        }
+
+        .high { background: #b5d592 !important; }
+        .medium { background: #ffe87c !important; }
+        .low { background: #fc8c84 !important; }
+
+        span.cover-fill, span.cover-empty {
+            display:inline-block;
+            border:1px solid #444;
+            background: white;
+            height: 12px;
+        }
+        span.cover-fill {
+            background: #ccc;
+            border-right: 1px solid #444;
+        }
+        span.cover-empty {
+            background: white;
+            border-left: none;
+        }
+        span.cover-full {
+            border-right: none !important;
+        }
+        pre.prettyprint {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .com { color: #999 !important; }
+        .ignore-none { color: #999; font-weight: normal; }
+
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">D:/Git/BikeBuilder/src/scripts/website/templates/templates.js</span></h1>
+    <h2>
+        
+        Statements: <span class="metric">100% <small>(9 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Functions: <span class="metric">100% <small>(1 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Lines: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">D:/Git/BikeBuilder/src/scripts/website/templates\</a> &#187; templates.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8</td><td class="line-coverage"><span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-yes">54</span></td><td class="text"><pre class="prettyprint lang-js">angular.module("bikeBuilder").run(["$templateCache", function($templateCache) {$templateCache.put("line.group.tpl.html","&lt;g id={{model.key}} ng-click=\"handleClicked(model.key)\" ng-class=\"[model.key, model.active ? \'active\' : \'\', model.color ? \'has-color\' : \'\']\"&gt;\r\n    &lt;line svg-line ng-repeat=\"line in model.lines\" color=\"model.color\" line-data=\"line.data\"&gt;&lt;/line&gt;\r\n&lt;/g&gt;");
+$templateCache.put("line.tpl.html","&lt;line fill=\"none\" ng-style=\"style\"\r\n      ng-attr-x1=\"{{data[0]}}\" ng-attr-y1=\"{{data[1]}}\" ng-attr-x2=\"{{data[2]}}\" ng-attr-y2=\"{{data[3]}}\"\r\n      ng-attr-stroke-dasharray=\"{{pathLength}}\" ng-attr-stroke-dashoffset=\"{{pathLength}}\" /&gt;\r\n");
+$templateCache.put("part.section.tpl.html","&lt;div class=\"part-section\"&gt;\r\n    &lt;h2 class=\"part-section-name\"&gt;{{name}}&lt;/h2&gt;\r\n    &lt;div part=\"part\" section-name=\"name\" ng-repeat=\"part in parts\"&gt;\r\n    &lt;/div&gt;\r\n&lt;/div&gt;");
+$templateCache.put("part.tpl.html","&lt;div class=\"part\"&gt;\r\n    &lt;h3 class=\"part-name\"&gt;{{model.name}}&lt;/h3&gt;\r\n    &lt;div class=\"btn-group variant-buttons\"&gt;\r\n        &lt;a class=\"btn btn-default variant-button\" ng-class=\"{\'active\': variant.name == selectedVariant.name }\" ng-click=\"setSelectedVariant(variant)\" ng-repeat=\"variant in model.variants\"&gt;{{variant.name}}&lt;/a&gt;\r\n    &lt;/div&gt;\r\n    &lt;div variant-picker=\"model.variants\" data-selected-variant=\"selectedVariant\" data-base-part-img-url=\"content/images/parts\"&gt;&lt;/div&gt;\r\n    &lt;a class=\"btn part-select-btn btn-lg btn-default\" ng-click=\"updateSelectedPart()\" ng-class=\"{\'active\': model.selected}\"&gt;{{model.selected ? \'Selected\' : \'Select this part\'}}&lt;/a&gt;\r\n&lt;/div&gt;");
+$templateCache.put("path.tpl.html","&lt;path id={{model.key}} fill=\"none\" ng-click=\"handleClicked(model.key)\" ng-class=\"[model.type, model.selected ? \'selected\':\'\', model.color ? \'has-color\':\'\']\"\r\n      ng-style=\"style\" ng-attr-stroke-dasharray=\"{{pathLength}}\" ng-attr-stroke-dashoffset=\"{{pathLength}}\" ng-attr-d=\"{{model.data}}\" /&gt;");
+$templateCache.put("spinner.tpl.html","&lt;div class=\"spinner\"&gt;\r\n    &lt;h3 class=\"load-text\"&gt;Loading...&lt;/h3&gt;\r\n    &lt;?xml version=\"1.0\" encoding=\"utf-8\" ?&gt;\r\n    &lt;svg id=\"spinner-svg{{spinnerKeyPostFix}}\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\r\n         viewBox=\"204 89.3 243.3 243.3\" enable-background=\"new 204 89.3 243.3 243.3\" xml:space=\"preserve\"&gt;\r\n    &lt;g id=\"spinner-wrapper{{spinnerKeyPostFix}}\"&gt;&lt;g id=\"spinner-wheel{{spinnerKeyPostFix}}\"&gt;\r\n    &lt;path id=\"spinner-rim{{spinnerKeyPostFix}}\" fill=\"none\" d=\"M259.6,125.2c50.2-39,119.1-27.8,155.4,20.8c36.2,48.5,22.1,114.4-24.1,153.6\r\n		c-29.5,25-108.9,36.5-153.5-20.9C206.1,238.4,213.9,160.7,259.6,125.2z M248.2,270.7c38.3,49.2,90.8,49.7,133.1,18\r\n		s53.2-92.4,22.1-134c-31.1-41.7-86.4-55.7-134.8-16.8C224,173.7,221.3,236.1,248.2,270.7z\" /&gt;\r\n    &lt;g id=\"spinner-spokes{{spinnerKeyPostFix}}\"&gt;\r\n    &lt;line fill=\"none\" x1=\"416.9\" y1=\"180.9\" x2=\"338.7\" y2=\"203.9\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"338.7\" y1=\"203.9\" x2=\"386\" y2=\"136.3\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"398.7\" y1=\"150.7\" x2=\"343.2\" y2=\"215.1\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"409.6\" y1=\"164.1\" x2=\"329.2\" y2=\"199.8\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"420.1\" y1=\"199.8\" x2=\"343.2\" y2=\"215.1\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"420.9\" y1=\"217.9\" x2=\"339.8\" y2=\"221.9\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"416.9\" y1=\"236.4\" x2=\"340.9\" y2=\"207.4\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"410.5\" y1=\"253.9\" x2=\"342.3\" y2=\"211\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"401\" y1=\"269.3\" x2=\"334.2\" y2=\"226.4\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"388.3\" y1=\"282.9\" x2=\"332\" y2=\"227.6\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"356.1\" y1=\"303.2\" x2=\"339.8\" y2=\"221.9\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"340.9\" y1=\"221.9\" x2=\"373.8\" y2=\"293.9\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"320.9\" y1=\"310.5\" x2=\"322.2\" y2=\"226.4\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"300.7\" y1=\"307.8\" x2=\"327\" y2=\"227.6\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"282.3\" y1=\"300.4\" x2=\"332\" y2=\"227.6\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"268.1\" y1=\"291.1\" x2=\"315.4\" y2=\"211\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"254.2\" y1=\"277.8\" x2=\"315.4\" y2=\"220.5\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"244.1\" y1=\"264.8\" x2=\"319\" y2=\"224\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"319\" y1=\"224\" x2=\"338.7\" y2=\"308.6\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"235.5\" y1=\"246.3\" x2=\"319.5\" y2=\"226.4\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"231.8\" y1=\"229.5\" x2=\"319\" y2=\"204.3\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"231.1\" y1=\"209.4\" x2=\"316.8\" y2=\"207.4\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"234.3\" y1=\"190.7\" x2=\"316\" y2=\"217.9\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"241\" y1=\"172.5\" x2=\"315.5\" y2=\"215.1\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"252.2\" y1=\"154.4\" x2=\"319\" y2=\"204.3\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"264.8\" y1=\"141.1\" x2=\"323.8\" y2=\"200.8\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"296.2\" y1=\"121.4\" x2=\"319.5\" y2=\"204.1\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"315.4\" y1=\"116\" x2=\"330.3\" y2=\"199.3\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"334.7\" y1=\"116\" x2=\"338.7\" y2=\"203.9\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"352.3\" y1=\"118.2\" x2=\"319\" y2=\"204.3\" /&gt;\r\n    &lt;line fill=\"none\" x1=\"370.2\" y1=\"125.5\" x2=\"330.3\" y2=\"199.3\" /&gt;\r\n            &lt;/g&gt;\r\n    &lt;path id=\"spinner-tire{{spinnerKeyPostFix}}\" fill=\"none\" d=\"M259.6,125.2c50.2-39,119.1-27.8,155.4,20.8c36.2,48.5,22.1,114.4-24.1,153.6\r\n		c-29.5,25-108.9,36.5-153.5-20.9C206.1,238.4,213.9,160.7,259.6,125.2z M231.1,285.9c35.4,52.1,115,53.5,162.8,19.5\r\n		c48.2-34.3,65.4-116.9,26.1-164.1C378.8,91.6,318,73.1,252.2,121.5C208.4,153.6,191.6,227.6,231.1,285.9z\" /&gt;\r\n    &lt;path id=\"spinner-hub{{spinnerKeyPostFix}}\" fill=\"none\" d=\"M315.4,213.7c0-2.3,0.7-13.9,13.5-13.9c7.4,0,13.5,6.2,13.5,13.9s-6.1,13.9-13.6,13.9\r\n		C321.4,227.6,315.4,221.5,315.4,213.7z M323,218l-4.1,0.6l3.4,3.2L323,218z M333.8,216.9l0.7,4.1l3.1-3.5L333.8,216.9z M328,219.9\r\n		l-1.3,4l4.3-0.7L328,219.9z M318.7,211.2l-0.4,4.1l3.9-2.5L318.7,211.2z M323.9,208.3l1.3-3.9l-4.4,1.6L323.9,208.3z M334.5,205.7\r\n		l-5.3-2.9l1.7,4.3L334.5,205.7z M334.8,211.3l4,1.1l-1.8-4.3L334.8,211.3z\" /&gt;\r\n        &lt;/g&gt;\r\n        &lt;/g&gt;\r\n    &lt;/svg&gt;\r\n&lt;/div&gt;");
+$templateCache.put("summary.item.tpl.html","&lt;li ng-show=\"selectedPart\" class=\"summary-item\"&gt;\r\n    &lt;span class=\"summary-section-name\"&gt;{{sectionName}}:&amp;nbsp;&lt;/span&gt;\r\n    &lt;span class=\"summary-part-name\"&gt;{{selectedPart.name}}&lt;/span&gt;\r\n    &lt;span class=\"summary-variant-color\" ng-repeat=\"color in selectedVariant.colors\" ng-style=\"{\'background\':color}\"&gt;&amp;nbsp;&lt;/span&gt;\r\n&lt;/li&gt;");
+$templateCache.put("variant.picker.tpl.html","&lt;div class=\"variant-picker\"&gt;\r\n    &lt;div class=\"images-stack\"&gt;\r\n        &lt;img class=\"variant-image\" ng-src=\"{{basePartImgUrl + \'/\' + variant.imageUrl}}\" ng-class=\"{\'selected\': variant.name == selectedVariant.name }\" ng-repeat=\"variant in variants\" /&gt;\r\n    &lt;/div&gt;\r\n&lt;/div&gt;");}]);</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Nov 27 2014 11:40:31 GMT+0100 (Romance Standard Time)</div>
+</div>
+
+<script src="../prettify.js"></script>
+
+<script src="https://yui-s.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
+<script>
+
+    YUI().use('datatable', function (Y) {
+
+        var formatters = {
+          pct: function (o) {
+              o.className += o.record.get('classes')[o.column.key];
+              try {
+                  return o.value.toFixed(2) + '%';
+              } catch (ex) { return o.value + '%'; }
+          },
+          html: function (o) {
+              o.className += o.record.get('classes')[o.column.key];
+              return o.record.get(o.column.key + '_html');
+          }
+        },
+          defaultFormatter = function (o) {
+              o.className += o.record.get('classes')[o.column.key];
+              return o.value;
+          };
+
+        function getColumns(theadNode) {
+            var colNodes = theadNode.all('tr th'),
+                cols = [],
+                col;
+            colNodes.each(function (colNode) {
+                col = {
+                    key: colNode.getAttribute('data-col'),
+                    label: colNode.get('innerHTML') || ' ',
+                    sortable: !colNode.getAttribute('data-nosort'),
+                    className: colNode.getAttribute('class'),
+                    type: colNode.getAttribute('data-type'),
+                    allowHTML: colNode.getAttribute('data-html') === 'true' || colNode.getAttribute('data-fmt') === 'html'
+                };
+                col.formatter = formatters[colNode.getAttribute('data-fmt')] || defaultFormatter;
+                cols.push(col);
+            });
+            return cols;
+        }
+
+        function getRowData(trNode, cols) {
+            var tdNodes = trNode.all('td'),
+                    i,
+                    row = { classes: {} },
+                    node,
+                    name;
+            for (i = 0; i < cols.length; i += 1) {
+                name = cols[i].key;
+                node = tdNodes.item(i);
+                row[name] = node.getAttribute('data-value') || node.get('innerHTML');
+                row[name + '_html'] = node.get('innerHTML');
+                row.classes[name] = node.getAttribute('class');
+                //Y.log('Name: ' + name + '; Value: ' + row[name]);
+                if (cols[i].type === 'number') { row[name] = row[name] * 1; }
+            }
+            //Y.log(row);
+            return row;
+        }
+
+        function getData(tbodyNode, cols) {
+            var data = [];
+            tbodyNode.all('tr').each(function (trNode) {
+                data.push(getRowData(trNode, cols));
+            });
+            return data;
+        }
+
+        function replaceTable(node) {
+            if (!node) { return; }
+            var cols = getColumns(node.one('thead')),
+                data = getData(node.one('tbody'), cols),
+                table,
+                parent = node.get('parentNode');
+
+            table = new Y.DataTable({
+                columns: cols,
+                data: data,
+                sortBy: 'file'
+            });
+            parent.set('innerHTML', '');
+            table.render(parent);
+        }
+
+        Y.on('domready', function () {
+            replaceTable(Y.one('div.coverage-summary table'));
+            if (typeof prettyPrint === 'function') {
+                prettyPrint();
+            }
+        });
+    });
+</script>
+</body>
+</html>

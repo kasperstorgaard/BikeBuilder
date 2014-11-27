@@ -1,28 +1,39 @@
 ﻿describe('service:base.bind |', function () {
 
     var Bindable,
+        MockChildService,
         mockChildService,
         called;
 
-
-    beforeEach(module('bikeBuilder'));
-    beforeEach(inject(function (_Bindable_) {
-        Bindable = _Bindable_;
-    }));
-    beforeEach(function () {
-        var bindable = new Bindable();
+    function setupBindableObj() {
         called = {
             onAttach: 0,
             onDetach: 0,
             onBound: 0,
             onUnBound: 0
         };
-        bindable.onAttach = function () { called.onAttach++; };
-        bindable.onBound = function () { called.onBound++; };
-        bindable.onUnBound = function () { called.onUnBound++; };
-        bindable.onDetach = function () { called.onDetach++; };
+        //override default to measure called times
+        Bindable.prototype.onAttach = function () { called.onAttach++; };
+        Bindable.prototype.onBound = function () { called.onBound++; };
+        Bindable.prototype.onUnBound = function () { called.onUnBound++; };
+        Bindable.prototype.onDetach = function () { called.onDetach++; };
+    }
 
-        mockChildService = _.assign(function () { }, bindable);
+    function setupMockService() {
+        MockChildService = function () {
+            Bindable.apply(this, arguments);
+        };
+        MockChildService.prototype = new Bindable();
+        mockChildService = new MockChildService();
+    }
+
+    beforeEach(module('bikeBuilder'));
+    beforeEach(inject(function (_Bindable_) {
+        Bindable = _Bindable_;
+    }));
+    beforeEach(function () {
+        setupBindableObj();
+        setupMockService();
     });
 
     it('should be defined', function () {
