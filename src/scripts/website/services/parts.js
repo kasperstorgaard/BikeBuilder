@@ -18,14 +18,20 @@
             }
 
             function updateSelectedPart(sectionName, selectedPart) {
+                if (!sectionName || !selectedPart) {
+                    return null;
+                }
+
                 var section = this.items[sectionName];
                 if (!section) {
-                    return;
+                    return null;
                 }
 
                 _.each(section.parts, function (part) {
                     part.selected = part.name == selectedPart.name;
                 });
+
+                return this.items;
             }
         });
 })();

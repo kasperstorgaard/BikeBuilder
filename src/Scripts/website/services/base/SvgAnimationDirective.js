@@ -1,7 +1,7 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .service('SvgAnimationDirective', function () {
+        .factory('SvgAnimationDirective', function () {
             return function AnimationPart(el, type, options) {
                 var self = this;
                 options = options || {};

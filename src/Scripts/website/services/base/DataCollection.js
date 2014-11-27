@@ -2,7 +2,7 @@
     'use strict';
     angular.module('bikeBuilder')
         .factory('DataCollection', function ($q, $timeout, $http) {
-            var DataCollection = function (options) {
+            function DataCollection(options) {
                 options = options || {};
 
                 this.isAsync = !_.isUndefined(options.isAsync) ? options.isAsync : false;
