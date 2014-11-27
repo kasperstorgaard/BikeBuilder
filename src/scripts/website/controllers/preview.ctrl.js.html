@@ -195,20 +195,20 @@
     </style>
 </head>
 <body>
-<div class="header low">
+<div class="header high">
     <h1>Code coverage report for <span class="entity">D:/Git/BikeBuilder/src/scripts/website/controllers/preview.ctrl.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">27.78% <small>(5 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(20 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Branches: <span class="metric">0% <small>(0 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Functions: <span class="metric">16.67% <small>(1 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(6 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">27.78% <small>(5 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(20 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
@@ -250,72 +250,78 @@
 32
 33
 34
-35</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+35
+36
+37</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .controller('PreviewCtrl', <span class="fstat-no" title="function not covered" >function (SvgParts, DataCollection, $scope) {</span>
-<span class="cstat-no" title="statement not covered" >            var ctrl = this;</span>
-<span class="cstat-no" title="statement not covered" >            ctrl.getPart = getPart;</span>
+        .controller('PreviewCtrl', function (SvgParts, DataCollection, $scope) {
+            var ctrl = this;
+            ctrl.getPart = getPart;
+            ctrl.dataFetched = dataFetched;
+            ctrl.updateActiveSvgPart = updateActiveSvgPart;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            $scope.$on('svgPart:clicked', updateActiveSvgPart);</span>
+            $scope.$on('svgPart:clicked', updateActiveSvgPart);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            var svgData = new DataCollection({ filePath: 'scripts/svgdata.json', isAsync: true });</span>
+            ctrl.dataCollection = new DataCollection({ filePath: 'scripts/svgdata.json', isAsync: true });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            svgData.fetch().then(dataFetched);</span>
+            ctrl.dataCollection.fetch().then(dataFetched);
 &nbsp;
             //--------------------------------------------//
 &nbsp;
-<span class="fstat-no" title="function not covered" >            function getPart(key) {</span>
-<span class="cstat-no" title="statement not covered" >                if (!ctrl.SvgDataReady) {</span>
-<span class="cstat-no" title="statement not covered" >                    return {};</span>
+            function getPart(key) {
+                if (!ctrl.SvgDataReady) {
+                    return {};
                 }
-<span class="cstat-no" title="statement not covered" >                return SvgParts.getOne(key);</span>
+                return SvgParts.getOne(key);
             }
 &nbsp;
-<span class="fstat-no" title="function not covered" >            function dataFetched() {</span>
-<span class="cstat-no" title="statement not covered" >                _.forEach(svgData.getAll(), <span class="fstat-no" title="function not covered" >function(svgDataPart, key) {</span></span>
-<span class="cstat-no" title="statement not covered" >                    SvgParts.add(key, svgDataPart);</span>
+            function dataFetched() {
+                _.forEach(ctrl.dataCollection.getAll(), function (svgDataPart, key) {
+                    SvgParts.add(key, svgDataPart);
                 });
-<span class="cstat-no" title="statement not covered" >                ctrl.SvgDataReady = true;</span>
+                ctrl.SvgDataReady = true;
             }
 &nbsp;
-<span class="fstat-no" title="function not covered" >            function updateActiveSvgPart(event, key) {</span>
-<span class="cstat-no" title="statement not covered" >                SvgParts.updateAll({ selected: false });</span>
-<span class="cstat-no" title="statement not covered" >                SvgParts.updateOne(key, { selected: true });</span>
+            function updateActiveSvgPart(event, key) {
+                SvgParts.updateAll({ selected: false });
+                SvgParts.updateOne(key, { selected: true });
             }
         });
 })();</pre></td></tr>
@@ -323,7 +329,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Nov 27 2014 11:40:31 GMT+0100 (Romance Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Nov 27 2014 14:52:11 GMT+0100 (Romance Standard Time)</div>
 </div>
 
 <script src="../prettify.js"></script>

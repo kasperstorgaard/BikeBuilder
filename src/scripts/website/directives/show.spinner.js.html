@@ -199,16 +199,16 @@
     <h1>Code coverage report for <span class="entity">D:/Git/BikeBuilder/src/scripts/website/directives/show.spinner.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">23.08% <small>(6 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">12.5% <small>(2 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Functions: <span class="metric">12.5% <small>(1 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">25% <small>(1 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">23.08% <small>(6 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">12.5% <small>(2 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
@@ -250,25 +250,7 @@
 32
 33
 34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+35</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -279,6 +261,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -288,6 +271,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -295,27 +280,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -323,52 +287,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .directive('showSpinner', <span class="fstat-no" title="function not covered" >function ($templateCache, $compile) {</span>
+        .directive('showSpinner', <span class="fstat-no" title="function not covered" >function () {</span>
 <span class="cstat-no" title="statement not covered" >            var idPostFix = 0;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >            return {</span>
                 restrict: 'A',
                 scope: true,
                 priority: 1,
-                link: <span class="fstat-no" title="function not covered" >function (scope, element, attrs) {</span>
-<span class="cstat-no" title="statement not covered" >                    var showSpinner = getBool(attrs.showSpinner);</span>
+                controller: 'ShowSpinnerCtrl',
+                link: <span class="fstat-no" title="function not covered" >function (scope, element, attrs, ctrl) {</span>
+<span class="cstat-no" title="statement not covered" >                    var showSpinner = ctrl.getBool(attrs.showSpinner);</span>
 <span class="cstat-no" title="statement not covered" >                    if (showSpinner === false) {</span>
 <span class="cstat-no" title="statement not covered" >                        return;</span>
                     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >                    scope.spinnerKeyPostFix = idPostFix;</span>
-<span class="cstat-no" title="statement not covered" >                    idPostFix++; </span>
+<span class="cstat-no" title="statement not covered" >                    idPostFix++;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                    var spinnerElement = getSpinnerElement();</span>
-<span class="cstat-no" title="statement not covered" >                    insertBeforeElement(spinnerElement[0], element[0]);</span>
+<span class="cstat-no" title="statement not covered" >                    var spinnerElement = ctrl.getSpinnerElement();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    var parentEl = element[0].parentNode;</span>
+<span class="cstat-no" title="statement not covered" >                    parentEl.insertBefore(spinnerElement[0], element[0]);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >                    var removeObserve = attrs.$observe('showSpinner', <span class="fstat-no" title="function not covered" >function(val) {</span></span>
-<span class="cstat-no" title="statement not covered" >                        if (!getBool(val)) {</span>
-<span class="cstat-no" title="statement not covered" >                            removeElement(spinnerElement);</span>
+<span class="cstat-no" title="statement not covered" >                        if (!ctrl.getBool(val)) {</span>
+<span class="cstat-no" title="statement not covered" >                            spinnerElement.remove();</span>
 <span class="cstat-no" title="statement not covered" >                            removeObserve();</span>
                         }
                     });
-&nbsp;
-                    //---------------------------------------------//
-&nbsp;
-<span class="fstat-no" title="function not covered" >                    function getBool(attr) {</span>
-<span class="cstat-no" title="statement not covered" >                        return !_.isUndefined(attr) &amp;&amp; attr.toString().toLowerCase() === 'true';</span>
-                    }
-&nbsp;
-<span class="fstat-no" title="function not covered" >                    function getSpinnerElement() {</span>
-<span class="cstat-no" title="statement not covered" >                        var tpl = $templateCache.get('spinner.tpl.html');</span>
-<span class="cstat-no" title="statement not covered" >                        var linkFn = $compile(tpl);</span>
-<span class="cstat-no" title="statement not covered" >                        return linkFn(scope);</span>
-                    }
-&nbsp;
-<span class="fstat-no" title="function not covered" >                    function insertBeforeElement(insertEl, siblingEl) {</span>
-<span class="cstat-no" title="statement not covered" >                        var parentEl = siblingEl.parentNode;</span>
-<span class="cstat-no" title="statement not covered" >                        parentEl.insertBefore(insertEl, siblingEl);</span>
-                    }
-&nbsp;
-<span class="fstat-no" title="function not covered" >                    function removeElement(el) {</span>
-<span class="cstat-no" title="statement not covered" >                        el.remove();</span>
-                    }
                 }
             };
         });
@@ -377,7 +323,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Nov 27 2014 11:40:31 GMT+0100 (Romance Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Nov 27 2014 14:52:11 GMT+0100 (Romance Standard Time)</div>
 </div>
 
 <script src="../prettify.js"></script>

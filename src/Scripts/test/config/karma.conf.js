@@ -1,7 +1,7 @@
 module.exports = function (config) {
     config.set({
         browsers: ['Chrome', 'Firefox'],
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'sinon'],
         files: [
             '../../vendor.min.js',
 
@@ -36,7 +36,8 @@ module.exports = function (config) {
             'karma-growl-reporter',
             'karma-html-reporter',
             'karma-coverage',
-            'karma-jasmine'
+            'karma-jasmine',
+            'karma-sinon'
         ]
     });
 };

@@ -93,7 +93,7 @@
         
         
         <div class="alert alert-success" role="alert">
-            Passing 54 specs
+            Passing 75 specs
         </div>
         
         
@@ -103,6 +103,132 @@
         <div class="summary">
 
             <ul class="list-group">
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>controller:flow | partSelected |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return null when called without all proper arguments
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should call updateSvgPart with variant
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should call parts service.updateSelectedPart with sectionName and selectedPart
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should broadcast &quot;update:selected&quot; on rootscope with args except event
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return ctrl for chaining
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>controller:flow | updateSvgPart |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return null when called with anything but obj with colors prop
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should call &quot;svgParts.updateone&quot; once when one color in variant
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return ctrl for chaining
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>controller:flow | partDataFetched |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should set partSections
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return ctrl for chaining
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>controller:preview | getPart |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return empty object when !SvgDataReady
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should return &quot;SvgParts.getOne&quot;
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>controller:preview | dataFetched |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should add each svg part
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should set SvgDataReady
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="list-group-item-heading list-group-item">
+                    <h3>controller:preview | updateActiveSvgPart |</h3>
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should be defined
+                        </li>
+                        
+                        <li class="list-group-item list-group-item-passed">
+                            should update selected svgPart
+                        </li>
+                        
+                    </ul>
+                </li>
                 
                 <li class="list-group-item-heading list-group-item">
                     <h3>service:base:DataCollection |</h3>
