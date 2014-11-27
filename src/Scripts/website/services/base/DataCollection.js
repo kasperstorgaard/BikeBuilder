@@ -26,27 +26,7 @@
             //---------------------------------------------------------------------------------//
 
             function fetch() {
-                if (!this.isAsync) {
-                    return null;
-                }
-
-                var self = this;
-                this.fetchedDfd = this.fetchedDfd || $q.defer();
-
-                if (this.fetched) {
-                    this.fetchedDfd = $q.defer();
-                    this.fetchedDfd.resolve();
-                } else if (!this.fetching) {
-                    this.fetching = true;
-                    $http.get(this.filePath).success(function (data) {
-                        self.fetching = false;
-                        self.fetched = true;
-                        self.items = self.processData(data);
-                        self.fetchedDfd.resolve(self.items);
-                    });
-                }
-
-                return this.fetchedDfd.promise;
+                //
             }
 
             function processData(data) {

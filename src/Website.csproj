@@ -188,6 +188,8 @@
     <Content Include="scripts\.jshintignore" />
     <Content Include="scripts\.jshintrc" />
     <Content Include="scripts\website\controllers\flow.ctrl.js" />
+    <Content Include="scripts\website\controllers\scroll.bind.ctrl.js" />
+    <Content Include="scripts\website\controllers\show.spinner.ctrl.js" />
     <Content Include="scripts\website\controllers\summary.ctrl.js" />
     <Content Include="scripts\website\controllers\preview.ctrl.js" />
     <Content Include="scripts\website\directives\summary.item.js" />
