@@ -1,52 +1,34 @@
 ﻿; (function () {
     'use strict';
     angular.module('bikeBuilder')
-        .directive('showSpinner', function ($templateCache, $compile) {
+        .directive('showSpinner', function () {
             var idPostFix = 0;
 
             return {
                 restrict: 'A',
                 scope: true,
                 priority: 1,
-                link: function (scope, element, attrs) {
-                    var showSpinner = getBool(attrs.showSpinner);
+                controller: 'ShowSpinnerCtrl',
+                link: function (scope, element, attrs, ctrl) {
+                    var showSpinner = ctrl.getBool(attrs.showSpinner);
                     if (showSpinner === false) {
                         return;
                     }
 
                     scope.spinnerKeyPostFix = idPostFix;
-                    idPostFix++; 
+                    idPostFix++;
 
-                    var spinnerElement = getSpinnerElement();
-                    insertBeforeElement(spinnerElement[0], element[0]);
+                    var spinnerElement = ctrl.getSpinnerElement();
+
+                    var parentEl = element[0].parentNode;
+                    parentEl.insertBefore(spinnerElement[0], element[0]);
 
                     var removeObserve = attrs.$observe('showSpinner', function(val) {
-                        if (!getBool(val)) {
-                            removeElement(spinnerElement);
+                        if (!ctrl.getBool(val)) {
+                            spinnerElement.remove();
                             removeObserve();
                         }
                     });
-
-                    //---------------------------------------------//
-
-                    function getBool(attr) {
-                        return !_.isUndefined(attr) && attr.toString().toLowerCase() === 'true';
-                    }
-
-                    function getSpinnerElement() {
-                        var tpl = $templateCache.get('spinner.tpl.html');
-                        var linkFn = $compile(tpl);
-                        return linkFn(scope);
-                    }
-
-                    function insertBeforeElement(insertEl, siblingEl) {
-                        var parentEl = siblingEl.parentNode;
-                        parentEl.insertBefore(insertEl, siblingEl);
-                    }
-
-                    function removeElement(el) {
-                        el.remove();
-                    }
                 }
             };
         });

@@ -1,4 +1,4 @@
-﻿module.exports = function (gulp, config, handleError) {
+﻿module.exports = function (gulp, config) {
 
     var templateCache = require('gulp-angular-templatecache');
     var reload = require('browser-sync').reload;

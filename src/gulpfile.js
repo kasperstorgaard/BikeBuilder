@@ -10,7 +10,7 @@ var config = require('./gulpconfig.json');
 var karmaPath = __dirname + '/' + config.karma.configPath;
 
 require('./tasks/browser-sync.js')(gulp, config);
-require('./tasks/templates.js')(gulp, config, handleError)
+require('./tasks/templates.js')(gulp, config, handleError);
 require('./tasks/js.js')(gulp, config, handleError);
 require('./tasks/karma.js')(gulp, karmaPath, handleError);
 require('./tasks/less.js')(gulp, config, handleError);

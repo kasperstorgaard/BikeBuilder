@@ -6,16 +6,11 @@
                 DataCollection.apply(this, arguments);
             }
             Parts.prototype = new DataCollection();
-            Parts.prototype.processData = processData;
             Parts.prototype.updateSelectedPart = updateSelectedPart;
 
             return new Parts({ filePath: 'scripts/partdata.json', isAsync: true });
 
             //-----------------------------------------------------//
-
-            function processData(data) {
-                return data;
-            }
 
             function updateSelectedPart(sectionName, selectedPart) {
                 if (!sectionName || !selectedPart) {

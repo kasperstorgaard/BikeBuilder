@@ -4,12 +4,14 @@
         .controller('PreviewCtrl', function (SvgParts, DataCollection, $scope) {
             var ctrl = this;
             ctrl.getPart = getPart;
+            ctrl.dataFetched = dataFetched;
+            ctrl.updateActiveSvgPart = updateActiveSvgPart;
 
             $scope.$on('svgPart:clicked', updateActiveSvgPart);
 
-            var svgData = new DataCollection({ filePath: 'scripts/svgdata.json', isAsync: true });
+            ctrl.dataCollection = new DataCollection({ filePath: 'scripts/svgdata.json', isAsync: true });
 
-            svgData.fetch().then(dataFetched);
+            ctrl.dataCollection.fetch().then(dataFetched);
 
             //--------------------------------------------//
 
@@ -21,7 +23,7 @@
             }
 
             function dataFetched() {
-                _.forEach(svgData.getAll(), function(svgDataPart, key) {
+                _.forEach(ctrl.dataCollection.getAll(), function (svgDataPart, key) {
                     SvgParts.add(key, svgDataPart);
                 });
                 ctrl.SvgDataReady = true;

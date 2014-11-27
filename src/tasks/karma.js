@@ -1,4 +1,4 @@
-﻿module.exports = function (gulp, configPath, handleError) {
+﻿module.exports = function (gulp, configPath) {
     var karma = require('karma');
     var server = karma.server;
 
