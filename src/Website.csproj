@@ -356,7 +356,6 @@
     <Content Include="views\sections\_summary.cshtml" />
     <Content Include="views\sections\_preview.cshtml" />
     <Content Include="views\sections\_flow.cshtml" />
-    <Content Include="readme.md" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
     <Content Include="scripts\vendor\map.json" />
